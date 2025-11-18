@@ -9,8 +9,8 @@ echo   Weather Map - UI and API Server Launcher
 echo ==================================================
 echo.
 
-echo [1/2] Starting UI static server (serve_local.py)...
-start "UI Server" cmd /k python serve_local.py
+echo [1/2] Starting UI static server (backend\api\serve_local.py)...
+start "UI Server" cmd /k python backend\api\serve_local.py
 if errorlevel 1 (
     echo   !! Failed to start UI server. Check that Python is installed and serve_local.py exists.
 ) else (
@@ -18,8 +18,8 @@ if errorlevel 1 (
 )
 echo.
 
-echo [2/2] Starting Weather API server (openmeteo\weather_api_server.py)...
-start "Weather API" cmd /k python openmeteo\weather_api_server.py
+echo [2/2] Starting Weather API server (backend\api\weather_api_server_extended.py)...
+start "Weather API" cmd /k python backend\api\weather_api_server_extended.py
 if errorlevel 1 (
     echo   !! Failed to start Weather API server. Ensure dependencies are installed.
 ) else (

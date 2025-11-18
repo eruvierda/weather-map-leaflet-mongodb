@@ -13,14 +13,14 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from openmeteo import weather_repository as repo
+from backend.data import weather_repository as repo
 
 
 class WeatherRepositoryTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.mongo_client = mongomock.MongoClient()
         self.get_client_patcher = patch(
-            "openmeteo.weather_repository._get_client",
+            "backend.data.weather_repository._get_client",
             return_value=self.mongo_client,
         )
         self.get_client_patcher.start()

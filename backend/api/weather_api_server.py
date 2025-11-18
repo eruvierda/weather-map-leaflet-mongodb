@@ -11,18 +11,22 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 
-from weather_repository import (
+# Add project root to path for imports
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+from ..data.weather_repository import (
     get_city_weather_documents,
     get_grid_weather_documents,
     get_latest_city_fetch_time,
     get_latest_grid_fetch_time,
     get_latest_port_time,
+    get_port_metadata,
     get_port_weather_documents,
 )
 
 load_dotenv()
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 app = Flask(__name__, static_folder=str(BASE_DIR), static_url_path="")
 CORS(app)
 
@@ -77,6 +81,12 @@ def get_port_weather() -> Any:
     return jsonify(data)
 
 
+@app.route("/api/weather/port/metadata")
+def get_port_metadata_endpoint() -> Any:
+    data = get_port_metadata()
+    return jsonify(data)
+
+
 @app.route("/api/weather/all")
 def get_all_weather() -> Any:
     payload: Dict[str, List[Dict[str, Any]]] = {
@@ -94,7 +104,7 @@ def get_weather_summary() -> Any:
 
 @app.route("/")
 def serve_root() -> Any:
-    return send_from_directory(BASE_DIR, "index.html")
+    return send_from_directory(BASE_DIR / "frontend", "index.html")
 
 
 @app.route("/<path:path>")

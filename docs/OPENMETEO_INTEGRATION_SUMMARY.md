@@ -7,23 +7,35 @@ Successfully created a Python-based weather data collection system using the off
 ## ✅ **What Was Delivered**
 
 ### 1. **Complete OpenMeteo Data Collection System**
-- **Location**: `openmeteo/` folder
+- **Location**: `backend/` and `frontend/` folders (restructured)
 - **Status**: ✅ **FULLY WORKING**
-- **Data Sources**: 86 cities + 96 grid points
-- **Update Method**: Automated with caching
+- **Data Sources**: 86 cities + 96 grid points + ports
+- **Update Method**: Orchestrated collectors with retry and logging
 
 ### 2. **Key Components**
 ```
-openmeteo/
-├── fetch_weather_data.py          # Main collection script (Official API)
-├── update_city_weather.py         # City collector writing to MongoDB
-├── weather_repository.py          # Shared Mongo helpers (save + freshness)
-├── weather_api_server.py          # Flask server exposing /api/weather/* endpoints
-├── scheduled_update.py            # Automated update with logging  
-├── run_openmeteo_update.bat       # Windows scheduler integration
-├── requirements.txt               # Dependencies management (incl. pymongo + Flask)
-├── .cache/                        # API response caching
-└── README.md                      # Complete documentation
+backend/
+├── api/
+│   ├── weather_api_server.py              # Core Flask API
+│   ├── weather_api_server_extended.py      # History + CSV export endpoints
+│   └── serve_local.py                     # Static file server
+├── collectors/
+│   ├── update_city_weather.py              # City collector
+│   ├── fetch_weather_data.py               # Grid collector
+│   ├── pelabuhan/pelabuhan_weather.py     # Port collector
+│   └── run_all_collectors.py              # Orchestrator with retry
+├── data/
+│   └── weather_repository.py               # MongoDB helpers
+├── logs/                                   # Orchestrator logs
+└── requirements.txt                        # Dependencies
+
+frontend/
+├── index.html                              # Main dashboard
+└── scripts/
+    └── smart_cache_manager.js              # Client-side caching
+
+scripts/                                     # Deployment utilities
+docs/                                        # Full documentation
 ```
 
 ### 3. **Technical Implementation**
@@ -73,17 +85,20 @@ openmeteo/
 
 ### **Automated Updates**:
 - **Frequency**: Every 1-3 hours (configurable)
-- **Method**: Windows Task Scheduler + batch file
-- **Caching**: Smart caching prevents unnecessary API calls
-- **Logging**: Complete update history in `openmeteo_update.log`
+- **Method**: Windows Task Scheduler + `start_server.bat`
+- **Orchestrator**: `backend/collectors/run_all_collectors.py` runs all collectors with retry
+- **Logging**: Complete update history in `backend/logs/collector.log`
 
 ### **Manual Updates**:
 ```bash
-# Single update
-python openmeteo/fetch_weather_data.py
+# Run all collectors with retry/orchestration
+python backend/collectors/run_all_collectors.py
 
-# Scheduled update with logging  
-python openmeteo/scheduled_update.py
+# Start API + UI server (extended)
+python backend/api/weather_api_server_extended.py
+
+# Or use the launcher (recommended)
+start_server.bat
 ```
 
 ## 🔧 **Integration Instructions**
@@ -127,12 +142,14 @@ pandas>=1.3.0               # Data manipulation capabilities
 ```
 
 ### **Architecture**:
-- **Data Collection**: Official OpenMeteo SDK
+- **Data Collection**: Official OpenMeteo SDK + BMKG maritime API
+- **Orchestration**: `backend/collectors/run_all_collectors.py` with retry and unified logging
 - **Persistence**: MongoDB (`city_weather`, `grid_weather`, `port_weather`)
-- **API Layer**: Flask (`weather_api_server.py`) serving `/api/weather/*`
-- **Caching Layer**: SQLite-based response cache
-- **Error Recovery**: Exponential backoff retry
-- **Scheduling**: Windows Task Scheduler integration
+- **API Layer**: Flask (`backend/api/weather_api_server_extended.py`) serving current + history + export endpoints
+- **Frontend**: LeafletJS dashboard (`frontend/index.html`) with client-side smart caching
+- **Caching Layer**: SQLite-based response cache + client-side cache manager
+- **Error Recovery**: Exponential backoff retry in orchestrator
+- **Scheduling**: Windows Task Scheduler integration via `start_server.bat`
 
 ## 🎉 **Project Impact**
 
@@ -154,18 +171,21 @@ pandas>=1.3.0               # Data manipulation capabilities
 
 ## 📝 **Next Steps** 
 
-1. **Schedule Updates**: Set up Windows Task Scheduler to run every 2-3 hours
-2. **Update HTML**: Continue refining `index.html` to consume `/api/weather/*`
-3. **Monitor Performance**: Check `openmeteo_update.log` for update success
-4. **Optimize Frequency**: Adjust update intervals based on data freshness needs
+1. **Schedule Updates**: Set up Windows Task Scheduler to run `backend/collectors/run_all_collectors.py` every 2-3 hours
+2. **Launch**: Run `start_server.bat` to start both UI and extended API server
+3. **Monitor Performance**: Check `backend/logs/collector.log` for orchestrator updates
+4. **Historical Features**: Use the 📈 Historical Weather panel in the UI to view trends and export CSV
+5. **Optimize Frequency**: Adjust update intervals based on data freshness needs
 
 ## 🏆 **Conclusion**
 
-Successfully delivered a complete OpenMeteo integration that:
+Successfully delivered a complete, restructured weather integration that:
 - ✅ **Eliminates live API dependency** for weather map loading
 - ✅ **Reduces API token consumption** by 90%+
 - ✅ **Improves page load performance** by 5x
 - ✅ **Provides offline capability** and reliability
-- ✅ **Includes complete automation** and monitoring
+- ✅ **Includes complete automation** and monitoring via orchestrator
+- ✅ **Adds historical visualization** and CSV export features
+- ✅ **Organized codebase** into backend/frontend/docs/scripts structure
 
-The solution is **production-ready** and provides **significant improvements** in both performance and cost efficiency while maintaining **full data fidelity** from the OpenMeteo API. 
+The solution is **production-ready** with a clean, maintainable architecture and provides **significant improvements** in both performance and cost efficiency while maintaining **full data fidelity** from the OpenMeteo API.

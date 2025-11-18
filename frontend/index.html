@@ -263,6 +263,9 @@
     <!-- Leaflet.heat Plugin -->
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
     
+    <!-- Chart.js for historical visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    
     <!-- Smart Cache Manager -->
     <script>
         (function configureWeatherApiBase() {
@@ -278,12 +281,16 @@
                     city: '/api/weather/city',
                     grid: '/api/weather/grid',
                     port: '/api/weather/port',
+                    cityHistory: '/api/weather/city/history',
+                    gridHistory: '/api/weather/grid/history',
+                    portHistory: '/api/weather/port/history',
+                    export: '/api/weather/export',
                 },
                 window.WEATHER_ENDPOINTS || {}
             );
         })();
     </script>
-    <script src="openmeteo/smart_cache_manager.js"></script>
+    <script src="scripts/smart_cache_manager.js"></script>
 
     <script>
         // --- 1. Map Initialization ---
@@ -1038,6 +1045,11 @@
             city: CITY_API_URL = '/api/weather/city',
             grid: GRID_API_URL = '/api/weather/grid',
             port: PORT_API_URL = '/api/weather/port',
+            portMetadata: PORT_METADATA_URL = '/api/weather/port/metadata',
+            cityHistory: CITY_HISTORY_URL = '/api/weather/city/history',
+            gridHistory: GRID_HISTORY_URL = '/api/weather/grid/history',
+            portHistory: PORT_HISTORY_URL = '/api/weather/port/history',
+            export: EXPORT_URL = '/api/weather/export',
         } = window.WEATHER_ENDPOINTS || {};
 
         async function loadAndDisplayCityWeather() {
@@ -1366,16 +1378,16 @@
             if (loadingText) loadingText.textContent = 'Memuat data cuaca pelabuhan...';
             
             try {
-                // Load port data using smart cache manager
-                const portData = await cacheManager.getData('pelabuhan/namaPelabuhan.json', 'static');
-                
-                // Convert to array format for display
-                const portList = Object.keys(portData).map(portName => ({
-                    name: portName,
-                    lat: portData[portName].latitude,
-                    lon: portData[portName].longitude,
-                    slug: portData[portName].slug
-                }));
+                // Load port metadata from API (stored in Mongo)
+                const portMetadata = await cacheManager.getData(PORT_METADATA_URL, 'static');
+
+                // Normalize metadata into array format for display
+                const portList = (Array.isArray(portMetadata) ? portMetadata : []).map(port => ({
+                    name: port.port_name || port.name,
+                    lat: port.lat ?? port.latitude,
+                    lon: port.lon ?? port.longitude,
+                    slug: port.slug || port.id || createSlugFromName(port.port_name || port.name || '')
+                })).filter(port => port.name && typeof port.lat === 'number' && typeof port.lon === 'number');
                 
                 if (loadingText) loadingText.textContent = `Memuat data cuaca untuk ${portList.length} pelabuhan dari BMKG...`;
                 
@@ -1386,6 +1398,14 @@
                 console.error("Gagal memuat data pelabuhan:", error);
                 alert("Tidak dapat memuat data pelabuhan. Silakan periksa konsol untuk detailnya.");
             }
+        }
+
+        function createSlugFromName(name) {
+            return name
+                .toLowerCase()
+                .trim()
+                .replace(/[\\s]+/g, '-'
+                ).replace(/[^a-z0-9-]/g, '');
         }
 
         // Function to display port weather from our collected data (avoiding CORS issues)
@@ -1838,6 +1858,138 @@
             window.open('openmeteo/cache_control_panel.html', '_blank');
         }
         
+        // --- 6. Historical Panel ---
+        let historicalCharts = {};
+
+        function openHistoricalPanel() {
+            const popup = L.popup()
+                .setLatLng(map.getCenter())
+                .setContent(`
+                    <div style="min-width: 420px; max-width: 500px;">
+                        <h3 style="margin:0 0 12px 0; font-size:16px;">📈 Historical Weather</h3>
+                        
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
+                            <select id="histType" style="padding:4px; border-radius:4px; border:1px solid #ccc;">
+                                <option value="city">City</option>
+                                <option value="grid">Grid</option>
+                                <option value="port">Port</option>
+                            </select>
+                            <select id="histDays" style="padding:4px; border-radius:4px; border:1px solid #ccc;">
+                                <option value="7">7 days</option>
+                                <option value="30" selected>30 days</option>
+                                <option value="90">90 days</option>
+                            </select>
+                        </div>
+                        
+                        <input type="text" id="histLocation" placeholder="Jakarta" style="width:100%; padding:4px; margin-bottom:8px; border-radius:4px; border:1px solid #ccc;">
+                        
+                        <div style="display:flex; gap:8px; margin-bottom:12px;">
+                            <button id="loadHistoryBtn" style="flex:1; padding:6px; background:#3b82f6; color:white; border:none; border-radius:4px; cursor:pointer;">Load</button>
+                            <button id="exportHistoryBtn" style="padding:6px; background:#10b981; color:white; border:none; border-radius:4px; cursor:pointer;">Export CSV</button>
+                        </div>
+                        
+                        <div style="height:200px; position:relative;">
+                            <canvas id="histChart"></canvas>
+                        </div>
+                    </div>
+                `)
+                .openOn(map);
+
+            // Wire events after popup is rendered
+            setTimeout(() => {
+                document.getElementById('loadHistoryBtn').addEventListener('click', loadHistoricalData);
+                document.getElementById('exportHistoryBtn').addEventListener('click', exportHistoricalData);
+                document.getElementById('histType').addEventListener('change', (e) => {
+                    const locInput = document.getElementById('histLocation');
+                    if (e.target.value === 'grid') {
+                        locInput.placeholder = '-2.5,118.0';
+                    } else if (e.target.value === 'port') {
+                        locInput.placeholder = 'Tanjung Priok';
+                    } else {
+                        locInput.placeholder = 'Jakarta';
+                    }
+                });
+
+                // Initialize empty chart
+                const ctx = document.getElementById('histChart').getContext('2d');
+                historicalCharts.main = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        datasets: [
+                            { label: 'Temperature Avg', data: [], borderColor: 'rgb(239, 68, 68)', tension: 0.3, yAxisID: 'y' },
+                            { label: 'Humidity Avg', data: [], borderColor: 'rgb(59, 130, 246)', tension: 0.3, yAxisID: 'y1' },
+                            { label: 'Wind Speed Avg', data: [], borderColor: 'rgb(34, 197, 94)', tension: 0.3, yAxisID: 'y' }
+                        ]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        plugins: { legend: { display: true } },
+                        scales: {
+                            x: { type: 'time', time: { unit: 'day' } },
+                            y: { type: 'linear', display: true, position: 'left', title: { display: true, text: '°C / km/h' } },
+                            y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: '%' }, grid: { drawOnChartArea: false } }
+                        }
+                    }
+                });
+            }, 100);
+        }
+
+        async function loadHistoricalData() {
+            const type = document.getElementById('histType').value;
+            const location = document.getElementById('histLocation').value || (type === 'city' ? 'Jakarta' : type === 'grid' ? '-2.5,118.0' : 'Tanjung Priok');
+            const days = document.getElementById('histDays').value;
+
+            let url;
+            if (type === 'city') {
+                url = `${CITY_HISTORY_URL}?name=${encodeURIComponent(location)}&days=${days}`;
+            } else if (type === 'grid') {
+                const [lat, lon] = location.split(',').map(Number);
+                url = `${GRID_HISTORY_URL}?lat=${lat}&lon=${lon}&days=${days}`;
+            } else {
+                url = `${PORT_HISTORY_URL}?name=${encodeURIComponent(location)}&days=${days}`;
+            }
+
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const result = await res.json();
+
+                const chart = historicalCharts.main;
+                chart.data.datasets[0].data = result.data.map(d => ({ x: d.date, y: d.temperature_avg }));
+                chart.data.datasets[1].data = result.data.map(d => ({ x: d.date, y: d.humidity_avg }));
+                chart.data.datasets[2].data = result.data.map(d => ({ x: d.date, y: d.wind_speed_avg }));
+                chart.update();
+            } catch (err) {
+                alert('Failed to load historical data. Ensure the extended API server is running.');
+                console.error(err);
+            }
+        }
+
+        function exportHistoricalData() {
+            const type = document.getElementById('histType').value;
+            const days = document.getElementById('histDays').value;
+            const url = `${EXPORT_URL}?type=${type}&days=${days}&format=csv`;
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${type}_export_${new Date().toISOString().split('T')[0]}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+        // Add a button to open historical panel (you can integrate this into your layer control if desired)
+        L.Control.openHistorical = L.Control.extend({
+            options: { position: 'topleft' },
+            onAdd: function(map) {
+                const div = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+                div.innerHTML = `<a style="font-size:16px; line-height:24px;" title="Historical Weather">📈</a>`;
+                div.style.cursor = 'pointer';
+                div.onclick = openHistoricalPanel;
+                return div;
+            }
+        });
+        new L.Control.openHistorical().addTo(map);
+
         // --- 6. Initial Load ---
         document.addEventListener('DOMContentLoaded', geocodeAndFetch);
     </script>

@@ -13,7 +13,13 @@ from pathlib import Path
 # Configuration
 PORT = 80
 
-DIRECTORY = os.getcwd()
+# Get the project root directory (one level up from backend/api)
+PROJECT_ROOT = str(Path(__file__).parent.parent.parent.absolute())
+# Serve from the frontend directory
+DIRECTORY = os.path.join(PROJECT_ROOT, 'frontend')
+
+# Change to the frontend directory
+os.chdir(DIRECTORY)
 
 class CORSHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
