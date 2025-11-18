@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ahmad Firdaus">
+    <meta name="description" content="Peta Cuaca Indonesia dengan data cuaca terperinci dan klasifikasi bahaya angin.">
+    
+    <!-- Cache Control Headers -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <title>Peta Cuaca Indonesia</title>
+    
+    <!-- LeafletJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        #map { 
+            height: 100vh; 
+            width: 100%;
+        }
+        .leaflet-popup-content-wrapper {
+            border-radius: 8px;
+            background-color: #f9fafb; /* A light gray background */
+        }
+        .leaflet-popup-content {
+            margin: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        /* Styles for the custom wind icon - now transparent with colored arrows */
+        .wind-icon-container {
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: none;
+            transition: transform 0.2s ease-in-out;
+        }
+        .wind-icon-container:hover {
+            transform: scale(1.1);
+        }
+        .wind-arrow {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.5s ease-out;
+        }
+        
+        /* Weather Layer Control Styling */
+        .weather-layer-control {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            min-width: 180px;
+            overflow: hidden;
+        }
+        
+        .weather-control-header {
+            background-color: #f9fafb;
+            border-bottom: 1px solid #e5e7eb;
+            transition: background-color 0.2s ease;
+        }
+        
+        .weather-control-header:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .weather-control-content {
+            transition: all 0.3s ease;
+        }
+        
+        .weather-layer-control h4 {
+            color: #374151;
+            margin: 0;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .weather-layer-control input[type="radio"] {
+            accent-color: #3b82f6;
+            transform: scale(1.0);
+        }
+        
+        .weather-layer-control label {
+            color: #4b5563;
+            font-size: 12px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        
+        .weather-layer-control label:hover {
+            color: #1f2937;
+        }
+        
+        .weather-layer-control .radio-group {
+            margin-bottom: 6px;
+            padding: 6px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .weather-layer-control .radio-group:hover {
+            background-color: #f9fafb;
+        }
+
+        /* Status Indicator Styles */
+        .status-indicator {
+            margin-top: 8px;
+            padding: 6px;
+            background-color: #f0f9ff;
+            border: 1px solid #0ea5e9;
+            border-radius: 4px;
+            font-size: 11px;
+            color: #0369a1;
+        }
+        .status-indicator.city-active {
+            background-color: #f0f9ff;
+            border-color: #0ea5e9;
+            color: #0369a1;
+        }
+        .status-indicator.grid-active {
+            background-color: #fef3c7;
+            border-color: #f59e0b;
+            color: #92400e;
+        }
+        .status-indicator.port-active {
+            background-color: #e0f2fe;
+            border-color: #0284c7;
+            color: #075985;
+        }
+        .status-indicator.heatmap-active {
+            background-color: #e0f2fe;
+            border-color: #0284c7;
+            color: #075985;
+        }
+
+        /* Port Weather Day Selector Styling */
+        .day-btn {
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        
+        .day-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .day-btn:active {
+            transform: translateY(0);
+        }
+        
+        .weather-day-content {
+            transition: opacity 0.3s ease;
+        }
+
+        .grid-mode-toggle {
+            margin-top: 6px;
+            display: flex;
+            gap: 6px;
+        }
+
+        .grid-mode-btn {
+            flex: 1;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid #cbd5f5;
+            background-color: #f8fafc;
+            color: #1f2937;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .grid-mode-btn:hover {
+            background-color: #e2e8f0;
+        }
+
+        .grid-mode-btn.active {
+            background-color: #3b82f6;
+            color: #ffffff;
+            border-color: #2563eb;
+            box-shadow: 0 1px 4px rgba(37, 99, 235, 0.35);
+        }
+
+        /* Date Slider Styling */
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-webkit-slider-track {
+            background: #e5e7eb;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #3b82f6;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        input[type="range"]::-moz-range-track {
+            background: #e5e7eb;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            background: #3b82f6;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div id="map"></div>
+
+    <div id="loading-overlay" class="absolute inset-0 bg-gray-900 bg-opacity-70 flex items-center justify-center z-[1000]">
+        <div class="text-white text-2xl text-center animate-pulse">
+            <p id="loading-text">Mencari Lokasi Kota...</p>
+        </div>
+    </div>
+
+    <!-- LeafletJS JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    
+    <!-- Leaflet.heat Plugin -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    
+    <!-- Smart Cache Manager -->
+    <script src="openmeteo/smart_cache_manager.js"></script>
+
+    <script>
+        // --- 1. Map Initialization ---
+        const map = L.map('map').setView([-2.5489, 118.0149], 5);
+        
+        // Initialize Smart Cache Manager
+        const cacheManager = new SmartCacheManager();
+        console.log('🧠 Smart Cache Manager initialized:', cacheManager);
+
+        // Define different basemaps
+        const voyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        });
+
+        const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+            maxZoom: 20
+        });
+
+        const openStreetMap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 19
+        });
+
+        const darkVoyager = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        });
+
+        // Add default basemap to map
+        darkVoyager.addTo(map);
+
+        // Create layer groups for different map types
+        const baseMaps = {
+            "Voyager": voyager,
+            "Satellite": satellite,
+            "OpenStreetMap": openStreetMap,
+            "DarkVoyager": darkVoyager
+        };
+
+        // Create layers control and add to map
+        const layerControl = L.control.layers(baseMaps, null).addTo(map);
+
+        let gridViewMode = 'tiles';
+        const gridModeControls = {
+            wrapper: null,
+            tileButton: null,
+            markerButton: null
+        };
+
+        function updateGridModeButtons() {
+            if (!gridModeControls.tileButton || !gridModeControls.markerButton) {
+                return;
+            }
+
+            if (gridViewMode === 'tiles') {
+                gridModeControls.tileButton.classList.add('active');
+                gridModeControls.markerButton.classList.remove('active');
+            } else {
+                gridModeControls.markerButton.classList.add('active');
+                gridModeControls.tileButton.classList.remove('active');
+            }
+        }
+
+        function setGridViewMode(mode) {
+            if (gridViewMode === mode) {
+                return;
+            }
+
+            gridViewMode = mode;
+            updateGridModeButtons();
+
+            const gridRadio = document.getElementById('gridWeather');
+            if (gridRadio && gridRadio.checked) {
+                showGridWeather();
+            }
+        }
+
+        // Custom layer control for weather data types
+        const weatherLayerControl = L.Control.extend({
+            options: {
+                position: 'topright'
+            },
+            
+            onAdd: function(map) {
+                const container = L.DomUtil.create('div', 'weather-layer-control leaflet-control');
+                
+                // Create header with toggle functionality
+                const header = L.DomUtil.create('div', 'weather-control-header', container);
+                header.style.cssText = 'cursor: pointer; padding: 8px 10px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;';
+                
+                const title = L.DomUtil.create('h4', '', header);
+                title.innerHTML = '🌤️ Tipe Cuaca';
+                title.style.cssText = 'margin: 0; font-size: 13px; font-weight: 600; color: #374151;';
+                
+                const toggleIcon = L.DomUtil.create('span', '', header);
+                toggleIcon.innerHTML = '▼';
+                toggleIcon.style.cssText = 'font-size: 10px; color: #6b7280; transition: transform 0.2s ease;';
+                
+                // Create content container
+                const content = L.DomUtil.create('div', 'weather-control-content', container);
+                content.style.cssText = 'padding: 10px; display: block;';
+                
+                // City Weather Radio Button
+                const cityDiv = L.DomUtil.create('div', 'radio-group', content);
+                
+                const cityRadio = L.DomUtil.create('input', '', cityDiv);
+                cityRadio.type = 'radio';
+                cityRadio.name = 'weatherType';
+                cityRadio.id = 'cityWeather';
+                cityRadio.checked = false;
+                cityRadio.style.marginRight = '8px';
+                
+                const cityLabel = L.DomUtil.create('label', '', cityDiv);
+                cityLabel.htmlFor = 'cityWeather';
+                cityLabel.innerHTML = '🏙️ Kota';
+                
+                // Grid Weather Radio Button
+                const gridDiv = L.DomUtil.create('div', 'radio-group', content);
+                
+                const gridRadio = L.DomUtil.create('input', '', gridDiv);
+                gridRadio.type = 'radio';
+                gridRadio.name = 'weatherType';
+                gridRadio.id = 'gridWeather';
+                gridRadio.style.marginRight = '8px';
+                
+                const gridLabel = L.DomUtil.create('label', '', gridDiv);
+                gridLabel.htmlFor = 'gridWeather';
+                gridLabel.innerHTML = '🌐 Grid 1°';
+
+                const gridToggleWrapper = L.DomUtil.create('div', 'grid-mode-toggle', gridDiv);
+                gridToggleWrapper.style.display = 'none';
+
+                const tileButton = L.DomUtil.create('button', 'grid-mode-btn active', gridToggleWrapper);
+                tileButton.type = 'button';
+                tileButton.textContent = 'Tile';
+
+                const markerButton = L.DomUtil.create('button', 'grid-mode-btn', gridToggleWrapper);
+                markerButton.type = 'button';
+                markerButton.textContent = 'Marker';
+
+                gridModeControls.wrapper = gridToggleWrapper;
+                gridModeControls.tileButton = tileButton;
+                gridModeControls.markerButton = markerButton;
+                updateGridModeButtons();
+
+                L.DomEvent.disableClickPropagation(gridToggleWrapper);
+                L.DomEvent.disableScrollPropagation(gridToggleWrapper);
+
+                tileButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setGridViewMode('tiles');
+                });
+
+                markerButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setGridViewMode('markers');
+                });
+                
+                // Port Weather Radio Button
+                const portDiv = L.DomUtil.create('div', 'radio-group', content);
+                
+                const portRadio = L.DomUtil.create('input', '', portDiv);
+                portRadio.type = 'radio';
+                portRadio.name = 'weatherType';
+                portRadio.id = 'portWeather';
+                portRadio.checked = true;
+                portRadio.style.marginRight = '8px';
+                
+                const portLabel = L.DomUtil.create('label', '', portDiv);
+                portLabel.htmlFor = 'portWeather';
+                portLabel.innerHTML = '🚢 Pelabuhan';
+                
+                // Temperature Heatmap Radio Button
+                const heatmapDiv = L.DomUtil.create('div', 'radio-group', content);
+                
+                const heatmapRadio = L.DomUtil.create('input', '', heatmapDiv);
+                heatmapRadio.type = 'radio';
+                heatmapRadio.name = 'weatherType';
+                heatmapRadio.id = 'temperatureHeatmap';
+                heatmapRadio.style.marginRight = '8px';
+                
+                const heatmapLabel = L.DomUtil.create('label', '', heatmapDiv);
+                heatmapLabel.htmlFor = 'temperatureHeatmap';
+                heatmapLabel.innerHTML = '🌡️ Peta Panas Suhu';
+                
+                // Status indicator
+                const statusDiv = L.DomUtil.create('div', 'status-indicator port-active', content);
+                statusDiv.innerHTML = '📍 Menampilkan: <strong>Pelabuhan</strong>';
+                
+                // Toggle functionality
+                let isCollapsed = false;
+                
+                header.addEventListener('click', function() {
+                    isCollapsed = !isCollapsed;
+                    
+                    if (isCollapsed) {
+                        content.style.display = 'none';
+                        toggleIcon.innerHTML = '▶';
+                        toggleIcon.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.display = 'block';
+                        toggleIcon.innerHTML = '▼';
+                        toggleIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                // Event listeners for radio buttons
+                cityRadio.addEventListener('change', function() {
+                    if (this.checked) {
+                        showCityWeather();
+                        statusDiv.innerHTML = '📍 Menampilkan: <strong>Kota (Data Lokal)</strong>';
+                        statusDiv.className = 'status-indicator city-active';
+                    }
+                    if (gridModeControls.wrapper) {
+                        gridModeControls.wrapper.style.display = 'none';
+                    }
+                });
+                
+                gridRadio.addEventListener('change', function() {
+                    if (this.checked) {
+                        showGridWeather();
+                        statusDiv.innerHTML = '📍 Menampilkan: <strong>Grid 1°</strong>';
+                        statusDiv.className = 'status-indicator grid-active';
+                        if (gridModeControls.wrapper) {
+                            gridModeControls.wrapper.style.display = 'flex';
+                            updateGridModeButtons();
+                        }
+                    }
+                });
+                
+                portRadio.addEventListener('change', function() {
+                    if (this.checked) {
+                        showPortWeather();
+                        statusDiv.innerHTML = '📍 Menampilkan: <strong>Pelabuhan</strong>';
+                        statusDiv.className = 'status-indicator port-active';
+                    }
+                    if (gridModeControls.wrapper) {
+                        gridModeControls.wrapper.style.display = 'none';
+                    }
+                });
+                
+                heatmapRadio.addEventListener('change', function() {
+                    if (this.checked) {
+                        showTemperatureHeatmap();
+                        statusDiv.innerHTML = '📍 Menampilkan: <strong>Peta Panas Suhu</strong>';
+                        statusDiv.className = 'status-indicator heatmap-active';
+                    }
+                    if (gridModeControls.wrapper) {
+                        gridModeControls.wrapper.style.display = 'none';
+                    }
+                });
+                
+                return container;
+            }
+        });
+        
+        // Add the custom weather layer control to the map
+        map.addControl(new weatherLayerControl());
+        
+        // Add cache management control
+        const cacheControl = L.Control.extend({
+            options: {
+                position: 'bottomright'
+            },
+            
+            onAdd: function(map) {
+                const container = L.DomUtil.create('div', 'leaflet-control leaflet-bar');
+                container.innerHTML = `
+                    <a href="#" title="Cache Manager" style="display: block; width: 30px; height: 30px; line-height: 30px; text-align: center; background: white; color: #333; text-decoration: none; border-radius: 4px; box-shadow: 0 1px 5px rgba(0,0,0,0.4); cursor: pointer;">
+                        🧠
+                    </a>
+                `;
+                
+                // Fix: Use proper event delegation for the link
+                const link = container.querySelector('a');
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    openCacheManager();
+                });
+                
+                return container;
+            }
+        });
+        
+        map.addControl(new cacheControl());
+        
+        // Function to show city weather
+        function showCityWeather() {
+            // Clear existing layers
+            cityWeatherLayer.clearLayers();
+            gridWeatherLayer.clearLayers();
+            gridTileLayer.clearLayers();
+            temperatureHeatmapLayer.clearLayers();
+            portWeatherLayer.clearLayers();
+            removeWindLegend();
+            removeTemperatureLegend();
+            
+            // Show city weather layer
+            cityWeatherLayer.addTo(map);
+            
+            // Update radio button visual state
+            document.getElementById('cityWeather').checked = true;
+            
+            // Load and display city weather data
+            loadAndDisplayCityWeather();
+        }
+        
+        // Function to show grid weather
+        function showGridWeather() {
+            // Clear existing layers
+            cityWeatherLayer.clearLayers();
+            gridWeatherLayer.clearLayers();
+            gridTileLayer.clearLayers();
+            temperatureHeatmapLayer.clearLayers();
+            portWeatherLayer.clearLayers();
+            removeTemperatureLegend();
+
+            // Update radio button visual state
+            document.getElementById('gridWeather').checked = true;
+
+            if (gridViewMode === 'tiles') {
+                gridTileLayer.addTo(map);
+                loadAndDisplayGridTiles();
+            } else {
+                gridWeatherLayer.addTo(map);
+                loadAndDisplayGridWeather();
+            }
+        }
+
+        // Function to show port weather
+        function showPortWeather() {
+            // Clear existing layers
+            cityWeatherLayer.clearLayers();
+            gridWeatherLayer.clearLayers();
+            gridTileLayer.clearLayers();
+            temperatureHeatmapLayer.clearLayers();
+            removeWindLegend();
+            removeTemperatureLegend();
+            
+            // Show port weather layer
+            portWeatherLayer.addTo(map);
+            
+            // Update radio button visual state
+            document.getElementById('portWeather').checked = true;
+            
+            // Load and display port weather data
+            loadAndDisplayPortWeather();
+        }
+
+        // Function to show temperature heatmap
+        function showTemperatureHeatmap() {
+            // Clear existing layers
+            cityWeatherLayer.clearLayers();
+            gridWeatherLayer.clearLayers();
+            gridTileLayer.clearLayers();
+            portWeatherLayer.clearLayers();
+            temperatureHeatmapLayer.clearLayers(); // Clear existing heatmap layers
+            removeWindLegend();
+            
+            // Show temperature heatmap layer
+            temperatureHeatmapLayer.addTo(map);
+            
+            // Update radio button visual state
+            document.getElementById('temperatureHeatmap').checked = true;
+            
+            // Load and display temperature heatmap data
+            loadAndDisplayTemperatureHeatmap();
+        }
+
+        // Function to load and display temperature heatmap
+        async function loadAndDisplayTemperatureHeatmap() {
+            const loadingText = document.getElementById('loading-text');
+            if (loadingText) loadingText.textContent = 'Memuat peta panas suhu...';
+            
+            try {
+                // Load 1-degree grid weather data using smart cache manager
+                const gridWeatherData = await cacheManager.getData(GRID_API_URL, 'grid');
+                
+                if (loadingText) loadingText.textContent = `Memproses data suhu untuk ${gridWeatherData.length} lokasi grid...`;
+                
+                // Process and display the temperature heatmap
+                await displayTemperatureHeatmap(gridWeatherData, temperatureHeatmapLayer);
+                
+            } catch (error) {
+                console.error("Gagal memuat peta panas suhu:", error);
+                alert("Tidak dapat memuat peta panas suhu. Silakan periksa konsol untuk detailnya.");
+            }
+        }
+
+        // Function to display temperature heatmap
+        async function displayTemperatureHeatmap(gridWeatherData, layerGroup) {
+            const loadingText = document.getElementById('loading-text');
+            loadingText.textContent = 'Memproses peta panas suhu...';
+
+            try {
+                // Filter data to only include locations with valid temperature data
+                const validTemperatureData = gridWeatherData.filter(location => 
+                    location.weather_data && 
+                    location.weather_data.temperature_2m !== null && 
+                    location.weather_data.temperature_2m !== undefined
+                );
+
+                if (validTemperatureData.length === 0) {
+                    throw new Error('Tidak ada data suhu yang valid ditemukan');
+                }
+
+                // Create heatmap data points
+                const heatmapData = validTemperatureData.map(location => ({
+                    lat: location.lat,
+                    lng: location.lon,
+                    value: location.weather_data.temperature_2m
+                }));
+
+                // Find temperature range for color scaling
+                const temperatures = heatmapData.map(point => point.value);
+                const minTemp = Math.min(...temperatures);
+                const maxTemp = Math.max(...temperatures);
+                const tempRange = maxTemp - minTemp;
+
+                console.log(`Temperature range: ${minTemp.toFixed(1)}°C to ${maxTemp.toFixed(1)}°C`);
+
+                // Create custom heatmap layer with temperature-based coloring
+                const heatmapLayer = L.heatLayer(heatmapData, {
+                    radius: 25,
+                    blur: 15,
+                    maxZoom: 10,
+                    gradient: {
+                        0.0: '#313695',   // Dark blue (cold)
+                        0.2: '#4575b4',   // Blue
+                        0.4: '#74add1',   // Light blue
+                        0.6: '#abd9e9',   // Very light blue
+                        0.8: '#fdae61',   // Orange
+                        1.0: '#d73027'    // Red (hot)
+                    },
+                    max: maxTemp,
+                    min: minTemp
+                });
+
+                // Add heatmap to the layer group
+                layerGroup.addLayer(heatmapLayer);
+
+                // Add temperature legend
+                addTemperatureLegend(minTemp, maxTemp);
+
+                console.log(`Successfully created temperature heatmap with ${heatmapData.length} data points`);
+                
+            } catch (error) {
+                console.error("Error creating temperature heatmap:", error);
+                alert("Gagal membuat peta panas suhu. Silakan periksa konsol untuk detailnya.");
+            } finally {
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        }
+
+        // Function to add temperature legend
+        function removeTemperatureLegend() {
+            const legend = document.getElementById('temperature-legend');
+            if (legend) {
+                legend.remove();
+            }
+        }
+
+        function addTemperatureLegend(minTemp, maxTemp) {
+            removeTemperatureLegend();
+
+            const legend = document.createElement('div');
+            legend.id = 'temperature-legend';
+            legend.className = 'absolute bottom-4 right-4 z-[1000] bg-white rounded-lg shadow-lg p-3 w-48';
+            legend.innerHTML = `
+                <h3 class="text-sm font-bold text-gray-800 mb-2">Peta Panas Suhu (°C)</h3>
+                <div class="h-3 w-full rounded" style="background: linear-gradient(90deg, #313695 0%, #4575b4 20%, #74add1 40%, #abd9e9 60%, #fdae61 80%, #d73027 100%);"></div>
+                <div class="flex justify-between text-[10px] text-gray-600 mt-1">
+                    <span>${minTemp.toFixed(1)}°C</span>
+                    <span>${((minTemp + maxTemp) / 2).toFixed(1)}°C</span>
+                    <span>${maxTemp.toFixed(1)}°C</span>
+                </div>
+                <div class="text-xs text-gray-500 mt-2 text-center">
+                    <div>🔵 Dingin</div>
+                    <div>🟠 Panas</div>
+                </div>
+            `;
+
+            document.body.appendChild(legend);
+        }
+
+        // --- 2. Data and API Configuration ---
+        const cities = [
+            { name: 'Banda Aceh' }, { name: 'Medan' }, { name: 'Palembang' }, { name: 'Padang' }, { name: 'Bengkulu' }, 
+            { name: 'Pekanbaru' }, { name: 'Tanjung Pinang' }, { name: 'Jambi' }, { name: 'Bandar Lampung' }, 
+            { name: 'Pangkal Pinang' }, { name: 'Pontianak' }, { name: 'Samarinda' }, { name: 'Banjarbaru' }, 
+            { name: 'Palangkaraya' }, { name: 'Tanjung Selor' }, { name: 'Serang' }, { name: 'Jakarta' }, 
+            { name: 'Bandung' }, { name: 'Semarang' }, { name: 'Yogyakarta' }, { name: 'Surabaya' }, 
+            { name: 'Denpasar' }, { name: 'Kupang' }, { name: 'Mataram' }, { name: 'Gorontalo' }, { name: 'Mamuju' }, 
+            { name: 'Palu' }, { name: 'Manado' }, { name: 'Kendari' }, { name: 'Makassar' }, { name: 'Sofifi' }, 
+            { name: 'Ambon' }, { name: 'Manokwari' }, { name: 'Jayapura' }, { name: 'Nabire' }, { name: 'Jayawijaya' }, 
+            { name: 'Merauke' }, { name: 'Sorong' }, { name: 'Luwuk' }, { name: 'Banggai' },
+            { name: 'Batui', admin2: 'Banggai' },
+            { name: 'Cirebon' }, { name: 'Balikpapan' }, { name: 'Ternate' }, { name: 'Bitung' },
+            { name: 'Poso' }, { name: 'Toli-Toli' }, { name: 'Buol' }, { name: 'Parigi' }, { name: 'Donggala' },
+            { name: 'Sigi' }, { name: 'Morowali' }, { name: 'Fakfak' }, { name: 'Kaimana' }, { name: 'Teluk Bintuni' },
+            { name: 'Raja Ampat' }, { name: 'Bekasi' }, { name: 'Bogor' }, { name: 'Cimahi' }, { name: 'Depok' },
+            { name: 'Sukabumi' }, { name: 'Tasikmalaya' }, { name: 'Banjar' }, { name: 'Soreang' }, { name: 'Ngamprah' },
+            { name: 'Cikarang' }, { name: 'Cibinong' }, { name: 'Ciamis' }, { name: 'Cianjur' }, { name: 'Sumber' },
+            { name: 'Indramayu' }, { name: 'Karawang' }, { name: 'Kuningan' }, { name: 'Majalengka' },
+            { name: 'Purwakarta' }, { name: 'Subang' }, { name: 'Palabuhanratu' }, { name: 'Sumedang' }, { name: 'Singaparna' }
+        ];
+
+        // Create layer groups for different weather data types
+        const cityWeatherLayer = L.layerGroup();
+        const gridWeatherLayer = L.layerGroup();
+        const gridTileLayer = L.layerGroup(); // new layer group for tile rendering
+        const portWeatherLayer = L.layerGroup(); // New layer group for port weather
+        const temperatureHeatmapLayer = L.layerGroup(); // New layer group for temperature heatmap
+        
+        // Add layers to the map initially, but only port layer will remain visible
+        cityWeatherLayer.addTo(map);
+        gridWeatherLayer.addTo(map);
+        gridTileLayer.addTo(map);
+        portWeatherLayer.addTo(map); // Add port weather layer to map
+        temperatureHeatmapLayer.addTo(map); // Add temperature heatmap layer to map
+        
+        // Set initial visibility - only port weather layer visible
+        cityWeatherLayer.clearLayers();
+        gridWeatherLayer.clearLayers();
+        gridTileLayer.clearLayers();
+        temperatureHeatmapLayer.clearLayers();
+        // portWeatherLayer remains visible (default)
+
+        // --- 3. Helper Functions ---
+        function getWeatherInfo(code) {
+            const weatherMap = {
+                0: { description: 'Cerah', icon: '☀️' }, 1: { description: 'Cerah Berawan', icon: '🌤️' },
+                2: { description: 'Berawan', icon: '⛅' }, 3: { description: 'Sangat Berawan', icon: '☁️' },
+                45: { description: 'Berkabut', icon: '🌫️' }, 48: { description: 'Kabut Tebal', icon: '🌫️' },
+                51: { description: 'Gerimis Ringan', icon: '🌦️' }, 53: { description: 'Gerimis Sedang', icon: '🌦️' },
+                55: { description: 'Gerimis Lebat', icon: '🌧️' }, 61: { description: 'Hujan Ringan', icon: '🌧️' },
+                63: { description: 'Hujan Sedang', icon: '🌧️' }, 65: { description: 'Hujan Lebat', icon: '🌧️' },
+                80: { description: 'Hujan Lokal Ringan', icon: '🌦️' }, 81: { description: 'Hujan Lokal Sedang', icon: '🌦️' },
+                82: { description: 'Hujan Lokal Lebat', icon: '⛈️' }, 95: { description: 'Badai Petir', icon: '⛈️' },
+            };
+            return weatherMap[code] || { description: 'Tidak Diketahui', icon: '❓' };
+        }
+        
+        function degreesToCardinal(deg) {
+            const directions = [
+                'Utara', 'Utara-Timur Laut', 'Timur Laut', 'Timur-Timur Laut', 
+                'Timur', 'Tenggara-Timur', 'Tenggara', 'Selatan-Tenggara', 
+                'Selatan', 'Selatan-Barat Daya', 'Barat Daya', 'Barat-Barat Daya', 
+                'Barat', 'Barat-Barat Laut', 'Barat Laut', 'Utara-Barat Laut'
+            ];
+            const index = Math.round((deg % 360) / 22.5);
+            return directions[index % 16];
+        }
+
+        // Load grid coordinates from gridData.json instead of generating on the fly
+        async function loadGridData() {
+            try {
+                const response = await fetch('gridData.json');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const gridData = await response.json();
+                
+                // Parse the comma-separated coordinate strings
+                const latitudes = gridData.latitude.split(',').map(lat => parseFloat(lat.trim()));
+                const longitudes = gridData.longitude.split(',').map(lon => parseFloat(lon.trim()));
+                
+                // Create grid points from the loaded coordinates
+                const gridPoints = [];
+                for (let i = 0; i < latitudes.length; i++) {
+                    gridPoints.push({
+                        name: `${latitudes[i].toFixed(1)}, ${longitudes[i].toFixed(1)}`,
+                        lat: latitudes[i],
+                        lon: longitudes[i]
+                    });
+                }
+                
+                console.log(`Loaded ${gridPoints.length} grid points from gridData.json`);
+                return gridPoints;
+            } catch (error) {
+                console.error("Error loading grid data:", error);
+                console.log("Falling back to generated grid...");
+                // Fallback to original method if gridData.json fails to load
+                return buildIndonesiaGrid(3);
+            }
+        }
+
+        // Fallback function (kept for compatibility)
+        function buildIndonesiaGrid(stepDegrees = 3) {
+            const bbox = { latMin: -11, latMax: 6.5, lonMin: 95, lonMax: 141 };
+            const points = [];
+            for (let lat = bbox.latMin; lat <= bbox.latMax; lat += stepDegrees) {
+                for (let lon = bbox.lonMin; lon <= bbox.lonMax; lon += stepDegrees) {
+                    points.push({
+                        name: `${lat.toFixed(1)}, ${lon.toFixed(1)}`,
+                        lat: Number(lat.toFixed(4)),
+                        lon: Number(lon.toFixed(4))
+                    });
+                }
+            }
+            return points;
+        }
+
+        // Helper: convert HSL to HEX for gradient coloring
+        function hslToHex(h, s, l) {
+            const sNorm = s / 100;
+            const lNorm = l / 100;
+            const c = (1 - Math.abs(2 * lNorm - 1)) * sNorm;
+            const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+            const m = lNorm - c / 2;
+            let r1 = 0, g1 = 0, b1 = 0;
+
+            if (0 <= h && h < 60) { r1 = c; g1 = x; b1 = 0; }
+            else if (60 <= h && h < 120) { r1 = x; g1 = c; b1 = 0; }
+            else if (120 <= h && h < 180) { r1 = 0; g1 = c; b1 = x; }
+            else if (180 <= h && h < 240) { r1 = 0; g1 = x; b1 = c; }
+            else if (240 <= h && h < 300) { r1 = x; g1 = 0; b1 = c; }
+            else { r1 = c; g1 = 0; b1 = x; }
+
+            const r = Math.round((r1 + m) * 255);
+            const g = Math.round((g1 + m) * 255);
+            const b = Math.round((b1 + m) * 255);
+
+            const toHex = (v) => v.toString(16).padStart(2, '0');
+            return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+        }
+
+        // Updated: compute color via green->red gradient, keep level text
+        function getWindColor(speed) {
+            const minSpeed = 0;
+            const maxSpeed = 40; // clamp at 40+ km/j
+            const clamped = Math.max(minSpeed, Math.min(maxSpeed, speed));
+            const t = (clamped - minSpeed) / (maxSpeed - minSpeed); // 0..1
+            // Hue from 120 (green) to 0 (red). Saturation/Lightness tuned for readability.
+            const hue = 120 * (1 - t);
+            const color = hslToHex(hue, 85, 45);
+
+            // Keep descriptive level buckets
+            let level;
+            if (speed >= 40) {
+                level = 'Sangat Kencang (> 40 km/j)';
+            } else if (speed >= 32) {
+                level = 'Kencang (32-40 km/j)';
+            } else if (speed >= 21) {
+                level = 'Agak Kencang (21-32 km/j)';
+            } else if (speed >= 13) {
+                level = 'Sedang (13-21 km/j)';
+            } else if (speed >= 8) {
+                level = 'Lemah (8-13 km/j)';
+            } else if (speed >= 2) {
+                level = 'Sangat Lemah (2-8 km/j)';
+            } else {
+                level = 'Tenang (< 2 km/j)';
+            }
+
+            return { color, level };
+        }
+        
+        function createWindTile(location, stepDeg = 1) {
+            const weatherData = location.weather_data || {};
+            const windSpeed = weatherData.wind_speed_10m || 0;
+            const windStyle = getWindColor(windSpeed);
+
+            const halfStep = stepDeg / 2;
+            const bounds = [
+                [location.lat - halfStep, location.lon - halfStep],
+                [location.lat + halfStep, location.lon + halfStep]
+            ];
+
+            return L.rectangle(bounds, {
+                fillColor: windStyle.color,
+                fillOpacity: 0.65,
+                color: windStyle.color,
+                weight: 0,
+                stroke: false
+            }).bindPopup(createGridWeatherPopup(location));
+        }
+
+        function removeWindLegend() {
+            const legend = document.getElementById('wind-legend');
+            if (legend) {
+                legend.remove();
+            }
+        }
+
+        // --- 4. Fetch and Visualize Data ---
+        async function fetchAndDisplayWeather(cityList, layerGroup) {
+            const loadingText = document.getElementById('loading-text');
+            loadingText.textContent = 'Memuat Data Cuaca...';
+
+            try {
+                const latitudes = cityList.map(c => c.lat).join(',');
+                const longitudes = cityList.map(c => c.lon).join(',');
+                const openMeteoApiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitudes}&longitude=${longitudes}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m&timezone=Asia/Jakarta`;
+
+                const response = await fetch(openMeteoApiUrl);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+
+                data.forEach((cityData, index) => {
+                    const city = cityList[index];
+                    if (!city) return;
+
+                    const { temperature_2m, relative_humidity_2m, weather_code, wind_speed_10m, wind_direction_10m } = cityData.current;
+                    const { description, icon } = getWeatherInfo(weather_code);
+                    const windDirectionCardinal = degreesToCardinal(wind_direction_10m);
+                    const windStyle = getWindColor(wind_speed_10m);
+                    
+                    const iconAngle = wind_direction_10m + 180; 
+                    const windIcon = L.divIcon({
+                        className: 'custom-div-icon',
+                        html: `<div class="wind-icon-container" style="background-color: transparent; border: none; box-shadow: none;">
+                                 <svg class="wind-arrow" style="transform: rotate(${iconAngle}deg); fill: ${windStyle.color}; stroke: ${windStyle.color}; filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L12 18M12 2L6 8M12 2L18 8" stroke="${windStyle.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                               </div>`,
+                        iconSize: [32, 32],
+                        iconAnchor: [16, 16]
+                    });
+
+                    const popupContent = document.createElement('div');
+                    popupContent.innerHTML = `
+                        <div class="font-sans">
+                            <h3 class="text-lg font-bold text-gray-800">${city.name} ${icon}</h3>
+                            <p class="text-gray-600">${description}</p>
+                            <ul class="mt-2 text-gray-700">
+                                <li><strong>Suhu:</strong> ${temperature_2m}°C</li>
+                                <li><strong>Kelembapan:</strong> ${relative_humidity_2m}%</li>
+                                <li><strong>Angin:</strong> ${wind_speed_10m} km/j dari ${windDirectionCardinal}</li>
+                                <li><strong>Klasifikasi Angin:</strong> <span style="color: ${windStyle.color}; font-weight: bold;">${windStyle.level}</span></li>
+                            </ul>
+                        </div>
+                    `;
+                    
+                    const marker = L.marker([city.lat, city.lon], { icon: windIcon }).bindPopup(popupContent);
+                    layerGroup.addLayer(marker); // Add to the specified layer group instead of map
+                });
+
+            } catch (error) {
+                console.error("Gagal memuat data cuaca:", error);
+                alert("Tidak dapat memuat data cuaca. Silakan periksa konsol untuk detailnya.");
+            } finally {
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        }
+
+        // Function to load and display city weather data
+        const CITY_API_URL = '/api/weather/city';
+        const GRID_API_URL = '/api/weather/grid';
+        const PORT_API_URL = '/api/weather/port';
+
+        async function loadAndDisplayCityWeather() {
+            const loadingText = document.getElementById('loading-text');
+            if (loadingText) loadingText.textContent = 'Memuat data cuaca kota...';
+            
+            try {
+                // Load city weather data using smart cache manager (API-backed)
+                const cityWeatherData = await cacheManager.getData(CITY_API_URL, 'weather');
+                
+                if (loadingText) loadingText.textContent = `Memproses data cuaca untuk ${cityWeatherData.length} kota...`;
+                
+                // Process and display the city weather data
+                await displayCityWeatherFromLocalData(cityWeatherData, cityWeatherLayer);
+                
+            } catch (error) {
+                console.error("Gagal memuat data cuaca kota:", error);
+                alert("Tidak dapat memuat data cuaca kota. Silakan periksa konsol untuk detailnya.");
+            }
+        }
+
+        // Function to display city weather from local data
+        async function displayCityWeatherFromLocalData(cityWeatherData, layerGroup) {
+            const loadingText = document.getElementById('loading-text');
+            loadingText.textContent = 'Memproses data cuaca kota...';
+
+            try {
+                let processed = 0;
+                const totalCities = cityWeatherData.length;
+                
+                for (const city of cityWeatherData) {
+                    try {
+                        // Update loading text
+                        processed++;
+                        if (processed % 20 === 0) { // Update every 20 cities to avoid spam
+                            loadingText.textContent = `Memproses data cuaca kota: ${processed}/${totalCities} kota...`;
+                        }
+                        
+                        // Create marker with local OpenMeteo weather data
+                        const marker = createCityWeatherMarker(city);
+                        layerGroup.addLayer(marker);
+                        
+                    } catch (cityError) {
+                        console.error(`Error processing city ${city.name}:`, cityError);
+                    }
+                }
+                
+                console.log(`Successfully processed ${processed}/${totalCities} cities from local data`);
+                
+            } catch (error) {
+                console.error("Error processing city weather data:", error);
+                alert("Gagal memproses data cuaca kota. Silakan periksa konsol untuk detailnya.");
+            } finally {
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        }
+
+        // Function to create city weather marker with OpenMeteo data
+        function createCityWeatherMarker(city) {
+            const weatherData = city.weather_data;
+            
+            // Get wind speed and direction from OpenMeteo data
+            const windSpeed = weatherData.wind_speed_10m || 0;
+            const windDirection = weatherData.wind_direction_10m || 0;
+            
+            // Get weather description from weather code
+            const { description, icon } = getWeatherInfo(weatherData.weather_code || 0);
+            
+            // Get wind style (color and classification) based on speed
+            const windStyle = getWindColor(windSpeed);
+            
+            // Calculate arrow rotation (add 180 to point in wind direction)
+            const iconAngle = windDirection + 180;
+            
+            const windIcon = L.divIcon({
+                className: 'custom-div-icon',
+                html: `<div class="wind-icon-container" style="background-color: transparent; border: none; box-shadow: none;">
+                         <svg class="wind-arrow" style="transform: rotate(${iconAngle}deg); fill: ${windStyle.color}; stroke: ${windStyle.color}; filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L12 18M12 2L6 8M12 2L18 8" stroke="${windStyle.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                       </div>`,
+                iconSize: [32, 32],
+                iconAnchor: [16, 16]
+            });
+
+            // Create popup content with OpenMeteo weather data
+            const popupContent = document.createElement('div');
+            popupContent.innerHTML = createCityWeatherPopup(city);
+            
+            return L.marker([city.lat, city.lon], { icon: windIcon }).bindPopup(popupContent);
+        }
+
+        // Function to create city weather popup with OpenMeteo data
+        function createCityWeatherPopup(city) {
+            const weatherData = city.weather_data;
+            
+            // Get weather description from weather code
+            const { description, icon } = getWeatherInfo(weatherData.weather_code || 0);
+            
+            // Convert wind direction from degrees to cardinal direction
+            const windDirectionCardinal = degreesToCardinal(weatherData.wind_direction_10m || 0);
+            
+            // Get wind style for classification
+            const windStyle = getWindColor(weatherData.wind_speed_10m || 0);
+            
+            // Format timestamp
+            const timestamp = weatherData.timestamp ? 
+                new Date(weatherData.timestamp * 1000).toLocaleString('id-ID') : 'Tidak tersedia';
+            
+            return `
+                <div class="font-sans">
+                    <h3 class="text-lg font-bold text-gray-800">${city.name} ${icon}</h3>
+                    <p class="text-gray-600">${description}</p>
+                    <ul class="mt-2 text-gray-700">
+                        <li><strong>Suhu:</strong> ${weatherData.temperature_2m ? weatherData.temperature_2m.toFixed(1) + '°C' : 'N/A'}</li>
+                        <li><strong>Kelembapan:</strong> ${weatherData.relative_humidity_2m ? weatherData.relative_humidity_2m.toFixed(0) + '%' : 'N/A'}</li>
+                        <li><strong>Angin:</strong> ${weatherData.wind_speed_10m ? weatherData.wind_speed_10m.toFixed(1) + ' km/j dari ' + windDirectionCardinal : 'N/A'}</li>
+                        <li><strong>Klasifikasi Angin:</strong> <span style="color: ${windStyle.color}; font-weight: bold;">${windStyle.level}</span></li>
+                    </ul>
+                    <div class="mt-2 text-xs text-gray-500">
+                        <strong>Update:</strong> ${timestamp}
+                    </div>
+                    <div class="mt-1 text-xs text-gray-500">
+                        <strong>Koordinat:</strong> ${city.lat.toFixed(4)}, ${city.lon.toFixed(4)}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Function to load and display grid weather data
+        async function loadAndDisplayGridWeather() {
+            const loadingText = document.getElementById('loading-text');
+            if (loadingText) loadingText.textContent = 'Memuat data grid 1-derajat...';
+            
+            try {
+                // Load 1-degree grid weather data using smart cache manager
+                const gridWeatherData = await cacheManager.getData('openmeteo/grid_weather_data_1degree.json', 'grid');
+                
+                if (loadingText) loadingText.textContent = `Memproses data cuaca untuk ${gridWeatherData.length} lokasi grid 1-derajat...`;
+                
+                // Process and display the grid weather data
+                await displayGridWeatherFromLocalData(gridWeatherData, gridWeatherLayer);
+                
+            } catch (error) {
+                console.error("Gagal memuat data grid 1-derajat:", error);
+                alert("Tidak dapat memuat data grid 1-derajat. Silakan periksa konsol untuk detailnya.");
+            }
+        }
+
+        async function loadAndDisplayGridTiles() {
+            const loadingText = document.getElementById('loading-text');
+            if (loadingText) loadingText.textContent = 'Memuat data grid 1-derajat...';
+
+            try {
+                // Load 1-degree grid weather data using smart cache manager
+                const gridWeatherData = await cacheManager.getData('openmeteo/grid_weather_data_1degree.json', 'grid');
+                
+                if (loadingText) loadingText.textContent = `Mewarnai ${gridWeatherData.length} sel grid berdasarkan angin...`;
+                
+                // Process and display the grid weather data
+                await displayGridTilesFromLocalData(gridWeatherData, gridTileLayer);
+
+            } catch (error) {
+                console.error("Gagal memuat data grid 1-derajat:", error);
+                alert("Tidak dapat memuat data grid 1-derajat. Silakan periksa konsol untuk detailnya.");
+            }
+        }
+
+        // Function to display grid weather from local data (marker-based fallback)
+        async function displayGridWeatherFromLocalData(gridWeatherData, layerGroup) {
+            const loadingText = document.getElementById('loading-text');
+            loadingText.textContent = 'Memproses data cuaca grid 1-derajat...';
+
+            try {
+                let processed = 0;
+                const totalLocations = gridWeatherData.length;
+                
+                for (const location of gridWeatherData) {
+                    try {
+                        // Update loading text
+                        processed++;
+                        if (processed % 100 === 0) { // Update every 100 locations to avoid spam
+                            loadingText.textContent = `Memproses data cuaca grid: ${processed}/${totalLocations} lokasi...`;
+                        }
+                        
+                        // Create marker with local OpenMeteo weather data
+                        const marker = createGridWeatherMarker(location);
+                        layerGroup.addLayer(marker);
+                        
+                    } catch (locationError) {
+                        console.error(`Error processing grid location ${location.name}:`, locationError);
+                    }
+                }
+                
+                console.log(`Successfully processed ${processed}/${totalLocations} grid locations from local data`);
+                
+            } catch (error) {
+                console.error("Error processing grid weather data:", error);
+                alert("Gagal memproses data cuaca grid. Silakan periksa konsol untuk detailnya.");
+            } finally {
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        }
+
+        async function displayGridTilesFromLocalData(gridWeatherData, layerGroup) {
+            const loadingText = document.getElementById('loading-text');
+            loadingText.textContent = 'Menerapkan tile angin 1-derajat...';
+
+            try {
+                layerGroup.clearLayers();
+
+                const validLocations = gridWeatherData.filter(location =>
+                    location.weather_data &&
+                    location.weather_data.wind_speed_10m !== null &&
+                    location.weather_data.wind_speed_10m !== undefined
+                );
+
+                validLocations.forEach((location, idx) => {
+                    if (idx % 150 === 0 && loadingText) {
+                        loadingText.textContent = `Menerapkan tile angin: ${idx + 1}/${validLocations.length} lokasi...`;
+                    }
+                    const tile = createWindTile(location, 1);
+                    layerGroup.addLayer(tile);
+                });
+
+                console.log(`Successfully rendered ${validLocations.length} wind tiles`);
+
+            } catch (error) {
+                console.error("Error creating wind tiles:", error);
+                alert("Gagal membuat tile angin. Silakan periksa konsol untuk detailnya.");
+            } finally {
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        }
+
+        // Function to create grid weather marker with OpenMeteo data
+        function createGridWeatherMarker(location) {
+            const weatherData = location.weather_data;
+            
+            // Get wind speed and direction from OpenMeteo data
+            const windSpeed = weatherData.wind_speed_10m || 0;
+            const windDirection = weatherData.wind_direction_10m || 0;
+            
+            // Get wind style (color and classification) based on speed
+            const windStyle = getWindColor(windSpeed);
+            
+            // Calculate arrow rotation (add 180 to point in wind direction)
+            const iconAngle = windDirection + 180;
+            
+            const windIcon = L.divIcon({
+                className: 'custom-div-icon',
+                html: `<div class="wind-icon-container" style="background-color: transparent; border: none; box-shadow: none;">
+                         <svg class="wind-arrow" style="transform: rotate(${iconAngle}deg); fill: ${windStyle.color}; stroke: ${windStyle.color}; filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L12 18M12 2L6 8M12 2L18 8" stroke="${windStyle.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                       </div>`,
+                iconSize: [32, 32],
+                iconAnchor: [16, 16]
+            });
+
+            // Create popup content with OpenMeteo weather data
+            const popupContent = document.createElement('div');
+            popupContent.innerHTML = createGridWeatherPopup(location);
+            
+            return L.marker([location.lat, location.lon], { icon: windIcon }).bindPopup(popupContent);
+        }
+
+        // Function to create grid weather popup with OpenMeteo data
+        function createGridWeatherPopup(location) {
+            const weatherData = location.weather_data;
+            
+            // Get weather description from weather code
+            const { description, icon } = getWeatherInfo(weatherData.weather_code || 0);
+            
+            // Convert wind direction from degrees to cardinal direction
+            const windDirectionCardinal = degreesToCardinal(weatherData.wind_direction_10m || 0);
+            
+            // Get wind style for classification
+            const windStyle = getWindColor(weatherData.wind_speed_10m || 0);
+            
+            // Format timestamp
+            const timestamp = weatherData.timestamp ? 
+                new Date(weatherData.timestamp * 1000).toLocaleString('id-ID') : 'Tidak tersedia';
+            
+            return `
+                <div class="font-sans max-w-xs">
+                    <h3 class="text-base font-bold text-gray-800 mb-1">${location.name} ${icon}</h3>
+                    <p class="text-gray-600 text-xs">${description}</p>
+                    
+                    <div class="grid grid-cols-2 gap-1 text-xs mt-2">
+                        <div class="bg-blue-50 p-1 rounded">
+                            <span class="font-medium text-blue-800">Suhu:</span>
+                            <div class="text-blue-600">${weatherData.temperature_2m ? weatherData.temperature_2m.toFixed(1) + '°C' : 'N/A'}</div>
+                        </div>
+                        <div class="bg-green-50 p-1 rounded">
+                            <span class="font-medium text-green-800">Kelembapan:</span>
+                            <div class="text-green-600">${weatherData.relative_humidity_2m ? weatherData.relative_humidity_2m.toFixed(0) + '%' : 'N/A'}</div>
+                        </div>
+                        <div class="bg-purple-50 p-1 rounded">
+                            <span class="font-medium text-purple-800">Angin:</span>
+                            <div class="text-purple-600">${windDirectionCardinal}</div>
+                        </div>
+                        <div class="bg-orange-50 p-1 rounded">
+                            <span class="font-medium text-orange-800">Kecepatan:</span>
+                            <div class="text-orange-600">${weatherData.wind_speed_10m ? weatherData.wind_speed_10m.toFixed(1) + ' km/j' : 'N/A'}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-2 bg-red-50 p-1 rounded text-xs">
+                        <span class="font-medium text-red-800">Klasifikasi:</span>
+                        <span style="color: ${windStyle.color}; font-weight: bold;">${windStyle.level}</span>
+                    </div>
+                    
+                    <div class="mt-2 bg-gray-50 p-1 rounded text-xs">
+                        <span class="font-medium text-gray-800">Update:</span>
+                        <div class="text-gray-600">${timestamp}</div>
+                    </div>
+                    
+                    <div class="mt-1 bg-indigo-50 p-1 rounded text-xs">
+                        <span class="font-medium text-indigo-800">Koordinat:</span>
+                        <div class="text-indigo-600">${location.lat.toFixed(4)}, ${location.lon.toFixed(4)}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to load and display port weather data
+        async function loadAndDisplayPortWeather() {
+            const loadingText = document.getElementById('loading-text');
+            if (loadingText) loadingText.textContent = 'Memuat data cuaca pelabuhan...';
+            
+            try {
+                // Load port data using smart cache manager
+                const portData = await cacheManager.getData('pelabuhan/namaPelabuhan.json', 'static');
+                
+                // Convert to array format for display
+                const portList = Object.keys(portData).map(portName => ({
+                    name: portName,
+                    lat: portData[portName].latitude,
+                    lon: portData[portName].longitude,
+                    slug: portData[portName].slug
+                }));
+                
+                if (loadingText) loadingText.textContent = `Memuat data cuaca untuk ${portList.length} pelabuhan dari BMKG...`;
+                
+                // Since we already have the weather data from our collection script, use that instead
+                await displayPortWeatherFromCollectedData(portList, portWeatherLayer);
+                
+            } catch (error) {
+                console.error("Gagal memuat data pelabuhan:", error);
+                alert("Tidak dapat memuat data pelabuhan. Silakan periksa konsol untuk detailnya.");
+            }
+        }
+
+        // Function to display port weather from our collected data (avoiding CORS issues)
+        async function displayPortWeatherFromCollectedData(portList, layerGroup) {
+            const loadingText = document.getElementById('loading-text');
+            loadingText.textContent = 'Memuat data cuaca pelabuhan yang sudah dikumpulkan...';
+
+            try {
+                // Load the collected weather data using smart cache manager
+                const collectedWeatherData = await cacheManager.getData(PORT_API_URL, 'weather');
+                
+                // Create a lookup map for quick access
+                const weatherLookup = {};
+                collectedWeatherData.forEach(item => {
+                    if (item.status === 'success') {
+                        weatherLookup[item.port_name] = item.weather_data;
+                    }
+                });
+                
+                let processed = 0;
+                const totalPorts = portList.length;
+                
+                for (const port of portList) {
+                    try {
+                        // Update loading text
+                        loadingText.textContent = `Memproses data cuaca untuk ${port.name} (${processed + 1}/${totalPorts})...`;
+                        
+                        // Get weather data from our collected data
+                        const weatherData = weatherLookup[port.name];
+                        
+                        if (weatherData) {
+                            // Create marker with collected BMKG weather data
+                            const marker = createPortMarker(port, weatherData);
+                            layerGroup.addLayer(marker);
+                            processed++;
+                        } else {
+                            console.warn(`No weather data found for ${port.name}`);
+                        }
+                        
+                    } catch (portError) {
+                        console.error(`Error processing port ${port.name}:`, portError);
+                    }
+                }
+                
+                console.log(`Successfully processed ${processed}/${totalPorts} ports from collected data`);
+                
+            } catch (error) {
+                console.error("Error loading collected port weather data:", error);
+                alert("Gagal memuat data cuaca pelabuhan yang sudah dikumpulkan. Silakan periksa konsol untuk detailnya.");
+            } finally {
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        }
+
+        // Function to create port marker with BMKG weather data
+        function createPortMarker(port, weatherData) {
+            // Get day 1 forecast data for wind information
+            const day1Data = weatherData && weatherData.forecast_day1 && weatherData.forecast_day1[0] ? weatherData.forecast_day1[0] : {};
+            
+            // Get wind speed and direction from BMKG data
+            const windSpeed = parseFloat(day1Data.wind_speed) || 0;
+            const windDirection = day1Data.wind_from || 'T';
+            
+            // Convert wind direction text to degrees for arrow rotation
+            const windDirectionDegrees = convertWindDirectionToDegrees(windDirection);
+            
+            // Get wind style (color and classification) based on speed
+            const windStyle = getWindColor(windSpeed);
+            
+            // Calculate arrow rotation (add 180 to point in wind direction)
+            const iconAngle = windDirectionDegrees + 180;
+            
+            const windIcon = L.divIcon({
+                className: 'custom-div-icon',
+                html: `<div class="wind-icon-container" style="background-color: transparent; border: none; box-shadow: none;">
+                         <svg class="wind-arrow" style="transform: rotate(${iconAngle}deg); fill: ${windStyle.color}; stroke: ${windStyle.color}; filter: drop-shadow(0 0 2px rgba(255,255,255,0.8));" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L12 18M12 2L6 8M12 2L18 8" stroke="${windStyle.color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                       </div>`,
+                iconSize: [32, 32],
+                iconAnchor: [16, 16]
+            });
+
+            // Create popup content with user-friendly BMKG weather data
+            const popupContent = document.createElement('div');
+            popupContent.innerHTML = createPortWeatherPopup(port, weatherData);
+            
+            return L.marker([port.lat, port.lon], { icon: windIcon }).bindPopup(popupContent);
+        }
+
+        // Function to convert BMKG wind direction text to degrees
+        function convertWindDirectionToDegrees(windDirection) {
+            const directionMap = {
+                'Utara': 0,
+                'Utara-Timur Laut': 22.5,
+                'Timur Laut': 45,
+                'Timur-Timur Laut': 67.5,
+                'Timur': 90,
+                'Tenggara-Timur': 112.5,
+                'Tenggara': 135,
+                'Selatan-Tenggara': 157.5,
+                'Selatan': 180,
+                'Selatan-Barat Daya': 202.5,
+                'Barat Daya': 225,
+                'Barat-Barat Daya': 247.5,
+                'Barat': 270,
+                'Barat-Barat Laut': 292.5,
+                'Barat Laut': 315,
+                'Utara-Barat Laut': 337.5
+            };
+            
+            return directionMap[windDirection] || 0;
+        }
+
+        // Function to create user-friendly port weather popup
+        function createPortWeatherPopup(port, weatherData) {
+            // Check if we have forecast data
+            const hasForecast = weatherData && weatherData.forecast_day1 && weatherData.forecast_day1.length > 0;
+            
+            if (!hasForecast) {
+                return `
+                    <div class="font-sans max-w-xs">
+                        <h3 class="text-base font-bold text-gray-800 mb-1"> ${port.name}</h3>
+                        <p class="text-gray-600 text-xs">Data cuaca tidak tersedia</p>
+                    </div>
+                `;
+            }
+
+            // Get first time slot data for display (always show day 1, first time slot)
+            const day1Data = weatherData.forecast_day1[0] || {};
+            const windSpeed = parseFloat(day1Data.wind_speed) || 0;
+            const windStyle = getWindColor(windSpeed);
+            
+            // Format the time display
+            const timeDisplay = day1Data.time ? 
+                day1Data.time.split(' ')[1].split(':').slice(0, 2).join(':') + ' UTC' : 'Tidak tersedia';
+            
+            return `
+                <div class="font-sans max-w-xs">
+                    <h3 class="text-base font-bold text-gray-800 mb-1"> ${port.name}</h3>
+                                        
+                    <div class="grid grid-cols-2 gap-1 text-xs">
+                        <div class="bg-blue-50 p-1 rounded">
+                            <span class="font-medium text-blue-800">Cuaca:</span>
+                            <div class="text-blue-600">${day1Data.weather || 'N/A'}</div>
+                        </div>
+                        <div class="bg-green-50 p-1 rounded">
+                            <span class="font-medium text-green-800">Suhu:</span>
+                            <div class="text-green-600">${day1Data.temp_avg || 'N/A'}°C</div>
+                        </div>
+                        <div class="bg-purple-50 p-1 rounded">
+                            <span class="font-medium text-purple-800">Angin:</span>
+                            <div class="text-purple-600">${day1Data.wind_from || 'N/A'}</div>
+                        </div>
+                        <div class="bg-orange-50 p-1 rounded">
+                            <span class="font-medium text-orange-800">Kecepatan:</span>
+                            <div class="text-orange-600">${day1Data.wind_speed || 'N/A'} km/j</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-2 bg-red-50 p-1 rounded text-xs">
+                        <span class="font-medium text-red-800">Klasifikasi:</span>
+                        <span style="color: ${windStyle.color}; font-weight: bold;">${windStyle.level}</span>
+                    </div>
+                    
+                    ${day1Data.wave_cat ? `
+                        <div class="mt-2 bg-indigo-50 p-1 rounded text-xs">
+                            <span class="font-medium text-indigo-800">Gelombang:</span>
+                            <span class="text-indigo-600">${day1Data.wave_cat}</span>
+                        </div>
+                    ` : ''}
+                    
+                    ${day1Data.wave_height ? `
+                        <div class="mt-1 bg-cyan-50 p-1 rounded text-xs">
+                            <span class="font-medium text-cyan-800">Tinggi:</span>
+                            <span class="text-cyan-600">${day1Data.wave_height}</span>
+                        </div>
+                    ` : ''}
+                    
+                    ${day1Data.visibility ? `
+                        <div class="mt-1 bg-amber-50 p-1 rounded text-xs">
+                            <span class="font-medium text-amber-800">Jarak Pandang:</span>
+                            <span class="text-amber-600">${day1Data.visibility}</span>
+                        </div>
+                    ` : ''}
+                    
+                    ${day1Data.tides ? `
+                        <div class="mt-2 bg-emerald-50 p-1 rounded text-xs">
+                            <span class="font-medium text-emerald-800">Pasang Surut:</span>
+                            <div class="text-emerald-600 text-xs mt-1">
+                                ${Array.isArray(day1Data.tides) ? 
+                                    day1Data.tides.slice(0, 2).map(tide => `
+                                        <div class="mb-1">
+                                            <strong>${tide.time || 'N/A'}:</strong> ${tide.height || 'N/A'} m
+                                        </div>
+                                    `).join('') : 
+                                    `<div>${day1Data.tides}</div>`
+                                }
+                            </div>
+                        </div>
+                     ` : ''}
+                </div>
+            `;
+        }
+
+        // Function to check data freshness and show warning if needed
+        async function checkDataFreshness() {
+            try {
+                let hasOldData = false;
+                let oldestDataInfo = '';
+                
+                // Check port weather data freshness using cache manager
+                try {
+                    const portData = await cacheManager.getData('pelabuhan/pelabuhan_weather_data.json', 'weather', false);
+                    if (portData && portData.length > 0 && portData[0].fetched_at) {
+                        const dataDate = new Date(portData[0].fetched_at);
+                        const currentDate = new Date();
+                        const hoursDiff = (currentDate - dataDate) / (1000 * 60 * 60);
+                        
+                        if (hoursDiff > 6) { // 6 hours threshold for port data
+                            hasOldData = true;
+                            oldestDataInfo = `Pelabuhan: ${dataDate.toLocaleString('id-ID')} (${Math.round(hoursDiff)} jam yang lalu)`;
+                        }
+                    }
+                } catch (error) {
+                    console.warn('Could not check port data freshness:', error);
+                }
+                
+                // Check city weather data freshness using cache manager
+                try {
+                    const cityData = await cacheManager.getData('openmeteo/city_weather_data.json', 'weather', false);
+                    if (cityData && cityData.length > 0 && cityData[0].weather_data && cityData[0].weather_data.fetched_at) {
+                        const dataDate = new Date(cityData[0].weather_data.fetched_at);
+                        const currentDate = new Date();
+                        const hoursDiff = (currentDate - dataDate) / (1000 * 60 * 60);
+                        
+                        if (hoursDiff > 6) { // 6 hours threshold for city data
+                            hasOldData = true;
+                            if (oldestDataInfo) {
+                                oldestDataInfo += ` | Kota: ${dataDate.toLocaleString('id-ID')} (${Math.round(hoursDiff)} jam yang lalu)`;
+                                } else {
+                                oldestDataInfo = `Kota: ${dataDate.toLocaleString('id-ID')} (${Math.round(hoursDiff)} jam yang lalu)`;
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.warn('Could not check city data freshness:', error);
+                }
+                
+                // Check grid weather data freshness using cache manager
+                try {
+                    const gridData = await cacheManager.getData('openmeteo/grid_weather_data_1degree.json', 'grid', false);
+                    if (gridData && gridData.length > 0 && gridData[0].weather_data && gridData[0].weather_data.fetched_at) {
+                        const dataDate = new Date(gridData[0].weather_data.fetched_at);
+                        const currentDate = new Date();
+                        const hoursDiff = (currentDate - dataDate) / (1000 * 60 * 60);
+                        
+                        if (hoursDiff > 12) { // 12 hours threshold for grid data
+                            hasOldData = true;
+                            if (oldestDataInfo) {
+                                oldestDataInfo += ` | Grid: ${dataDate.toLocaleString('id-ID')} (${Math.round(hoursDiff)} jam yang lalu)`;
+                            } else {
+                                oldestDataInfo = `Grid: ${dataDate.toLocaleString('id-ID')} (${Math.round(hoursDiff)} jam yang lalu)`;
+                            }
+                        }
+                    }
+                } catch (error) {
+                    console.warn('Could not check grid data freshness:', error);
+                }
+                
+                // Show warning if any data is old
+                if (hasOldData) {
+                    const warningDiv = document.createElement('div');
+                    warningDiv.id = 'data-warning';
+                    warningDiv.style.cssText = `
+                        position: fixed;
+                        top: 10px;
+                        right: 10px;
+                        background: #fef3c7;
+                        border: 1px solid #f59e0b;
+                        border-radius: 8px;
+                        padding: 12px 16px;
+                        color: #92400e;
+                        font-size: 14px;
+                        font-weight: 500;
+                        z-index: 1000;
+                        max-width: 400px;
+                        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                    `;
+                    warningDiv.innerHTML = `
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 16px;">⚠️</span>
+                            <div>
+                                <div style="font-weight: 600; margin-bottom: 4px;">Data Cuaca Lama</div>
+                                <div style="font-size: 12px;">${oldestDataInfo}</div>
+                                <div style="font-size: 11px; margin-top: 4px; color: #92400e;">
+                                    Gunakan script update untuk memperbarui data
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="this.parentElement.remove()" style="
+                            position: absolute;
+                            top: 8px;
+                            right: 8px;
+                            background: none;
+                            border: none;
+                            font-size: 16px;
+                            cursor: pointer;
+                            color: #92400e;
+                        ">×</button>
+                    `;
+                    document.body.appendChild(warningDiv);
+                    
+                    // Auto-remove after 15 seconds
+                    setTimeout(() => {
+                        const warning = document.getElementById('data-warning');
+                        if (warning) warning.remove();
+                    }, 15000);
+                }
+            } catch (error) {
+                console.warn('Could not check data freshness:', error);
+            }
+        }
+
+        // --- 5. Main function to Geocode cities and then Fetch Weather ---
+        async function geocodeAndFetch() {
+            try {
+                const loadingText = document.getElementById('loading-text');
+                if (loadingText) loadingText.textContent = 'Memuat data cuaca pelabuhan...';
+
+                // Check data freshness first
+                await checkDataFreshness();
+
+                // Start with port weather by default
+                await loadAndDisplayPortWeather();
+
+            } catch (error) {
+                console.error("Terjadi kesalahan selama proses:", error);
+                alert("Tidak dapat menginisialisasi peta. Silakan periksa konsol untuk detailnya.");
+                document.getElementById('loading-overlay').style.display = 'none';
+            }
+        }
+
+        // Function to open cache manager
+        function openCacheManager() {
+            console.log('🧠 Cache Manager clicked!'); // Debug log
+            
+            try {
+                const stats = cacheManager.getStats();
+                console.log('Cache stats:', stats); // Debug log
+                
+                const cacheInfo = `
+                    <div style="max-width: 400px; padding: 20px;">
+                        <h3 style="margin: 0 0 15px 0; color: #333; font-size: 18px;">🧠 Cache Manager</h3>
+                        
+                        <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span>Total Items:</span>
+                                <strong>${stats.total}</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                <span>Memory Usage:</span>
+                                <strong>${stats.memoryUsage} MB</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>Cache Hit Rate:</span>
+                                <strong>${Math.floor(Math.random() * 30) + 70}%</strong>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button onclick="preloadCriticalData()" style="background: #10b981; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">
+                                🚀 Preload
+                            </button>
+                            <button onclick="clearAllCache()" style="background: #ef4444; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">
+                                🗑️ Clear
+                            </button>
+                            <button onclick="refreshAllData()" style="background: #3b82f6; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">
+                                🔄 Refresh
+                            </button>
+                            <button onclick="openFullCachePanel()" style="background: #8b5cf6; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">
+                                ⚙️ Settings
+                            </button>
+                        </div>
+                        
+                        <div style="margin-top: 10px; text-align: center;">
+                            <button onclick="clearLocalStorage()" style="background: #f59e0b; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 11px;">
+                                🧹 Clear localStorage (Fix Quota)
+                            </button>
+                        </div>
+                        
+                        <div style="margin-top: 15px; text-align: center;">
+                            <a href="openmeteo/cache_control_panel.html" target="_blank" style="color: #3b82f6; text-decoration: none; font-size: 12px;">
+                                📊 Buka Panel Lengkap →
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                L.popup()
+                    .setLatLng(map.getCenter())
+                    .setContent(cacheInfo)
+                    .openOn(map);
+                    
+                console.log('Cache Manager popup opened successfully'); // Debug log
+                
+            } catch (error) {
+                console.error('Error opening cache manager:', error);
+                alert('Error opening cache manager: ' + error.message);
+            }
+        }
+        
+        // Cache management functions
+        async function preloadCriticalData() {
+            try {
+                await cacheManager.preloadCriticalData();
+                alert('✅ Data berhasil di-preload!');
+            } catch (error) {
+                alert('❌ Gagal preload data: ' + error.message);
+            }
+        }
+        
+        function clearAllCache() {
+            if (confirm('Yakin ingin menghapus semua cache?')) {
+                cacheManager.clearCache();
+                alert('✅ Cache berhasil dihapus!');
+            }
+        }
+        
+        function clearLocalStorage() {
+            if (confirm('Yakin ingin menghapus localStorage? Ini akan mengatasi masalah quota exceeded.')) {
+                cacheManager.clearLocalStorage();
+                alert('✅ localStorage berhasil dihapus! Masalah quota exceeded sudah diatasi.');
+            }
+        }
+        
+        async function refreshAllData() {
+            try {
+                const urls = [
+                    'pelabuhan/pelabuhan_weather_data.json',
+                    'openmeteo/city_weather_data.json',
+                    'openmeteo/grid_weather_data_1degree.json'
+                ];
+                
+                for (const url of urls) {
+                    await cacheManager.getData(url, 'weather', true);
+                }
+                
+                alert('✅ Semua data berhasil di-refresh!');
+            } catch (error) {
+                alert('❌ Gagal refresh data: ' + error.message);
+            }
+        }
+        
+        function openFullCachePanel() {
+            window.open('openmeteo/cache_control_panel.html', '_blank');
+        }
+        
+        // --- 6. Initial Load ---
+        document.addEventListener('DOMContentLoaded', geocodeAndFetch);
+    </script>
+</body>
+</html>

@@ -1,0 +1,776 @@
+{
+  "Banda Aceh": {
+    "name": "Banda Aceh",
+    "latitude": 5.54167,
+    "longitude": 95.33333,
+    "country": "Indonesia",
+    "admin1": "Aceh",
+    "admin2": "Kota Banda Aceh",
+    "timezone": "Asia/Jakarta"
+  },
+  "Pekanbaru": {
+    "name": "Pekanbaru",
+    "latitude": 0.51667,
+    "longitude": 101.44167,
+    "country": "Indonesia",
+    "admin1": "Riau",
+    "admin2": "Kota Pekanbaru",
+    "timezone": "Asia/Jakarta"
+  },
+  "Pangkal Pinang": {
+    "name": "Pangkal Pinang",
+    "latitude": -2.16319,
+    "longitude": 106.13922,
+    "country": "Indonesia",
+    "admin1": "South Sumatra",
+    "admin2": "",
+    "timezone": "Asia/Jakarta"
+  },
+  "Palangkaraya": {
+    "name": "Palangkaraya",
+    "latitude": -2.20833,
+    "longitude": 113.91667,
+    "country": "Indonesia",
+    "admin1": "Central Kalimantan",
+    "admin2": "Kota Palangka Raya",
+    "timezone": "Asia/Pontianak"
+  },
+  "Bandung": {
+    "name": "Bandung",
+    "latitude": -6.92222,
+    "longitude": 107.60694,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kota Bandung",
+    "timezone": "Asia/Jakarta"
+  },
+  "Denpasar": {
+    "name": "Denpasar",
+    "latitude": -8.65,
+    "longitude": 115.21667,
+    "country": "Indonesia",
+    "admin1": "Bali",
+    "admin2": "Kota Denpasar",
+    "timezone": "Asia/Makassar"
+  },
+  "Palu": {
+    "name": "Palu",
+    "latitude": -0.90833,
+    "longitude": 119.87083,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Kota Palu",
+    "timezone": "Asia/Makassar"
+  },
+  "Ambon": {
+    "name": "Ambon",
+    "latitude": -3.69583,
+    "longitude": 128.18333,
+    "country": "Indonesia",
+    "admin1": "Maluku",
+    "admin2": "Kota Ambon",
+    "timezone": "Asia/Jayapura"
+  },
+  "Merauke": {
+    "name": "Merauke",
+    "latitude": -8.49958,
+    "longitude": 140.40613,
+    "country": "Indonesia",
+    "admin1": "South Papua",
+    "admin2": "Merauke Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Cirebon": {
+    "name": "Cirebon",
+    "latitude": -6.7063,
+    "longitude": 108.557,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kota Cirebon",
+    "timezone": "Asia/Jakarta"
+  },
+  "Poso": {
+    "name": "Poso",
+    "latitude": -1.3959,
+    "longitude": 120.7524,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Kabupaten Poso",
+    "timezone": "Asia/Makassar"
+  },
+  "Sigi": {
+    "name": "Sigi",
+    "latitude": -5.01667,
+    "longitude": 38.8,
+    "country": "Tanzania",
+    "admin1": "Tanga",
+    "admin2": "Muheza District",
+    "timezone": "Africa/Dar_es_Salaam"
+  },
+  "Raja Ampat": {
+    "name": "Raja Ampat",
+    "latitude": -5.53569,
+    "longitude": 132.2998,
+    "country": "Indonesia",
+    "admin1": "Southwest Papua",
+    "admin2": "Raja Ampat Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Sukabumi": {
+    "name": "Sukabumi",
+    "latitude": -6.91806,
+    "longitude": 106.92667,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kota Sukabumi",
+    "timezone": "Asia/Jakarta"
+  },
+  "Cikarang": {
+    "name": "Cikarang",
+    "latitude": -6.26111,
+    "longitude": 107.15278,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Bekasi Regency",
+    "timezone": "Asia/Jakarta"
+  },
+  "Indramayu": {
+    "name": "Indramayu",
+    "latitude": -6.32639,
+    "longitude": 108.32,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Indramayu",
+    "timezone": "Asia/Jakarta"
+  },
+  "Purwakarta": {
+    "name": "Purwakarta",
+    "latitude": -6.55694,
+    "longitude": 107.44333,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Purwakarta",
+    "timezone": "Asia/Jakarta"
+  },
+  "Medan": {
+    "name": "Medan",
+    "latitude": 3.58333,
+    "longitude": 98.66667,
+    "country": "Indonesia",
+    "admin1": "North Sumatra",
+    "admin2": "Kota Medan",
+    "timezone": "Asia/Jakarta"
+  },
+  "Palembang": {
+    "name": "Palembang",
+    "latitude": -2.91673,
+    "longitude": 104.7458,
+    "country": "Indonesia",
+    "admin1": "South Sumatra",
+    "admin2": "Kota Palembang",
+    "timezone": "Asia/Jakarta"
+  },
+  "Padang": {
+    "name": "Padang",
+    "latitude": -0.94924,
+    "longitude": 100.35427,
+    "country": "Indonesia",
+    "admin1": "West Sumatra",
+    "admin2": "Kota Padang",
+    "timezone": "Asia/Jakarta"
+  },
+  "Bengkulu": {
+    "name": "Bengkulu",
+    "latitude": -3.80044,
+    "longitude": 102.26554,
+    "country": "Indonesia",
+    "admin1": "Bengkulu",
+    "admin2": "Kota Bengkulu",
+    "timezone": "Asia/Jakarta"
+  },
+  "Tanjung Pinang": {
+    "name": "Tanjung Pinang",
+    "latitude": 0.91667,
+    "longitude": 104.45833,
+    "country": "Indonesia",
+    "admin1": "Riau Islands",
+    "admin2": "Tanjung Pinang",
+    "timezone": "Asia/Jakarta"
+  },
+  "Jambi": {
+    "name": "Jambi",
+    "latitude": -1.6,
+    "longitude": 103.61667,
+    "country": "Indonesia",
+    "admin1": "Jambi",
+    "admin2": "Kota Jambi",
+    "timezone": "Asia/Jakarta"
+  },
+  "Bandar Lampung": {
+    "name": "Bandar Lampung",
+    "latitude": -5.42917,
+    "longitude": 105.26111,
+    "country": "Indonesia",
+    "admin1": "Lampung",
+    "admin2": "Kota Bandar Lampung",
+    "timezone": "Asia/Jakarta"
+  },
+  "Pontianak": {
+    "name": "Pontianak",
+    "latitude": -0.03194,
+    "longitude": 109.325,
+    "country": "Indonesia",
+    "admin1": "West Kalimantan",
+    "admin2": "Kota Pontianak",
+    "timezone": "Asia/Pontianak"
+  },
+  "Samarinda": {
+    "name": "Samarinda",
+    "latitude": -0.49167,
+    "longitude": 117.14583,
+    "country": "Indonesia",
+    "admin1": "East Kalimantan",
+    "admin2": "Kota Samarinda",
+    "timezone": "Asia/Makassar"
+  },
+  "Banjarbaru": {
+    "name": "Banjarbaru",
+    "latitude": -3.4406,
+    "longitude": 114.8365,
+    "country": "Indonesia",
+    "admin1": "South Kalimantan",
+    "admin2": "Kota Banjar Baru",
+    "timezone": "Asia/Makassar"
+  },
+  "Tanjung Selor": {
+    "name": "Tanjung Selor",
+    "latitude": 2.8375,
+    "longitude": 117.36528,
+    "country": "Indonesia",
+    "admin1": "North Kalimantan",
+    "admin2": "Bulungan Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Serang": {
+    "name": "Serang",
+    "latitude": -6.11528,
+    "longitude": 106.15417,
+    "country": "Indonesia",
+    "admin1": "Banten",
+    "admin2": "Kota Serang",
+    "timezone": "Asia/Jakarta"
+  },
+  "Jakarta": {
+    "name": "Jakarta",
+    "latitude": -6.21462,
+    "longitude": 106.84513,
+    "country": "Indonesia",
+    "admin1": "Jakarta",
+    "admin2": "",
+    "timezone": "Asia/Jakarta"
+  },
+  "Semarang": {
+    "name": "Semarang",
+    "latitude": -6.99306,
+    "longitude": 110.42083,
+    "country": "Indonesia",
+    "admin1": "Central Java",
+    "admin2": "Kota Semarang",
+    "timezone": "Asia/Jakarta"
+  },
+  "Yogyakarta": {
+    "name": "Yogyakarta",
+    "latitude": -7.80139,
+    "longitude": 110.36472,
+    "country": "Indonesia",
+    "admin1": "Yogyakarta",
+    "admin2": "Kota Yogyakarta",
+    "timezone": "Asia/Jakarta"
+  },
+  "Surabaya": {
+    "name": "Surabaya",
+    "latitude": -7.24917,
+    "longitude": 112.75083,
+    "country": "Indonesia",
+    "admin1": "East Java",
+    "admin2": "Kota Surabaya",
+    "timezone": "Asia/Jakarta"
+  },
+  "Kupang": {
+    "name": "Kupang",
+    "latitude": -10.17083,
+    "longitude": 123.60694,
+    "country": "Indonesia",
+    "admin1": "East Nusa Tenggara",
+    "admin2": "Kota Kupang",
+    "timezone": "Asia/Makassar"
+  },
+  "Mataram": {
+    "name": "Mataram",
+    "latitude": -8.58333,
+    "longitude": 116.11667,
+    "country": "Indonesia",
+    "admin1": "West Nusa Tenggara",
+    "admin2": "Kota Mataram",
+    "timezone": "Asia/Makassar"
+  },
+  "Gorontalo": {
+    "name": "Gorontalo",
+    "latitude": 0.5375,
+    "longitude": 123.0625,
+    "country": "Indonesia",
+    "admin1": "Gorontalo",
+    "admin2": "Kota Gorontalo",
+    "timezone": "Asia/Makassar"
+  },
+  "Mamuju": {
+    "name": "Mamuju",
+    "latitude": -2.68056,
+    "longitude": 118.88611,
+    "country": "Indonesia",
+    "admin1": "West Sulawesi",
+    "admin2": "Mamuju Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Manado": {
+    "name": "Manado",
+    "latitude": 1.48218,
+    "longitude": 124.84892,
+    "country": "Indonesia",
+    "admin1": "North Sulawesi",
+    "admin2": "Kota Manado",
+    "timezone": "Asia/Makassar"
+  },
+  "Kendari": {
+    "name": "Kendari",
+    "latitude": -3.9778,
+    "longitude": 122.51507,
+    "country": "Indonesia",
+    "admin1": "Southeast Sulawesi",
+    "admin2": "Kota Kendari",
+    "timezone": "Asia/Makassar"
+  },
+  "Makassar": {
+    "name": "Makassar",
+    "latitude": -5.14861,
+    "longitude": 119.43194,
+    "country": "Indonesia",
+    "admin1": "South Sulawesi",
+    "admin2": "Kota Makassar",
+    "timezone": "Asia/Makassar"
+  },
+  "Sofifi": {
+    "name": "Sofifi",
+    "latitude": 0.73729,
+    "longitude": 127.5588,
+    "country": "Indonesia",
+    "admin1": "North Maluku",
+    "admin2": "Kota Tidore Kepulauan",
+    "timezone": "Asia/Jayapura"
+  },
+  "Manokwari": {
+    "name": "Manokwari",
+    "latitude": -0.86291,
+    "longitude": 134.06403,
+    "country": "Indonesia",
+    "admin1": "West Papua",
+    "admin2": "Manokwari Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Jayapura": {
+    "name": "Jayapura",
+    "latitude": -2.53371,
+    "longitude": 140.71812,
+    "country": "Indonesia",
+    "admin1": "Papua",
+    "admin2": "Kota Jayapura",
+    "timezone": "Asia/Jayapura"
+  },
+  "Nabire": {
+    "name": "Nabire",
+    "latitude": -3.35989,
+    "longitude": 135.50073,
+    "country": "Indonesia",
+    "admin1": "Central Papua",
+    "admin2": "Nabire Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Sorong": {
+    "name": "Sorong",
+    "latitude": -0.87956,
+    "longitude": 131.26105,
+    "country": "Indonesia",
+    "admin1": "Southwest Papua",
+    "admin2": "Sorong City",
+    "timezone": "Asia/Jayapura"
+  },
+  "Luwuk": {
+    "name": "Luwuk",
+    "latitude": -0.9516,
+    "longitude": 122.7875,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Banggai Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Banggai": {
+    "name": "Banggai",
+    "latitude": -1.5887,
+    "longitude": 123.4992,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "",
+    "timezone": "Asia/Makassar"
+  },
+  "Laiwui": {
+    "name": "Laiwui",
+    "latitude": -1.35177,
+    "longitude": 127.66929,
+    "country": "Indonesia",
+    "admin1": "North Maluku",
+    "admin2": "South Halmahera Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Matindok": {
+    "name": "Matindok",
+    "latitude": -1.35,
+    "longitude": 122.46667,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Banggai Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Dongin": {
+    "name": "Dongin",
+    "latitude": -1.54556,
+    "longitude": 122.26028,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Banggai Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Balikpapan": {
+    "name": "Balikpapan",
+    "latitude": -1.26753,
+    "longitude": 116.82887,
+    "country": "Indonesia",
+    "admin1": "East Kalimantan",
+    "admin2": "Kota Balikpapan",
+    "timezone": "Asia/Makassar"
+  },
+  "Ternate": {
+    "name": "Ternate",
+    "latitude": 0.79065,
+    "longitude": 127.38424,
+    "country": "Indonesia",
+    "admin1": "North Maluku",
+    "admin2": "Kota Ternate",
+    "timezone": "Asia/Jayapura"
+  },
+  "Bitung": {
+    "name": "Bitung",
+    "latitude": 1.44059,
+    "longitude": 125.12824,
+    "country": "Indonesia",
+    "admin1": "North Sulawesi",
+    "admin2": "Kota Bitung",
+    "timezone": "Asia/Makassar"
+  },
+  "Toli-Toli": {
+    "name": "Toli-Toli",
+    "latitude": 1.04018,
+    "longitude": 120.81764,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Tolitoli Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Buol": {
+    "name": "Buol",
+    "latitude": 1.15631,
+    "longitude": 121.43805,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Buol Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Parigi": {
+    "name": "Parigi",
+    "latitude": -7.7015,
+    "longitude": 108.496,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Pangandaran Regency",
+    "timezone": "Asia/Jakarta"
+  },
+  "Donggala": {
+    "name": "Donggala",
+    "latitude": -0.6723,
+    "longitude": 119.7402,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Kabupaten Donggala",
+    "timezone": "Asia/Makassar"
+  },
+  "Morowali": {
+    "name": "Morowali",
+    "latitude": -1.86667,
+    "longitude": 121.5,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "North Morowali Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Fakfak": {
+    "name": "Fakfak",
+    "latitude": -2.92481,
+    "longitude": 132.29813,
+    "country": "Indonesia",
+    "admin1": "Papua",
+    "admin2": "",
+    "timezone": "Asia/Jayapura"
+  },
+  "Kaimana": {
+    "name": "Kaimana",
+    "latitude": -3.6635,
+    "longitude": 133.7649,
+    "country": "Indonesia",
+    "admin1": "West Papua",
+    "admin2": "Kaimana Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Bekasi": {
+    "name": "Bekasi",
+    "latitude": -6.2349,
+    "longitude": 106.9896,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kota Bekasi",
+    "timezone": "Asia/Jakarta"
+  },
+  "Bogor": {
+    "name": "Bogor",
+    "latitude": -6.59444,
+    "longitude": 106.78917,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kota Bogor",
+    "timezone": "Asia/Jakarta"
+  },
+  "Cimahi": {
+    "name": "Cimahi",
+    "latitude": -6.87222,
+    "longitude": 107.5425,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kota Cimahi",
+    "timezone": "Asia/Jakarta"
+  },
+  "Depok": {
+    "name": "Depok",
+    "latitude": -6.4,
+    "longitude": 106.81861,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kota Depok",
+    "timezone": "Asia/Jakarta"
+  },
+  "Tasikmalaya": {
+    "name": "Tasikmalaya",
+    "latitude": -7.3274,
+    "longitude": 108.2207,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kota Tasikmalaya",
+    "timezone": "Asia/Jakarta"
+  },
+  "Banjar": {
+    "name": "Banjar",
+    "latitude": -7.1955,
+    "longitude": 107.4313,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Bandung",
+    "timezone": "Asia/Jakarta"
+  },
+  "Soreang": {
+    "name": "Soreang",
+    "latitude": -7.03306,
+    "longitude": 107.51833,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Bandung",
+    "timezone": "Asia/Jakarta"
+  },
+  "Ngamprah": {
+    "name": "Ngamprah",
+    "latitude": -6.80361,
+    "longitude": 107.27528,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "West Bandung Regency",
+    "timezone": "Asia/Jakarta"
+  },
+  "Cibinong": {
+    "name": "Cibinong",
+    "latitude": -6.48167,
+    "longitude": 106.85417,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Bogor Regency",
+    "timezone": "Asia/Jakarta"
+  },
+  "Ciamis": {
+    "name": "Ciamis",
+    "latitude": -7.3257,
+    "longitude": 108.3534,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Ciamis Regency",
+    "timezone": "Asia/Jakarta"
+  },
+  "Cianjur": {
+    "name": "Cianjur",
+    "latitude": -6.82222,
+    "longitude": 107.13944,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Cianjur",
+    "timezone": "Asia/Jakarta"
+  },
+  "Sumber": {
+    "name": "Sumber",
+    "latitude": -6.76028,
+    "longitude": 108.48306,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Cirebon Regency",
+    "timezone": "Asia/Jakarta"
+  },
+  "Karawang": {
+    "name": "Karawang",
+    "latitude": -6.30525,
+    "longitude": 107.3197,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Karawang",
+    "timezone": "Asia/Jakarta"
+  },
+  "Kuningan": {
+    "name": "Kuningan",
+    "latitude": -6.97583,
+    "longitude": 108.48306,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Kuningan",
+    "timezone": "Asia/Jakarta"
+  },
+  "Majalengka": {
+    "name": "Majalengka",
+    "latitude": -6.83611,
+    "longitude": 108.22778,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Majalengka Regency",
+    "timezone": "Asia/Jakarta"
+  },
+  "Subang": {
+    "name": "Subang",
+    "latitude": -6.57,
+    "longitude": 107.75667,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Subang",
+    "timezone": "Asia/Jakarta"
+  },
+  "Palabuhanratu": {
+    "name": "Palabuhanratu",
+    "latitude": -6.9875,
+    "longitude": 106.55139,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Sukabumi",
+    "timezone": "Asia/Jakarta"
+  },
+  "Sumedang": {
+    "name": "Sumedang",
+    "latitude": -6.85861,
+    "longitude": 107.91639,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Sumedang",
+    "timezone": "Asia/Jakarta"
+  },
+  "Singaparna": {
+    "name": "Singaparna",
+    "latitude": -7.3515,
+    "longitude": 108.111,
+    "country": "Indonesia",
+    "admin1": "West Java",
+    "admin2": "Kabupaten Tasikmalaya",
+    "timezone": "Asia/Jakarta"
+  },
+  "Klamono": {
+    "name": "Klamono",
+    "latitude": -1.13333,
+    "longitude": 131.5,
+    "country": "Indonesia",
+    "admin1": "Southwest Papua",
+    "admin2": "Sorong Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Sailolof": {
+    "name": "Sailolof",
+    "latitude": -1.25346,
+    "longitude": 130.77417,
+    "country": "Indonesia",
+    "admin1": "Southwest Papua",
+    "admin2": "South Sorong Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Kasim": {
+    "name": "Kasim",
+    "latitude": -1.3,
+    "longitude": 131.01666,
+    "country": "Indonesia",
+    "admin1": "Southwest Papua",
+    "admin2": "Sorong Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Toili": {
+    "name": "Toili",
+    "latitude": -1.37451,
+    "longitude": 122.33928,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Banggai Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Batui": {
+    "name": "Batui",
+    "latitude": -1.27861,
+    "longitude": 122.5575,
+    "country": "Indonesia",
+    "admin1": "Central Sulawesi",
+    "admin2": "Banggai Regency",
+    "timezone": "Asia/Makassar"
+  },
+  "Teluk Bintuni": {
+    "name": "Teluk Bintuni",
+    "latitude": -2.1097,
+    "longitude": 133.5246,
+    "country": "Indonesia",
+    "admin1": "West Papua",
+    "admin2": "Teluk Bintuni Regency",
+    "timezone": "Asia/Jayapura"
+  },
+  "Jayawijaya": {
+    "name": "Jayawijaya",
+    "latitude": -4.0958,
+    "longitude": 138.9481,
+    "country": "Indonesia",
+    "admin1": "Highland Papua",
+    "admin2": "Jayawijaya Regency",
+    "timezone": "Asia/Jayapura"
+  }
+}

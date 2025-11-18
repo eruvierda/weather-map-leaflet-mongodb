@@ -1,0 +1,25 @@
+	{
+    "cities": [
+    { "name": "Banda Aceh" }, { "name": "Medan" }, { "name": "Palembang" }, { "name": "Padang" }, { "name": "Bengkulu" }, 
+    { "name": "Pekanbaru" }, { "name": "Tanjung Pinang" }, { "name": "Jambi" }, { "name": "Bandar Lampung" }, 
+    { name: 'Pangkal Pinang' }, { name: 'Pontianak' }, { name: 'Samarinda' }, { name: 'Banjarbaru' }, 
+    { name: 'Palangkaraya' }, { name: 'Tanjung Selor' }, { name: 'Serang' }, { name: 'Jakarta' }, 
+    { name: 'Bandung' }, { name: 'Semarang' }, { name: 'Yogyakarta' }, { name: 'Surabaya' }, 
+    { name: 'Denpasar' }, { name: 'Kupang' }, { name: 'Mataram' }, { name: 'Gorontalo' }, { name: 'Mamuju' }, 
+    { name: 'Palu' }, { name: 'Manado' }, { name: 'Kendari' }, { name: 'Makassar' }, { name: 'Sofifi' }, 
+    { name: 'Ambon' }, { name: 'Manokwari' }, { name: 'Jayapura' }, { name: 'Nabire' }, { name: 'Jayawijaya' }, 
+    { name: 'Merauke' }, { name: 'Sorong' }, { name: 'Luwuk' }, { name: 'Banggai' },
+    // Specific case for Batui in Banggai Regency, using admin2 filter for precision
+    { name: 'Batui', admin2: 'Banggai' },{name: 'Laiwui'},{name: 'Matindok'},{name: 'Toili', admin2: 'Banggai'},{name: 'Dongin'},
+    { name: 'Cirebon' }, { name: 'Balikpapan' }, { name: 'Ternate' }, { name: 'Bitung' },
+    { name: 'Poso' }, { name: 'Toli-Toli' }, { name: 'Buol' }, { name: 'Parigi' }, { name: 'Donggala' },
+    { name: 'Sigi' }, { name: 'Morowali' }, { name: 'Fakfak' }, { name: 'Kaimana' }, { name: 'Teluk Bintuni' },
+    { name: 'Raja Ampat' }, { name: 'Bekasi' }, { name: 'Bogor' }, { name: 'Cimahi' }, { name: 'Depok' },
+    { name: 'Sukabumi' }, { name: 'Tasikmalaya' }, { name: 'Banjar' }, { name: 'Soreang' }, { name: 'Ngamprah' },
+    { name: 'Cikarang' }, { name: 'Cibinong' }, { name: 'Ciamis' }, { name: 'Cianjur' }, { name: 'Sumber' },
+    { name: 'Indramayu' }, { name: 'Karawang' }, { name: 'Kuningan' }, { name: 'Majalengka' },
+    { name: 'Purwakarta' }, { name: 'Subang' }, { name: 'Palabuhanratu' }, { name: 'Sumedang' }, { name: 'Singaparna' },
+    //papua
+    {name:'Klamono'},{name:'Kasim', admin2:'Sorong'},{name:'Sailolof'}
+]
+        }

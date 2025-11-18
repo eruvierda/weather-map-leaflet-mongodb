@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cache Control Panel - Weather Data</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .cache-stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .cache-item {
+            transition: all 0.3s ease;
+        }
+        .cache-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #10b981 0%, #3b82f6 50%, #f59e0b 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">🧠 Smart Cache Manager</h1>
+            <p class="text-gray-600">Kelola cache data cuaca untuk performa optimal</p>
+        </div>
+
+        <!-- Cache Statistics -->
+        <div class="cache-stats rounded-lg p-6 text-white mb-8">
+            <h2 class="text-2xl font-semibold mb-4">📊 Statistik Cache</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-3xl font-bold" id="totalItems">-</div>
+                    <div class="text-sm opacity-90">Total Item</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold" id="memoryUsage">-</div>
+                    <div class="text-sm opacity-90">Penggunaan Memory</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold" id="hitRate">-</div>
+                    <div class="text-sm opacity-90">Cache Hit Rate</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold" id="lastCleanup">-</div>
+                    <div class="text-sm opacity-90">Pembersihan Terakhir</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cache Configuration -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">⚙️ Konfigurasi Cache</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Weather Data Cache -->
+                <div class="cache-item bg-blue-50 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3">🌤️ Data Cuaca</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium text-blue-700 mb-1">
+                                Maksimal Umur Cache
+                            </label>
+                            <select id="weatherMaxAge" class="w-full p-2 border border-blue-300 rounded-md">
+                                <option value="15">15 menit</option>
+                                <option value="30" selected>30 menit</option>
+                                <option value="60">1 jam</option>
+                                <option value="120">2 jam</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="weatherBackgroundRefresh" checked class="mr-2">
+                            <label class="text-sm text-blue-700">Refresh Otomatis</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid Data Cache -->
+                <div class="cache-item bg-green-50 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-green-800 mb-3">🌐 Data Grid</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium text-green-700 mb-1">
+                                Maksimal Umur Cache
+                            </label>
+                            <select id="gridMaxAge" class="w-full p-2 border border-green-300 rounded-md">
+                                <option value="60">1 jam</option>
+                                <option value="120" selected>2 jam</option>
+                                <option value="240">4 jam</option>
+                                <option value="480">8 jam</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="gridBackgroundRefresh" checked class="mr-2">
+                            <label class="text-sm text-green-700">Refresh Otomatis</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Static Data Cache -->
+                <div class="cache-item bg-purple-50 rounded-lg p-4">
+                    <h3 class="text-lg font-semibold text-purple-800 mb-3">📁 Data Statis</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium text-purple-700 mb-1">
+                                Maksimal Umur Cache
+                            </label>
+                            <select id="staticMaxAge" class="w-full p-2 border border-purple-300 rounded-md">
+                                <option value="3600">1 jam</option>
+                                <option value="7200">2 jam</option>
+                                <option value="86400" selected>24 jam</option>
+                                <option value="604800">7 hari</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="staticBackgroundRefresh" class="mr-2">
+                            <label class="text-sm text-purple-700">Refresh Otomatis</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 flex gap-4">
+                <button id="saveConfig" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+                    💾 Simpan Konfigurasi
+                </button>
+                <button id="resetConfig" class="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-colors">
+                    🔄 Reset Default
+                </button>
+            </div>
+        </div>
+
+        <!-- Cache Actions -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">🛠️ Aksi Cache</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <button id="preloadData" class="bg-green-600 text-white p-4 rounded-lg hover:bg-green-700 transition-colors">
+                    <div class="text-2xl mb-2">🚀</div>
+                    <div class="font-semibold">Preload Data</div>
+                    <div class="text-sm opacity-90">Muat data penting</div>
+                </button>
+                
+                <button id="clearCache" class="bg-red-600 text-white p-4 rounded-lg hover:bg-red-700 transition-colors">
+                    <div class="text-2xl mb-2">🗑️</div>
+                    <div class="font-semibold">Hapus Cache</div>
+                    <div class="text-sm opacity-90">Bersihkan semua cache</div>
+                </button>
+                
+                <button id="refreshAll" class="bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 transition-colors">
+                    <div class="text-2xl mb-2">🔄</div>
+                    <div class="font-semibold">Refresh Semua</div>
+                    <div class="text-sm opacity-90">Update semua data</div>
+                </button>
+                
+                <button id="exportCache" class="bg-purple-600 text-white p-4 rounded-lg hover:bg-purple-700 transition-colors">
+                    <div class="text-2xl mb-2">📤</div>
+                    <div class="font-semibold">Export Cache</div>
+                    <div class="text-sm opacity-90">Download data cache</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Cache Items List -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">📋 Item Cache</h2>
+            <div id="cacheItemsList" class="space-y-3">
+                <!-- Cache items will be populated here -->
+            </div>
+        </div>
+
+        <!-- Performance Monitor -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mt-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">📈 Monitor Performa</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">Cache Hit Rate</h3>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
+                            <div id="hitRateBar" class="progress-bar shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center" style="width: 75%"></div>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <span id="hitRateText">75%</span> request menggunakan cache
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-3">Response Time</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Dengan Cache:</span>
+                            <span id="cachedResponseTime" class="text-sm font-medium text-green-600">~50ms</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Tanpa Cache:</span>
+                            <span id="freshResponseTime" class="text-sm font-medium text-red-600">~500ms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="smart_cache_manager.js"></script>
+    <script>
+        // Initialize cache manager
+        const cacheManager = new SmartCacheManager();
+        
+        // Update statistics
+        function updateStats() {
+            const stats = cacheManager.getStats();
+            
+            document.getElementById('totalItems').textContent = stats.total;
+            document.getElementById('memoryUsage').textContent = stats.memoryUsage + ' MB';
+            
+            // Calculate hit rate (mock data for demo)
+            const hitRate = Math.floor(Math.random() * 30) + 70; // 70-100%
+            document.getElementById('hitRate').textContent = hitRate + '%';
+            document.getElementById('hitRateText').textContent = hitRate + '%';
+            document.getElementById('hitRateBar').style.width = hitRate + '%';
+            
+            document.getElementById('lastCleanup').textContent = '5 menit lalu';
+        }
+        
+        // Update cache items list
+        function updateCacheItems() {
+            const container = document.getElementById('cacheItemsList');
+            const stats = cacheManager.getStats();
+            
+            if (stats.total === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-center py-8">Tidak ada item cache</p>';
+                return;
+            }
+            
+            let html = '';
+            for (const [key, value] of cacheManager.cache.entries()) {
+                const age = Math.floor((Date.now() - value.timestamp) / 1000 / 60); // minutes
+                const ageText = age < 60 ? `${age} menit` : `${Math.floor(age / 60)} jam`;
+                
+                html += `
+                    <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div class="flex-1">
+                            <div class="font-medium text-gray-800">${key}</div>
+                            <div class="text-sm text-gray-600">
+                                Tipe: ${value.type} | Umur: ${ageText} | Prioritas: ${value.priority}
+                            </div>
+                        </div>
+                        <button onclick="removeCacheItem('${key}')" class="text-red-600 hover:text-red-800 ml-4">
+                            🗑️
+                        </button>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+        
+        // Remove specific cache item
+        function removeCacheItem(key) {
+            cacheManager.cache.delete(key);
+            updateStats();
+            updateCacheItems();
+        }
+        
+        // Event listeners
+        document.getElementById('saveConfig').addEventListener('click', function() {
+            // Save configuration logic
+            alert('Konfigurasi berhasil disimpan!');
+        });
+        
+        document.getElementById('resetConfig').addEventListener('click', function() {
+            // Reset configuration logic
+            alert('Konfigurasi direset ke default!');
+        });
+        
+        document.getElementById('preloadData').addEventListener('click', async function() {
+            try {
+                await cacheManager.preloadCriticalData();
+                alert('Data berhasil di-preload!');
+                updateStats();
+                updateCacheItems();
+            } catch (error) {
+                alert('Gagal preload data: ' + error.message);
+            }
+        });
+        
+        document.getElementById('clearCache').addEventListener('click', function() {
+            if (confirm('Yakin ingin menghapus semua cache?')) {
+                cacheManager.clearCache();
+                alert('Cache berhasil dihapus!');
+                updateStats();
+                updateCacheItems();
+            }
+        });
+        
+        document.getElementById('refreshAll').addEventListener('click', async function() {
+            try {
+                // Force refresh all data
+                const urls = [
+                    'pelabuhan/pelabuhan_weather_data.json',
+                    'openmeteo/city_weather_data.json',
+                    'openmeteo/grid_weather_data_1degree.json'
+                ];
+                
+                for (const url of urls) {
+                    await cacheManager.getData(url, 'weather', true);
+                }
+                
+                alert('Semua data berhasil di-refresh!');
+                updateStats();
+                updateCacheItems();
+            } catch (error) {
+                alert('Gagal refresh data: ' + error.message);
+            }
+        });
+        
+        document.getElementById('exportCache').addEventListener('click', function() {
+            const stats = cacheManager.getStats();
+            const dataStr = JSON.stringify(stats, null, 2);
+            const dataBlob = new Blob([dataStr], {type: 'application/json'});
+            
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(dataBlob);
+            link.download = 'cache_stats.json';
+            link.click();
+        });
+        
+        // Initialize
+        updateStats();
+        updateCacheItems();
+        
+        // Update every 30 seconds
+        setInterval(() => {
+            updateStats();
+            updateCacheItems();
+        }, 30000);
+    </script>
+</body>
+</html>

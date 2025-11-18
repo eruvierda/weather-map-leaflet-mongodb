@@ -1,0 +1,2842 @@
+{
+  "Pelabuhan Ulee Lheue Banda Aceh": {
+    "latitude": 5.56697295500004,
+    "longitude": 95.293521419,
+    "slug": "pelabuhan-ulee-lheue-banda-aceh"
+  },
+  "Pelabuhan Calang Aceh Jaya": {
+    "latitude": 4.63591545400004,
+    "longitude": 95.56573421,
+    "slug": "pelabuhan-calang-aceh-jaya"
+  },
+  "Pelabuhan Sinabang": {
+    "latitude": 2.5,
+    "longitude": 96.387409726,
+    "slug": "pelabuhan-sinabang"
+  },
+  "Pelabuhan Balohan Sabang": {
+    "latitude": 5.774444444,
+    "longitude": 95.21722222,
+    "slug": "pelabuhan-balohan-sabang"
+  },
+  "Pelabuhan Pulau Banyak": {
+    "latitude": 2.3736111111,
+    "longitude": 97.061111111,
+    "slug": "pelabuhan-pulau-banyak"
+  },
+  "Pelabuhan Kuala Langsa": {
+    "latitude": 4.55,
+    "longitude": 98.02,
+    "slug": "pelabuhan-kuala-langsa"
+  },
+  "Pelabuhan Kuala Bubon": {
+    "latitude": 4.216666666667,
+    "longitude": 95.8,
+    "slug": "pelabuhan-kuala-bubon"
+  },
+  "Pelabuhan Labuhan Haji": {
+    "latitude": 3.54,
+    "longitude": 96.99,
+    "slug": "pelabuhan-labuhan-haji"
+  },
+  "Pelabuhan ASDP Gilimanuk": {
+    "latitude": -8.16058,
+    "longitude": 114.43705,
+    "slug": "pelabuhan-asdp-gilimanuk"
+  },
+  "Pelabuhan PPN Pengambengan": {
+    "latitude": -8.396645146,
+    "longitude": 114.581376634,
+    "slug": "pelabuhan-ppn-pengambengan"
+  },
+  "Pelabuhan Celukan Bawang": {
+    "latitude": -8.18720419699997,
+    "longitude": 114.832045927,
+    "slug": "pelabuhan-celukan-bawang"
+  },
+  "Pelabuhan Padangbai": {
+    "latitude": -8.533611,
+    "longitude": 115.5078,
+    "slug": "pelabuhan-padangbai"
+  },
+  "Pelabuhan Benoa": {
+    "latitude": -8.74279888399996,
+    "longitude": 115.212605457,
+    "slug": "pelabuhan-benoa"
+  },
+  "Pelabuhan Sanur": {
+    "latitude": -8.66961,
+    "longitude": 115.26107,
+    "slug": "pelabuhan-sanur"
+  },
+  "Pelabuhan Nusa Penida": {
+    "latitude": -8.66200924199995,
+    "longitude": 115.552549841,
+    "slug": "pelabuhan-nusa-penida"
+  },
+  "Pelabuhan Kusamba": {
+    "latitude": -8.5595,
+    "longitude": 115.45791,
+    "slug": "pelabuhan-kusamba"
+  },
+  "Pelabuhan Pangkalbalam": {
+    "latitude": -2.08782326541555,
+    "longitude": 106.236432143391,
+    "slug": "pelabuhan-pangkalbalam"
+  },
+  "Pelabuhan Belinyu": {
+    "latitude": -1.63008889,
+    "longitude": 105.7344639,
+    "slug": "pelabuhan-belinyu"
+  },
+  "Pelabuhan Tanjur Ular": {
+    "latitude": -1.960558487,
+    "longitude": 105.126018984,
+    "slug": "pelabuhan-tanjur-ular"
+  },
+  "Pelabuhan Tanjung Kalian": {
+    "latitude": -2.08393333,
+    "longitude": 105.1327139,
+    "slug": "pelabuhan-tanjung-kalian"
+  },
+  "Pelabuhan Sadai": {
+    "latitude": -3.12339611819352,
+    "longitude": 106.81388055141,
+    "slug": "pelabuhan-sadai"
+  },
+  "Pelabuhan Tanjung Gading": {
+    "latitude": -3.017582037,
+    "longitude": 106.790845857,
+    "slug": "pelabuhan-tanjung-gading"
+  },
+  "Pelabuhan Tanjung Pandan": {
+    "latitude": -2.706022404977,
+    "longitude": 107.550446012883,
+    "slug": "pelabuhan-tanjung-pandan"
+  },
+  "Pelabuhan Tanjung Batu": {
+    "latitude": -2.89665833,
+    "longitude": 107.5512667,
+    "slug": "pelabuhan-tanjung-batu"
+  },
+  "Pelabuhan Tanjung Ru": {
+    "latitude": -2.93658056,
+    "longitude": 107.5303611,
+    "slug": "pelabuhan-tanjung-ru"
+  },
+  "Pelabuhan Tanjung Nyato": {
+    "latitude": -2.88676553536931,
+    "longitude": 107.519041511301,
+    "slug": "pelabuhan-tanjung-nyato"
+  },
+  "Pelabuhan Sungai Selan": {
+    "latitude": -2.44371999932,
+    "longitude": 105.86589512,
+    "slug": "pelabuhan-sungai-selan"
+  },
+  "Pelabuhan Manggar": {
+    "latitude": -2.84826672613983,
+    "longitude": 108.316613536452,
+    "slug": "pelabuhan-manggar"
+  },
+  "Pelabuhan Cituis": {
+    "latitude": -5.97030127645727,
+    "longitude": 106.581662301722,
+    "slug": "pelabuhan-cituis"
+  },
+  "Pelabuhan Kronjo": {
+    "latitude": -6.01191219315835,
+    "longitude": 106.451935212837,
+    "slug": "pelabuhan-kronjo"
+  },
+  "Pelabuhan Tanjung Pasir": {
+    "latitude": -5.98033433801829,
+    "longitude": 106.671128050795,
+    "slug": "pelabuhan-tanjung-pasir"
+  },
+  "Pelabuhan Anyer": {
+    "latitude": -6.02642202897692,
+    "longitude": 105.882004192493,
+    "slug": "pelabuhan-anyer"
+  },
+  "Pelabuhan Kepuh": {
+    "latitude": -5.95998253276849,
+    "longitude": 106.134743370201,
+    "slug": "pelabuhan-kepuh"
+  },
+  "Pelabuhan Lontar": {
+    "latitude": -5.90615696442707,
+    "longitude": 106.31204708843,
+    "slug": "pelabuhan-lontar"
+  },
+  "Pelabuhan Pasauran": {
+    "latitude": -6.232008122,
+    "longitude": 105.8302628,
+    "slug": "pelabuhan-pasauran"
+  },
+  "Pelabuhan Bojonegara": {
+    "latitude": -5.88674002473034,
+    "longitude": 106.110337366816,
+    "slug": "pelabuhan-bojonegara"
+  },
+  "Pelabuhan Karangantu": {
+    "latitude": -5.97342077205125,
+    "longitude": 106.174807164016,
+    "slug": "pelabuhan-karangantu"
+  },
+  "Pelabuhan Merak": {
+    "latitude": -5.934464243,
+    "longitude": 105.9990948,
+    "slug": "pelabuhan-merak"
+  },
+  "Pelabuhan Ciwandan": {
+    "latitude": -5.94852292295032,
+    "longitude": 105.911078599828,
+    "slug": "pelabuhan-ciwandan"
+  },
+  "Pelabuhan Carita": {
+    "latitude": -6.316988706,
+    "longitude": 105.8370814,
+    "slug": "pelabuhan-carita"
+  },
+  "Pelabuhan Labuan": {
+    "latitude": -6.372852183,
+    "longitude": 105.8225801,
+    "slug": "pelabuhan-labuan"
+  },
+  "Pelabuhan Panimbang": {
+    "latitude": -6.481287581,
+    "longitude": 105.664014118,
+    "slug": "pelabuhan-panimbang"
+  },
+  "Pelabuhan Tamanjaya": {
+    "latitude": -6.774049627,
+    "longitude": 105.5050715,
+    "slug": "pelabuhan-tamanjaya"
+  },
+  "Pelabuhan Binuangeun": {
+    "latitude": -6.83744324,
+    "longitude": 105.883748,
+    "slug": "pelabuhan-binuangeun"
+  },
+  "Pelabuhan Suralaya": {
+    "latitude": -5.8839324141861,
+    "longitude": 106.02532084003,
+    "slug": "pelabuhan-suralaya"
+  },
+  "Pelabuhan KBS": {
+    "latitude": -6.00186495891392,
+    "longitude": 105.956769876911,
+    "slug": "pelabuhan-kbs"
+  },
+  "Pelabuhan Linau": {
+    "latitude": -4.842779,
+    "longitude": 103.413326,
+    "slug": "pelabuhan-linau"
+  },
+  "Pelabuhan Pulai Baai": {
+    "latitude": -3.89859298199996,
+    "longitude": 102.286103487,
+    "slug": "pelabuhan-pulai-baai"
+  },
+  "Pelabuhan Panjang (Utama)": {
+    "latitude": -5.468861,
+    "longitude": 105.319722,
+    "slug": "pelabuhan-panjang-utama"
+  },
+  "Pelabuhan PPP Sadeng": {
+    "latitude": -8.189463639,
+    "longitude": 110.799510154,
+    "slug": "pelabuhan-ppp-sadeng"
+  },
+  "Pelabuhan PPP Gesing": {
+    "latitude": -8.098704441,
+    "longitude": 110.462590061,
+    "slug": "pelabuhan-ppp-gesing"
+  },
+  "Pelabuhan PP Adikarto": {
+    "latitude": -7.91632783399995,
+    "longitude": 110.085781254,
+    "slug": "pelabuhan-pp-adikarto"
+  },
+  "Pelabuhan Tanjung Priok": {
+    "latitude": -6.103879776,
+    "longitude": 106.882294878,
+    "slug": "pelabuhan-tanjung-priok"
+  },
+  "Pelabuhan Sunda Kelapa": {
+    "latitude": -6.06667274010226,
+    "longitude": 106.818996786671,
+    "slug": "pelabuhan-sunda-kelapa"
+  },
+  "Pelabuhan Muara Angke": {
+    "latitude": -6.06815832443186,
+    "longitude": 106.783135640271,
+    "slug": "pelabuhan-muara-angke"
+  },
+  "Pelabuhan Muara Baru": {
+    "latitude": -6.07542367154284,
+    "longitude": 106.801242054662,
+    "slug": "pelabuhan-muara-baru"
+  },
+  "Pelabuhan Kalibaru Cilincing": {
+    "latitude": -6.06702338470804,
+    "longitude": 106.916083997067,
+    "slug": "pelabuhan-kalibaru-cilincing"
+  },
+  "Pelabuhan Marunda": {
+    "latitude": -6.06669493030074,
+    "longitude": 106.947993060551,
+    "slug": "pelabuhan-marunda"
+  },
+  "Pelabuhan P. Untung Jawa": {
+    "latitude": -5.97948,
+    "longitude": 106.70722,
+    "slug": "pelabuhan-p-untung-jawa"
+  },
+  "Pelabuhan P. Lancang": {
+    "latitude": -5.92863,
+    "longitude": 106.58325,
+    "slug": "pelabuhan-p-lancang"
+  },
+  "Pelabuhan P. Pari": {
+    "latitude": -5.85864,
+    "longitude": 106.61898,
+    "slug": "pelabuhan-p-pari"
+  },
+  "Pelabuhan P. Tidung": {
+    "latitude": -5.7995,
+    "longitude": 106.49963,
+    "slug": "pelabuhan-p-tidung"
+  },
+  "Pelabuhan P. Pramuka": {
+    "latitude": -5.74527,
+    "longitude": 106.61216,
+    "slug": "pelabuhan-p-pramuka"
+  },
+  "Pelabuhan P. Kelapa": {
+    "latitude": -5.65669,
+    "longitude": 106.57349,
+    "slug": "pelabuhan-p-kelapa"
+  },
+  "Pelabuhan P. Pabelokan": {
+    "latitude": -5.48037,
+    "longitude": 106.39298,
+    "slug": "pelabuhan-p-pabelokan"
+  },
+  "Pelabuhan P. Sabira": {
+    "latitude": -5.20575,
+    "longitude": 106.46058,
+    "slug": "pelabuhan-p-sabira"
+  },
+  "Pelabuhan Gorontalo": {
+    "latitude": 0.508866,
+    "longitude": 123.063074,
+    "slug": "pelabuhan-gorontalo"
+  },
+  "Pelabuhan Ferry Gorontalo": {
+    "latitude": 0.497361,
+    "longitude": 123.070695,
+    "slug": "pelabuhan-ferry-gorontalo"
+  },
+  "Pelabuhan Kwandang": {
+    "latitude": 0.853564632,
+    "longitude": 122.898208948,
+    "slug": "pelabuhan-kwandang"
+  },
+  "Pelabuhan Tilamuta": {
+    "latitude": 0.510079989,
+    "longitude": 122.357004737,
+    "slug": "pelabuhan-tilamuta"
+  },
+  "Pelabuhan Penyeberangan Marisa": {
+    "latitude": 0.486235,
+    "longitude": 122.109081,
+    "slug": "pelabuhan-penyeberangan-marisa"
+  },
+  "Pelabuhan Bumbulan": {
+    "latitude": 0.487187,
+    "longitude": 122.112118,
+    "slug": "pelabuhan-bumbulan"
+  },
+  "Pelabuhan Talang Duku": {
+    "latitude": -1.02325638699994,
+    "longitude": 104.272321612,
+    "slug": "pelabuhan-talang-duku"
+  },
+  "Pelabuhan Roro Kuala Tungkal": {
+    "latitude": -0.786572416999945,
+    "longitude": 103.505034101,
+    "slug": "pelabuhan-roro-kuala-tungkal"
+  },
+  "Pelabuhan Muara Sabak": {
+    "latitude": -1.00908051599992,
+    "longitude": 103.817086838,
+    "slug": "pelabuhan-muara-sabak"
+  },
+  "Pelabuhan PPI Nipah Panjang": {
+    "latitude": -1.04950097899995,
+    "longitude": 104.184411512,
+    "slug": "pelabuhan-ppi-nipah-panjang"
+  },
+  "Pelabuhan Muara Gembong (Bekasi)": {
+    "latitude": -6.014635,
+    "longitude": 107.006964,
+    "slug": "pelabuhan-muara-gembong-bekasi"
+  },
+  "Pelabuhan Tarumajaya (Bekasi)": {
+    "latitude": -6.08476,
+    "longitude": 106.99667,
+    "slug": "pelabuhan-tarumajaya-bekasi"
+  },
+  "Pelabuhan Cilamaya (Karawang)": {
+    "latitude": -6.18726411349574,
+    "longitude": 107.660807185002,
+    "slug": "pelabuhan-cilamaya-karawang"
+  },
+  "Pelabuhan Perikanan Pantai Muara Ciasem (Subang)": {
+    "latitude": -6.18351492063576,
+    "longitude": 107.69946570243,
+    "slug": "pelabuhan-perikanan-pantai-muara-ciasem-subang"
+  },
+  "Pelabuhan Perikanan Pantai Blanakan (Subang)": {
+    "latitude": -6.18334032626219,
+    "longitude": 107.681727965913,
+    "slug": "pelabuhan-perikanan-pantai-blanakan-subang"
+  },
+  "Pelabuhan Patimban (Subang)": {
+    "latitude": -6.18825339103099,
+    "longitude": 107.954942482545,
+    "slug": "pelabuhan-patimban-subang"
+  },
+  "Pelabuhan Perikanan Pantai Eretan (Indramayu)": {
+    "latitude": -6.27495109010882,
+    "longitude": 108.08750303878,
+    "slug": "pelabuhan-perikanan-pantai-eretan-indramayu"
+  },
+  "Pelabuhan Karangsong (Indramayu)": {
+    "latitude": -6.29063594559144,
+    "longitude": 108.400212910936,
+    "slug": "pelabuhan-karangsong-indramayu"
+  },
+  "Pelabuhan Cirebon (Cirebon)": {
+    "latitude": -6.70297706774938,
+    "longitude": 108.594765111719,
+    "slug": "pelabuhan-cirebon-cirebon"
+  },
+  "Pelabuhan Kejawanan (Cirebon)": {
+    "latitude": -6.69902547103381,
+    "longitude": 108.633152410262,
+    "slug": "pelabuhan-kejawanan-cirebon"
+  },
+  "Pelabuhan Ratu (Sukabumi)": {
+    "latitude": -6.98862422,
+    "longitude": 106.542573609,
+    "slug": "pelabuhan-ratu-sukabumi"
+  },
+  "Pelabuhan Sindang Barang (Cianjur)": {
+    "latitude": -7.46083,
+    "longitude": 107.1303,
+    "slug": "pelabuhan-sindang-barang-cianjur"
+  },
+  "Pelabuhan Perikanan Jayanti (Cianjur)": {
+    "latitude": -7.4987,
+    "longitude": 107.38648,
+    "slug": "pelabuhan-perikanan-jayanti-cianjur"
+  },
+  "Pelabuhan Perikanan Pantai Cilauteureun (Garut)": {
+    "latitude": -7.661835337,
+    "longitude": 107.686443856,
+    "slug": "pelabuhan-perikanan-pantai-cilauteureun-garut"
+  },
+  "Pelabuhan Pamayang Cipatujah (Tasikmalaya)": {
+    "latitude": -7.74823,
+    "longitude": 108.01115,
+    "slug": "pelabuhan-pamayang-cipatujah-tasikmalaya"
+  },
+  "Pelabuhan Pangandaran (Pangandaran)": {
+    "latitude": -7.7384743897255,
+    "longitude": 108.656579017631,
+    "slug": "pelabuhan-pangandaran-pangandaran"
+  },
+  "Pelabuhan Perikanan Cikidang (Pangandaran)": {
+    "latitude": -7.70573734193747,
+    "longitude": 108.705914459949,
+    "slug": "pelabuhan-perikanan-cikidang-pangandaran"
+  },
+  "Pelabuhan Sarang": {
+    "latitude": -6.70283390253245,
+    "longitude": 111.691935157745,
+    "slug": "pelabuhan-sarang"
+  },
+  "Pelabuhan Pangkalan Sluke": {
+    "latitude": -6.57909827898745,
+    "longitude": 111.464803057466,
+    "slug": "pelabuhan-pangkalan-sluke"
+  },
+  "Pelabuhan Banyutowo": {
+    "latitude": -6.43110470710504,
+    "longitude": 111.094690697083,
+    "slug": "pelabuhan-banyutowo"
+  },
+  "Pelabuhan Penyebrangan Jepara, Kartini": {
+    "latitude": -6.590559911,
+    "longitude": 110.6482815,
+    "slug": "pelabuhan-penyebrangan-jepara-kartini"
+  },
+  "Pelabuhan Karimunjawa": {
+    "latitude": -5.883985444,
+    "longitude": 110.4400136,
+    "slug": "pelabuhan-karimunjawa"
+  },
+  "Pelabuhan Legon Bajak": {
+    "latitude": -5.787474991,
+    "longitude": 110.4761688,
+    "slug": "pelabuhan-legon-bajak"
+  },
+  "Pelabuhan Tanjung Emas": {
+    "latitude": -6.91872532144169,
+    "longitude": 110.415917538653,
+    "slug": "pelabuhan-tanjung-emas"
+  },
+  "Pelabuhan Morodemak": {
+    "latitude": -6.820583595,
+    "longitude": 110.5444696,
+    "slug": "pelabuhan-morodemak"
+  },
+  "Pelabuhan Wedung": {
+    "latitude": -6.77430710599998,
+    "longitude": 110.586848495,
+    "slug": "pelabuhan-wedung"
+  },
+  "Pelabuhan Tawang": {
+    "latitude": -6.87748664679331,
+    "longitude": 110.044905452788,
+    "slug": "pelabuhan-tawang"
+  },
+  "Pelabuhan Perikanan Nusantara": {
+    "latitude": -6.81626297698684,
+    "longitude": 109.712485531497,
+    "slug": "pelabuhan-perikanan-nusantara"
+  },
+  "Pelabuhan Tegal Sari (Kota Tegal)": {
+    "latitude": -6.80392691396126,
+    "longitude": 109.152666855184,
+    "slug": "pelabuhan-tegal-sari-kota-tegal"
+  },
+  "Pelabuhan Asem Doyong (Pemalang)": {
+    "latitude": -6.81782251231998,
+    "longitude": 109.407430830377,
+    "slug": "pelabuhan-asem-doyong-pemalang"
+  },
+  "Pelabuhan Perikanan Bulu Tuban": {
+    "latitude": -6.72708698588188,
+    "longitude": 111.726621288468,
+    "slug": "pelabuhan-perikanan-bulu-tuban"
+  },
+  "Pelabuhan Brondong": {
+    "latitude": -6.85338033870564,
+    "longitude": 112.269020529748,
+    "slug": "pelabuhan-brondong"
+  },
+  "Pelabuhan Paciran": {
+    "latitude": -6.8597459450294,
+    "longitude": 112.368800696229,
+    "slug": "pelabuhan-paciran"
+  },
+  "Pelabuhan Gresik": {
+    "latitude": -7.11156591352064,
+    "longitude": 112.674653951933,
+    "slug": "pelabuhan-gresik"
+  },
+  "Pelabuhan Bawean": {
+    "latitude": -5.848884031,
+    "longitude": 112.6488911,
+    "slug": "pelabuhan-bawean"
+  },
+  "Pelabuhan Tanjung Perak Surabaya": {
+    "latitude": -7.196891691,
+    "longitude": 112.7330252,
+    "slug": "pelabuhan-tanjung-perak-surabaya"
+  },
+  "Pelabuhan Kamal": {
+    "latitude": -7.174824639,
+    "longitude": 112.722081,
+    "slug": "pelabuhan-kamal"
+  },
+  "Pelabuhan Telaga Biru": {
+    "latitude": -6.88113948429963,
+    "longitude": 113.085464666722,
+    "slug": "pelabuhan-telaga-biru"
+  },
+  "Pelabuhan Taddan Camplong": {
+    "latitude": -7.220840074,
+    "longitude": 113.2975784,
+    "slug": "pelabuhan-taddan-camplong"
+  },
+  "Pelabuhan Mandangin": {
+    "latitude": -7.307011065,
+    "longitude": 113.207852,
+    "slug": "pelabuhan-mandangin"
+  },
+  "Pelabuhan Branta": {
+    "latitude": -7.223877006,
+    "longitude": 113.4487715,
+    "slug": "pelabuhan-branta"
+  },
+  "Pelabuhan Perikanan Pasongsongan": {
+    "latitude": -6.8857687,
+    "longitude": 113.6546214,
+    "slug": "pelabuhan-perikanan-pasongsongan"
+  },
+  "Pelabuhan Kalianget": {
+    "latitude": -7.056894922,
+    "longitude": 113.9427229,
+    "slug": "pelabuhan-kalianget"
+  },
+  "Pelabuhan Kangean": {
+    "latitude": -6.841059013,
+    "longitude": 115.2284567,
+    "slug": "pelabuhan-kangean"
+  },
+  "Pelabuhan Raas": {
+    "latitude": -7.154382048,
+    "longitude": 114.6248657,
+    "slug": "pelabuhan-raas"
+  },
+  "Pelabuhan Masalembu": {
+    "latitude": -5.578255751,
+    "longitude": 114.4147363,
+    "slug": "pelabuhan-masalembu"
+  },
+  "Pelabuhan Perikanan Lekok": {
+    "latitude": -7.61356151057932,
+    "longitude": 113.00118300427,
+    "slug": "pelabuhan-perikanan-lekok"
+  },
+  "Pelabuhan Probolinggo": {
+    "latitude": -7.70395508418424,
+    "longitude": 113.214090787319,
+    "slug": "pelabuhan-probolinggo"
+  },
+  "Pelabuhan Perikanan Mayangan": {
+    "latitude": -7.64600317670039,
+    "longitude": 113.234345102711,
+    "slug": "pelabuhan-perikanan-mayangan"
+  },
+  "Pelabuhan Perikanan Paiton": {
+    "latitude": -7.64200413523409,
+    "longitude": 113.527390537258,
+    "slug": "pelabuhan-perikanan-paiton"
+  },
+  "Pelabuhan Jangkar": {
+    "latitude": -7.68703764029264,
+    "longitude": 114.209348077805,
+    "slug": "pelabuhan-jangkar"
+  },
+  "Pelabuhan Panarukan": {
+    "latitude": -7.67951782086477,
+    "longitude": 113.916194769864,
+    "slug": "pelabuhan-panarukan"
+  },
+  "Pelabuhan Kalbut": {
+    "latitude": -7.61628930767858,
+    "longitude": 114.009161349125,
+    "slug": "pelabuhan-kalbut"
+  },
+  "Pelabuhan Perikanan Tamperan": {
+    "latitude": -8.30262536123934,
+    "longitude": 111.08419544187,
+    "slug": "pelabuhan-perikanan-tamperan"
+  },
+  "Pelabuhan Perikanan Popoh": {
+    "latitude": -8.264487536,
+    "longitude": 111.8027673,
+    "slug": "pelabuhan-perikanan-popoh"
+  },
+  "Pelabuhan Perikanan Tambakrejo": {
+    "latitude": -8.31573533,
+    "longitude": 112.1408298,
+    "slug": "pelabuhan-perikanan-tambakrejo"
+  },
+  "Pelabuhan Perikanan Pondok Dadap": {
+    "latitude": -8.43277393,
+    "longitude": 112.681343217,
+    "slug": "pelabuhan-perikanan-pondok-dadap"
+  },
+  "Pelabuhan Perikanan Puger": {
+    "latitude": -8.38776350799997,
+    "longitude": 113.474994815,
+    "slug": "pelabuhan-perikanan-puger"
+  },
+  "Pelabuhan Perikanan Grajagan": {
+    "latitude": -8.62890306180248,
+    "longitude": 114.250281003897,
+    "slug": "pelabuhan-perikanan-grajagan"
+  },
+  "Pelabuhan Perikanan Muncar": {
+    "latitude": -8.39839758171251,
+    "longitude": 114.407011974374,
+    "slug": "pelabuhan-perikanan-muncar"
+  },
+  "Pelabuhan Boom": {
+    "latitude": -8.20092187897611,
+    "longitude": 114.41648065898,
+    "slug": "pelabuhan-boom"
+  },
+  "Pelabuhan Ketapang": {
+    "latitude": -8.14442315705218,
+    "longitude": 114.417906985502,
+    "slug": "pelabuhan-ketapang"
+  },
+  "Pelabuhan Tanjung Wangi": {
+    "latitude": -8.04634271457542,
+    "longitude": 114.479258748066,
+    "slug": "pelabuhan-tanjung-wangi"
+  },
+  "Pelabuhan Utama Dwikora Pontianak": {
+    "latitude": 0.045011724000062,
+    "longitude": 109.211178808,
+    "slug": "pelabuhan-utama-dwikora-pontianak"
+  },
+  "Pelabuhan Penyebrangan Tebas Kuala": {
+    "latitude": 1.20438668000002,
+    "longitude": 108.984386388,
+    "slug": "pelabuhan-penyebrangan-tebas-kuala"
+  },
+  "Pelabuhan Perikanan Nusantara Pemangkat": {
+    "latitude": 1.20108031800003,
+    "longitude": 108.979102721,
+    "slug": "pelabuhan-perikanan-nusantara-pemangkat"
+  },
+  "Pelabuhan Internasional Kijing": {
+    "latitude": 0.506644919,
+    "longitude": 108.908787887,
+    "slug": "pelabuhan-internasional-kijing"
+  },
+  "Pelabuhan Perikanan Pantai Sungai Rengas": {
+    "latitude": 0.031073334000041,
+    "longitude": 109.185976974,
+    "slug": "pelabuhan-perikanan-pantai-sungai-rengas"
+  },
+  "Pelabuhan Penyebrangan Rasau Jaya": {
+    "latitude": -0.203700970999932,
+    "longitude": 109.08201977,
+    "slug": "pelabuhan-penyebrangan-rasau-jaya"
+  },
+  "Pelabuhan Laut Padang Tikar": {
+    "latitude": -0.675952473999928,
+    "longitude": 109.276029677,
+    "slug": "pelabuhan-laut-padang-tikar"
+  },
+  "Pelabuhan Perikanan Pantai Teluk Batang": {
+    "latitude": -1.04245592299997,
+    "longitude": 109.76626274,
+    "slug": "pelabuhan-perikanan-pantai-teluk-batang"
+  },
+  "Pelabuhan Laut Sukabangun": {
+    "latitude": -1.76851318699994,
+    "longitude": 109.937082978,
+    "slug": "pelabuhan-laut-sukabangun"
+  },
+  "Pelabuhan Laut Kendawangan": {
+    "latitude": -2.53008790099994,
+    "longitude": 110.212130751,
+    "slug": "pelabuhan-laut-kendawangan"
+  },
+  "Pelabuhan Trisakti Banjarmasin": {
+    "latitude": -3.49949710599997,
+    "longitude": 114.498647947,
+    "slug": "pelabuhan-trisakti-banjarmasin"
+  },
+  "Pelabuhan PPI Banjarmasin": {
+    "latitude": -3.49468765099993,
+    "longitude": 114.494997271,
+    "slug": "pelabuhan-ppi-banjarmasin"
+  },
+  "Pelabuhan Muara Sungai Barito Banjarmasin": {
+    "latitude": -3.49667778,
+    "longitude": 114.494689863,
+    "slug": "pelabuhan-muara-sungai-barito-banjarmasin"
+  },
+  "Pelabuhan Muara Kintap Tanah Laut": {
+    "latitude": -3.904694787,
+    "longitude": 115.259138027,
+    "slug": "pelabuhan-muara-kintap-tanah-laut"
+  },
+  "Pelabuhan Samudera Pelindo III Tanah Bumbu": {
+    "latitude": -3.801757043,
+    "longitude": 115.483624918,
+    "slug": "pelabuhan-samudera-pelindo-iii-tanah-bumbu"
+  },
+  "Pelabuhan Penyeberangan Tarjun Kotabaru": {
+    "latitude": -3.272872871,
+    "longitude": 116.12153091,
+    "slug": "pelabuhan-penyeberangan-tarjun-kotabaru"
+  },
+  "Pelabuhan Panjang Kotabaru": {
+    "latitude": -3.235936946,
+    "longitude": 116.22482786,
+    "slug": "pelabuhan-panjang-kotabaru"
+  },
+  "Pelabuhan Tanjung Serdang Kotabaru": {
+    "latitude": -3.473979869,
+    "longitude": 116.043055405,
+    "slug": "pelabuhan-tanjung-serdang-kotabaru"
+  },
+  "Pelabuhan Penyeberangan Stagen Kotabaru": {
+    "latitude": -3.29024825,
+    "longitude": 116.15254835,
+    "slug": "pelabuhan-penyeberangan-stagen-kotabaru"
+  },
+  "Pelabuhan Pelindo III Kotabaru": {
+    "latitude": -3.293558699,
+    "longitude": 116.145045476,
+    "slug": "pelabuhan-pelindo-iii-kotabaru"
+  },
+  "Pelabuhan PPI Kotabaru": {
+    "latitude": -3.272240045,
+    "longitude": 116.18081692,
+    "slug": "pelabuhan-ppi-kotabaru"
+  },
+  "Pelabuhan Panglima Utar": {
+    "latitude": -2.84277690799996,
+    "longitude": 111.733000207,
+    "slug": "pelabuhan-panglima-utar"
+  },
+  "Pelabuhan Bumi Harjo": {
+    "latitude": -2.84566718999997,
+    "longitude": 111.730756504,
+    "slug": "pelabuhan-bumi-harjo"
+  },
+  "Pelabuhan Pangkalan Bun": {
+    "latitude": -2.91348600199995,
+    "longitude": 111.417925598,
+    "slug": "pelabuhan-pangkalan-bun"
+  },
+  "Pelabuhan Kuala Jelai": {
+    "latitude": -3.07218967957232,
+    "longitude": 110.749372045851,
+    "slug": "pelabuhan-kuala-jelai"
+  },
+  "Pelabuhan Sukamara": {
+    "latitude": -2.98918811399994,
+    "longitude": 110.732308483,
+    "slug": "pelabuhan-sukamara"
+  },
+  "Pelabuhan Sampit": {
+    "latitude": -3.26033010544341,
+    "longitude": 113.081644018159,
+    "slug": "pelabuhan-sampit"
+  },
+  "Pelabuhan Bagendang": {
+    "latitude": -3.00364790999992,
+    "longitude": 113.043322208,
+    "slug": "pelabuhan-bagendang"
+  },
+  "Pelabuhan Kuala Pembuang": {
+    "latitude": -3.44046602199995,
+    "longitude": 112.575942289,
+    "slug": "pelabuhan-kuala-pembuang"
+  },
+  "Pelabuhan Teluk Segintung": {
+    "latitude": -3.334985449,
+    "longitude": 112.378863586,
+    "slug": "pelabuhan-teluk-segintung"
+  },
+  "Pelabuhan Bukit Pinang": {
+    "latitude": -3.33041694499996,
+    "longitude": 114.063224803,
+    "slug": "pelabuhan-bukit-pinang"
+  },
+  "Pelabuhan Pulang Pisau": {
+    "latitude": -2.764201852,
+    "longitude": 114.250417827,
+    "slug": "pelabuhan-pulang-pisau"
+  },
+  "Pelabuhan Betanjung": {
+    "latitude": -3.39789506799996,
+    "longitude": 114.227206735,
+    "slug": "pelabuhan-betanjung"
+  },
+  "Pelabuhan Bahaur": {
+    "latitude": -3.38585632558614,
+    "longitude": 114.061066587996,
+    "slug": "pelabuhan-bahaur"
+  },
+  "Pelabuhan Kuala Kapuas": {
+    "latitude": -3.39213202599995,
+    "longitude": 114.225829428,
+    "slug": "pelabuhan-kuala-kapuas"
+  },
+  "Pelabuhan MTU Betung": {
+    "latitude": -3.39692450999996,
+    "longitude": 114.2277879,
+    "slug": "pelabuhan-mtu-betung"
+  },
+  "Pelabuhan Adaro": {
+    "latitude": -3.39888877999993,
+    "longitude": 114.220234865,
+    "slug": "pelabuhan-adaro"
+  },
+  "Pelabuhan Peti Kemas": {
+    "latitude": -0.604997065999953,
+    "longitude": 117.543173626,
+    "slug": "pelabuhan-peti-kemas"
+  },
+  "Pelabuhan Semayang": {
+    "latitude": -1.272882327,
+    "longitude": 116.805795195,
+    "slug": "pelabuhan-semayang"
+  },
+  "Pelabuhan Kampung Baru": {
+    "latitude": -1.219,
+    "longitude": 116.815,
+    "slug": "pelabuhan-kampung-baru"
+  },
+  "Pelabuhan Kariangau, Balikpapan": {
+    "latitude": -1.21583534899997,
+    "longitude": 116.769720721,
+    "slug": "pelabuhan-kariangau-balikpapan"
+  },
+  "Pelabuhan Penajam Paser Utara": {
+    "latitude": -1.23003571399993,
+    "longitude": 116.764046271,
+    "slug": "pelabuhan-penajam-paser-utara"
+  },
+  "Pelabuhan Tanjung Laut": {
+    "latitude": 0.112033390000022,
+    "longitude": 117.49257468,
+    "slug": "pelabuhan-tanjung-laut"
+  },
+  "Pelabuhan Tanah Grogot Pondong": {
+    "latitude": -1.803415806,
+    "longitude": 116.251183151,
+    "slug": "pelabuhan-tanah-grogot-pondong"
+  },
+  "Pelabuhan Sangkulirang": {
+    "latitude": 0.961218276000068,
+    "longitude": 117.990215801,
+    "slug": "pelabuhan-sangkulirang"
+  },
+  "Pelabuhan Maloy": {
+    "latitude": 0.803924757,
+    "longitude": 117.934180336,
+    "slug": "pelabuhan-maloy"
+  },
+  "Pelabuhan Kuala Samboja": {
+    "latitude": -1.019706666,
+    "longitude": 117.115545565,
+    "slug": "pelabuhan-kuala-samboja"
+  },
+  "Pelabuhan Tanjung Redeb": {
+    "latitude": 2.16051793100007,
+    "longitude": 117.97264703,
+    "slug": "pelabuhan-tanjung-redeb"
+  },
+  "Pelabuhan Mantritip": {
+    "latitude": 2.01477094800003,
+    "longitude": 117.816420005,
+    "slug": "pelabuhan-mantritip"
+  },
+  "Pelabuhan Sangatta": {
+    "latitude": 0.529357654,
+    "longitude": 117.645374582,
+    "slug": "pelabuhan-sangatta"
+  },
+  "Pelabuhan Lhok Tuan": {
+    "latitude": 0.16546330400007,
+    "longitude": 117.487574392,
+    "slug": "pelabuhan-lhok-tuan"
+  },
+  "Pelabuhan Tanjung Santan": {
+    "latitude": -0.103522904,
+    "longitude": 117.46595892,
+    "slug": "pelabuhan-tanjung-santan"
+  },
+  "Pelabuhan Malundung Tarakan": {
+    "latitude": 3.28329,
+    "longitude": 117.595442,
+    "slug": "pelabuhan-malundung-tarakan"
+  },
+  "Pelabuhan Feri Juata Laut Tarakan": {
+    "latitude": 3.430715285,
+    "longitude": 117.537088388,
+    "slug": "pelabuhan-feri-juata-laut-tarakan"
+  },
+  "Pelabuhan Bunyu": {
+    "latitude": 3.461869569,
+    "longitude": 117.83715921,
+    "slug": "pelabuhan-bunyu"
+  },
+  "Pelabuhan Feri Ancam Bulungan": {
+    "latitude": 3.16283362400002,
+    "longitude": 117.316828013,
+    "slug": "pelabuhan-feri-ancam-bulungan"
+  },
+  "Pelabuhan KIPI Tanah Kuning Bulungan": {
+    "latitude": 2.510677,
+    "longitude": 117.903824,
+    "slug": "pelabuhan-kipi-tanah-kuning-bulungan"
+  },
+  "Pelabuhan Tunon Taka Nunukan": {
+    "latitude": 4.144225609,
+    "longitude": 117.66702,
+    "slug": "pelabuhan-tunon-taka-nunukan"
+  },
+  "Pelabuhan Sei Nyamuk Sebatik": {
+    "latitude": 4.160981542,
+    "longitude": 117.902616233,
+    "slug": "pelabuhan-sei-nyamuk-sebatik"
+  },
+  "Pelabuhan Feri Sei Jepun Nunukan": {
+    "latitude": 4.07585912,
+    "longitude": 117.7306924,
+    "slug": "pelabuhan-feri-sei-jepun-nunukan"
+  },
+  "Pelabuhan Feri Liang Bunyu Sebatik": {
+    "latitude": 4.103859961,
+    "longitude": 117.753058782,
+    "slug": "pelabuhan-feri-liang-bunyu-sebatik"
+  },
+  "Pelabuhan Speedboat Malinau": {
+    "latitude": 3.55208823800006,
+    "longitude": 117.523108736,
+    "slug": "pelabuhan-speedboat-malinau"
+  },
+  "Pelabuhan Tideng Pale, Kabupaten Tana Tidung": {
+    "latitude": 3.54457629800003,
+    "longitude": 117.524811583,
+    "slug": "pelabuhan-tideng-pale-kabupaten-tana-tidung"
+  },
+  "Pelabuhan Feri Sei Bawan Kabupaten Tana Tidung": {
+    "latitude": 3.54471316200005,
+    "longitude": 117.527357599,
+    "slug": "pelabuhan-feri-sei-bawan-kabupaten-tana-tidung"
+  },
+  "Pelabuhan Nongsapura": {
+    "latitude": 1.187951645,
+    "longitude": 104.094681413,
+    "slug": "pelabuhan-nongsapura"
+  },
+  "Pelabuhan Batam Center": {
+    "latitude": 1.16491934200007,
+    "longitude": 104.062610709,
+    "slug": "pelabuhan-batam-center"
+  },
+  "Pelabuhan Harbour Bay": {
+    "latitude": 1.153287202,
+    "longitude": 103.996803136,
+    "slug": "pelabuhan-harbour-bay"
+  },
+  "Pelabuhan Telaga Punggur": {
+    "latitude": 1.03508302000005,
+    "longitude": 104.132875093,
+    "slug": "pelabuhan-telaga-punggur"
+  },
+  "Pelabuhan Sekupang": {
+    "latitude": 1.124855,
+    "longitude": 103.926713,
+    "slug": "pelabuhan-sekupang"
+  },
+  "Pelabuhan Sekupang 2": {
+    "latitude": 1.12723011100007,
+    "longitude": 103.9236681,
+    "slug": "pelabuhan-sekupang-2"
+  },
+  "Pelabuhan Batu Ampar": {
+    "latitude": 1.16477794500002,
+    "longitude": 104.002159585,
+    "slug": "pelabuhan-batu-ampar"
+  },
+  "Pelabuhan Dermaga Roro Asdp Punggur": {
+    "latitude": 1.033865381,
+    "longitude": 104.131419737,
+    "slug": "pelabuhan-dermaga-roro-asdp-punggur"
+  },
+  "Pelabuhan Tambelan": {
+    "latitude": 0.975353887,
+    "longitude": 107.548145151,
+    "slug": "pelabuhan-tambelan"
+  },
+  "Pelabuhan Jagoh": {
+    "latitude": -0.33392538499993,
+    "longitude": 104.490347597,
+    "slug": "pelabuhan-jagoh"
+  },
+  "Pelabuhan Sei Daik": {
+    "latitude": -0.216809998,
+    "longitude": 104.623909165,
+    "slug": "pelabuhan-sei-daik"
+  },
+  "Pelabuhan Tanjung Buton": {
+    "latitude": -0.252826201,
+    "longitude": 104.595039722,
+    "slug": "pelabuhan-tanjung-buton"
+  },
+  "Pelabuhan Sei Tenam": {
+    "latitude": -0.00654851599995,
+    "longitude": 104.507024272,
+    "slug": "pelabuhan-sei-tenam"
+  },
+  "Pelabuhan Dabo": {
+    "latitude": -0.500747924999928,
+    "longitude": 104.565474926,
+    "slug": "pelabuhan-dabo"
+  },
+  "Pelabuhan Sri Bintan Pura": {
+    "latitude": 0.930765889,
+    "longitude": 104.439959094,
+    "slug": "pelabuhan-sri-bintan-pura"
+  },
+  "Pelabuhan Sri Payung": {
+    "latitude": 0.932107854000037,
+    "longitude": 104.461126151,
+    "slug": "pelabuhan-sri-payung"
+  },
+  "Pelabuhan Roro Dompak": {
+    "latitude": 0.86718997,
+    "longitude": 104.483180238,
+    "slug": "pelabuhan-roro-dompak"
+  },
+  "Pelabuhan Sri Bayintan (Kijang)": {
+    "latitude": 0.808723376000046,
+    "longitude": 104.615095499,
+    "slug": "pelabuhan-sri-bayintan-kijang"
+  },
+  "Pelabuhan Bandar Bentan Telani (Lagoi)": {
+    "latitude": 1.160454622,
+    "longitude": 104.320303792,
+    "slug": "pelabuhan-bandar-bentan-telani-lagoi"
+  },
+  "Pelabuhan Bandar Seri Udana (Lobam)": {
+    "latitude": 1.0021248,
+    "longitude": 104.2555929,
+    "slug": "pelabuhan-bandar-seri-udana-lobam"
+  },
+  "Pelabuhan Internasional Tanjung Balai Karimun": {
+    "latitude": 0.988535874,
+    "longitude": 103.436420048,
+    "slug": "pelabuhan-internasional-tanjung-balai-karimun"
+  },
+  "Pelabuhan Sri Tanjung Gelam": {
+    "latitude": 0.989015461,
+    "longitude": 103.43385554,
+    "slug": "pelabuhan-sri-tanjung-gelam"
+  },
+  "Pelabuhan Bintang 99": {
+    "latitude": 1.16048082437207,
+    "longitude": 103.995463970211,
+    "slug": "pelabuhan-bintang-99"
+  },
+  "Pelabuhan Khusus Bea Cukai": {
+    "latitude": 0.992177,
+    "longitude": 103.394469,
+    "slug": "pelabuhan-khusus-bea-cukai"
+  },
+  "Pelabuhan Penagi": {
+    "latitude": 3.893569,
+    "longitude": 108.391787711,
+    "slug": "pelabuhan-penagi"
+  },
+  "Pelabuhan Selat Lampa": {
+    "latitude": 3.662119207,
+    "longitude": 108.132060209,
+    "slug": "pelabuhan-selat-lampa"
+  },
+  "Pelabuhan Subi": {
+    "latitude": 3.02304472300005,
+    "longitude": 108.890833189,
+    "slug": "pelabuhan-subi"
+  },
+  "Pelabuhan Serasan": {
+    "latitude": 2.497683533,
+    "longitude": 109.008020604,
+    "slug": "pelabuhan-serasan"
+  },
+  "Pelabuhan Midai": {
+    "latitude": 3.005164702,
+    "longitude": 107.747994743,
+    "slug": "pelabuhan-midai"
+  },
+  "Pelabuhan Pulau Laut": {
+    "latitude": 4.675529924,
+    "longitude": 107.951074712,
+    "slug": "pelabuhan-pulau-laut"
+  },
+  "Pelabuhan Sedanau": {
+    "latitude": 3.796766542,
+    "longitude": 108.038039621,
+    "slug": "pelabuhan-sedanau"
+  },
+  "Pelabuhan Tarempa": {
+    "latitude": 3.216879867,
+    "longitude": 106.217256358,
+    "slug": "pelabuhan-tarempa"
+  },
+  "Pelabuhan Letung": {
+    "latitude": 2.98724493300005,
+    "longitude": 105.694820271,
+    "slug": "pelabuhan-letung"
+  },
+  "Pelabuhan Matak": {
+    "latitude": 3.32623427722725,
+    "longitude": 106.23979374126,
+    "slug": "pelabuhan-matak"
+  },
+  "Pelabuhan Sri Lakang (Kuala Maras)": {
+    "latitude": 2.90861543258024,
+    "longitude": 105.802471902517,
+    "slug": "pelabuhan-sri-lakang-kuala-maras"
+  },
+  "Pelabuhan Seluan": {
+    "latitude": 4.11528032507935,
+    "longitude": 107.848735841132,
+    "slug": "pelabuhan-seluan"
+  },
+  "Pelabuhan Teluk Buton": {
+    "latitude": 4.23242112266854,
+    "longitude": 108.212588292891,
+    "slug": "pelabuhan-teluk-buton"
+  },
+  "Pelabuhan Binjai": {
+    "latitude": 3.80529362152259,
+    "longitude": 108.232742445777,
+    "slug": "pelabuhan-binjai"
+  },
+  "Pelabuhan Seminte": {
+    "latitude": 3.82263738408619,
+    "longitude": 108.077834544832,
+    "slug": "pelabuhan-seminte"
+  },
+  "Pelabuhan Pulau Panjang": {
+    "latitude": 2.72449557028763,
+    "longitude": 108.887866017307,
+    "slug": "pelabuhan-pulau-panjang"
+  },
+  "Pelabuhan Kota Agung": {
+    "latitude": -5.4993133,
+    "longitude": 104.6201627,
+    "slug": "pelabuhan-kota-agung"
+  },
+  "Pelabuhan Mesuji": {
+    "latitude": -4.14111752899992,
+    "longitude": 105.816987399,
+    "slug": "pelabuhan-mesuji"
+  },
+  "Pelabuhan Labuhan Maringgai": {
+    "latitude": -5.358099275,
+    "longitude": 105.819789198,
+    "slug": "pelabuhan-labuhan-maringgai"
+  },
+  "Pelabuhan Lempasing": {
+    "latitude": -5.485324,
+    "longitude": 105.260649,
+    "slug": "pelabuhan-lempasing"
+  },
+  "Pelabuhan Teladas": {
+    "latitude": -4.40980233999994,
+    "longitude": 105.862999567,
+    "slug": "pelabuhan-teladas"
+  },
+  "Pelabuhan Krui": {
+    "latitude": -5.183860171,
+    "longitude": 103.932977552,
+    "slug": "pelabuhan-krui"
+  },
+  "Pelabuhan Bakauheni": {
+    "latitude": -5.870577,
+    "longitude": 105.754617,
+    "slug": "pelabuhan-bakauheni"
+  },
+  "Pelabuhan Sebesi": {
+    "latitude": -5.93578879568928,
+    "longitude": 105.513003719127,
+    "slug": "pelabuhan-sebesi"
+  },
+  "Pelabuhan Canti": {
+    "latitude": -5.80005176771059,
+    "longitude": 105.584273518765,
+    "slug": "pelabuhan-canti"
+  },
+  "Pelabuhan Limus": {
+    "latitude": -5.85648493499371,
+    "longitude": 104.706452758162,
+    "slug": "pelabuhan-limus"
+  },
+  "Pelabuhan Yos Sudarso": {
+    "latitude": -3.69350318,
+    "longitude": 128.176683,
+    "slug": "pelabuhan-yos-sudarso"
+  },
+  "Pelabuhan Penyeberangan Galala": {
+    "latitude": -3.72794766228481,
+    "longitude": 128.106772141608,
+    "slug": "pelabuhan-penyeberangan-galala"
+  },
+  "Pelabuhan Penyeberangan Poka": {
+    "latitude": -3.75297455246577,
+    "longitude": 128.088490546966,
+    "slug": "pelabuhan-penyeberangan-poka"
+  },
+  "Pelabuhan Penyeberangan Hunimua (Liang)": {
+    "latitude": -3.509979867,
+    "longitude": 128.3460395,
+    "slug": "pelabuhan-penyeberangan-hunimua-liang"
+  },
+  "Pelabuhan Penyeberangan Wairiang (Kailolo)": {
+    "latitude": -3.54373941503168,
+    "longitude": 128.4111068773,
+    "slug": "pelabuhan-penyeberangan-wairiang-kailolo"
+  },
+  "Pelabuhan Penyeberangan Umeputih (Kulur)": {
+    "latitude": -3.47963520946724,
+    "longitude": 128.560790900407,
+    "slug": "pelabuhan-penyeberangan-umeputih-kulur"
+  },
+  "Pelabuhan Penyeberangan Wahai": {
+    "latitude": -2.70519707254497,
+    "longitude": 129.517018045308,
+    "slug": "pelabuhan-penyeberangan-wahai"
+  },
+  "Pelabuhan Penyeberangan Nalahia (Nusa Laut)": {
+    "latitude": -3.63503222635763,
+    "longitude": 128.790558432745,
+    "slug": "pelabuhan-penyeberangan-nalahia-nusa-laut"
+  },
+  "Pelabuhan Penyeberangan Jazirah Salahutu (Waai)": {
+    "latitude": -3.55795938179922,
+    "longitude": 128.337876182507,
+    "slug": "pelabuhan-penyeberangan-jazirah-salahutu-waai"
+  },
+  "Pelabuhan Penyeberangan Amahai Ina Marina (Masohi)": {
+    "latitude": -3.29963586193825,
+    "longitude": 128.945593977718,
+    "slug": "pelabuhan-penyeberangan-amahai-ina-marina-masohi"
+  },
+  "Pelabuhan Penyeberangan Namlea": {
+    "latitude": -3.269349957,
+    "longitude": 127.083622838,
+    "slug": "pelabuhan-penyeberangan-namlea"
+  },
+  "Pelabuhan Penyeberangan Teluk Bara": {
+    "latitude": -3.03405862149273,
+    "longitude": 126.166634057232,
+    "slug": "pelabuhan-penyeberangan-teluk-bara"
+  },
+  "Pelabuhan Penyeberangan Waipirit": {
+    "latitude": -3.335703269,
+    "longitude": 128.3412668,
+    "slug": "pelabuhan-penyeberangan-waipirit"
+  },
+  "Pelabuhan Penyeberangan Waisala": {
+    "latitude": -3.12204197131586,
+    "longitude": 127.93307691456,
+    "slug": "pelabuhan-penyeberangan-waisala"
+  },
+  "Pelabuhan Penyeberangan Wailey": {
+    "latitude": -3.431085672,
+    "longitude": 128.619825488,
+    "slug": "pelabuhan-penyeberangan-wailey"
+  },
+  "Pelabuhan Penyeberangan Air Nanang": {
+    "latitude": -3.82602226,
+    "longitude": 130.822274495,
+    "slug": "pelabuhan-penyeberangan-air-nanang"
+  },
+  "Pelabuhan Penyeberangan Geser": {
+    "latitude": -3.879051638,
+    "longitude": 130.9026427,
+    "slug": "pelabuhan-penyeberangan-geser"
+  },
+  "Pelabuhan Penyeberangan Gorom": {
+    "latitude": -3.99964052024884,
+    "longitude": 131.337697301701,
+    "slug": "pelabuhan-penyeberangan-gorom"
+  },
+  "Pelabuhan Penyeberangan Kesui - Pulau Kasiui": {
+    "latitude": -4.499330813,
+    "longitude": 131.674872463,
+    "slug": "pelabuhan-penyeberangan-kesui-pulau-kasiui"
+  },
+  "Pelabuhan Penyeberangan Teor": {
+    "latitude": -4.737798456,
+    "longitude": 131.759417861,
+    "slug": "pelabuhan-penyeberangan-teor"
+  },
+  "Pelabuhan Penyeberangan Ilwaki": {
+    "latitude": -7.928157788,
+    "longitude": 126.403791455,
+    "slug": "pelabuhan-penyeberangan-ilwaki"
+  },
+  "Pelabuhan Penyeberangan Lakor": {
+    "latitude": -8.155459095,
+    "longitude": 127.7865422,
+    "slug": "pelabuhan-penyeberangan-lakor"
+  },
+  "Pelabuhan Penyeberangan Wonreli (Kisar)": {
+    "latitude": -8.07927542338026,
+    "longitude": 127.098992675716,
+    "slug": "pelabuhan-penyeberangan-wonreli-kisar"
+  },
+  "Pelabuhan Penyeberangan Letwurung (Tepa)": {
+    "latitude": -7.897833099,
+    "longitude": 129.861910315,
+    "slug": "pelabuhan-penyeberangan-letwurung-tepa"
+  },
+  "Pelabuhan Penyeberangan Sermata": {
+    "latitude": -8.12394416238202,
+    "longitude": 127.701773041494,
+    "slug": "pelabuhan-penyeberangan-sermata"
+  },
+  "Pelabuhan Penyeberangan Tual": {
+    "latitude": -5.46442426680213,
+    "longitude": 132.623085923043,
+    "slug": "pelabuhan-penyeberangan-tual"
+  },
+  "Pelabuhan Penyeberangan Toyando": {
+    "latitude": -5.59557157350163,
+    "longitude": 132.328656613412,
+    "slug": "pelabuhan-penyeberangan-toyando"
+  },
+  "Pelabuhan Penyeberangan Elat": {
+    "latitude": -5.54479227313208,
+    "longitude": 132.944066381253,
+    "slug": "pelabuhan-penyeberangan-elat"
+  },
+  "Pelabuhan Penyeberangan Dobo": {
+    "latitude": -5.75783402279543,
+    "longitude": 134.246020931509,
+    "slug": "pelabuhan-penyeberangan-dobo"
+  },
+  "Pelabuhan Penyeberangan Benjina": {
+    "latitude": -6.01093812078542,
+    "longitude": 134.253863698233,
+    "slug": "pelabuhan-penyeberangan-benjina"
+  },
+  "Pelabuhan Penyeberangan Dermaga Lamerang": {
+    "latitude": -5.74890841985799,
+    "longitude": 134.238253152837,
+    "slug": "pelabuhan-penyeberangan-dermaga-lamerang"
+  },
+  "Pelabuhan Penyeberangan Tabarfane": {
+    "latitude": -6.13018535017296,
+    "longitude": 134.077558075602,
+    "slug": "pelabuhan-penyeberangan-tabarfane"
+  },
+  "Pelabuhan Penyeberangan Saumlaki": {
+    "latitude": -8.00728073059181,
+    "longitude": 131.269996238923,
+    "slug": "pelabuhan-penyeberangan-saumlaki"
+  },
+  "Pelabuhan Penyeberangan Larat": {
+    "latitude": -7.05149948971465,
+    "longitude": 131.717669874862,
+    "slug": "pelabuhan-penyeberangan-larat"
+  },
+  "Pelabuhan Penyeberangan Wunlah": {
+    "latitude": -7.3106822853012,
+    "longitude": 131.405970550325,
+    "slug": "pelabuhan-penyeberangan-wunlah"
+  },
+  "Pelabuhan Banda Neira": {
+    "latitude": -4.52490812980702,
+    "longitude": 129.8967710387,
+    "slug": "pelabuhan-banda-neira"
+  },
+  "Pelabuhan Tulehu": {
+    "latitude": -3.58389854624185,
+    "longitude": 128.330374288039,
+    "slug": "pelabuhan-tulehu"
+  },
+  "Pelabuhan Ahmad Yani Ternate": {
+    "latitude": 0.78078788,
+    "longitude": 127.387628732,
+    "slug": "pelabuhan-ahmad-yani-ternate"
+  },
+  "Pelabuhan Bastiong": {
+    "latitude": 0.73676295127846,
+    "longitude": 127.345552798591,
+    "slug": "pelabuhan-bastiong"
+  },
+  "Pelabuhan Rum": {
+    "latitude": 0.737126,
+    "longitude": 127.38595,
+    "slug": "pelabuhan-rum"
+  },
+  "Pelabuhan Goto": {
+    "latitude": 0.670373710353925,
+    "longitude": 127.496732697989,
+    "slug": "pelabuhan-goto"
+  },
+  "Pelabuhan Daruba": {
+    "latitude": 2.049824956,
+    "longitude": 128.290725034,
+    "slug": "pelabuhan-daruba"
+  },
+  "Pelabuhan Kayoa": {
+    "latitude": 0.121907403,
+    "longitude": 127.4477026,
+    "slug": "pelabuhan-kayoa"
+  },
+  "Pelabuhan Sidangoli": {
+    "latitude": 0.886643833,
+    "longitude": 127.500206348,
+    "slug": "pelabuhan-sidangoli"
+  },
+  "Pelabuhan Sofifi": {
+    "latitude": 0.741168971,
+    "longitude": 127.559514661,
+    "slug": "pelabuhan-sofifi"
+  },
+  "Pelabuhan Tobelo": {
+    "latitude": 1.71890325464247,
+    "longitude": 128.040214198987,
+    "slug": "pelabuhan-tobelo"
+  },
+  "Pelabuhan Babang": {
+    "latitude": -0.593345945591733,
+    "longitude": 127.662816069609,
+    "slug": "pelabuhan-babang"
+  },
+  "Pelabuhan Subaim": {
+    "latitude": 1.15220708034922,
+    "longitude": 128.111009241015,
+    "slug": "pelabuhan-subaim"
+  },
+  "Pelabuhan Moti": {
+    "latitude": 0.453246734,
+    "longitude": 127.437769694,
+    "slug": "pelabuhan-moti"
+  },
+  "Pelabuhan Makian": {
+    "latitude": 0.331051197,
+    "longitude": 127.438996794,
+    "slug": "pelabuhan-makian"
+  },
+  "Pelabuhan Kupal": {
+    "latitude": -0.662226298280857,
+    "longitude": 127.440506357126,
+    "slug": "pelabuhan-kupal"
+  },
+  "Pelabuhan Busua": {
+    "latitude": -0.208938983857409,
+    "longitude": 127.142980705779,
+    "slug": "pelabuhan-busua"
+  },
+  "Pelabuhan Indari": {
+    "latitude": -0.381536869308657,
+    "longitude": 127.308116130295,
+    "slug": "pelabuhan-indari"
+  },
+  "Pelabuhan Buli": {
+    "latitude": 0.872596479889747,
+    "longitude": 128.329424115725,
+    "slug": "pelabuhan-buli"
+  },
+  "Pelabuhan Gebe": {
+    "latitude": -0.079631321,
+    "longitude": 129.429435637,
+    "slug": "pelabuhan-gebe"
+  },
+  "Pelabuhan Weda": {
+    "latitude": 0.331847320428473,
+    "longitude": 127.93695565944,
+    "slug": "pelabuhan-weda"
+  },
+  "Pelabuhan Sanana": {
+    "latitude": -2.058987496401,
+    "longitude": 125.991459072329,
+    "slug": "pelabuhan-sanana"
+  },
+  "Pelabuhan Bobong": {
+    "latitude": -1.951383352,
+    "longitude": 124.382880154,
+    "slug": "pelabuhan-bobong"
+  },
+  "Pelabuhan Lembar": {
+    "latitude": -8.71134686699997,
+    "longitude": 116.046270137,
+    "slug": "pelabuhan-lembar"
+  },
+  "Pelabuhan Kayangan": {
+    "latitude": -8.485983129,
+    "longitude": 116.674632187,
+    "slug": "pelabuhan-kayangan"
+  },
+  "Pelabuhan Badas": {
+    "latitude": -8.4627868,
+    "longitude": 117.3714857,
+    "slug": "pelabuhan-badas"
+  },
+  "Pelabuhan Kempo Calabai": {
+    "latitude": -8.2142115,
+    "longitude": 117.7094949,
+    "slug": "pelabuhan-kempo-calabai"
+  },
+  "Pelabuhan Sape": {
+    "latitude": -8.574005,
+    "longitude": 119.020945,
+    "slug": "pelabuhan-sape"
+  },
+  "Pelabuhan Pototano": {
+    "latitude": -8.521623,
+    "longitude": 116.831888,
+    "slug": "pelabuhan-pototano"
+  },
+  "Pelabuhan Pemenang": {
+    "latitude": -8.372411,
+    "longitude": 116.065036,
+    "slug": "pelabuhan-pemenang"
+  },
+  "Pelabuhan Khusus Pertamina": {
+    "latitude": -8.5688563,
+    "longitude": 116.0719293,
+    "slug": "pelabuhan-khusus-pertamina"
+  },
+  "Pelabuhan Bima": {
+    "latitude": -8.40899817599995,
+    "longitude": 118.694966045,
+    "slug": "pelabuhan-bima"
+  },
+  "Pelabuhan Perikanan Labuhan Lombok": {
+    "latitude": -8.48762847499995,
+    "longitude": 116.662894861,
+    "slug": "pelabuhan-perikanan-labuhan-lombok"
+  },
+  "Pelabuhan Perikanan Tanjung Luar": {
+    "latitude": -8.77769,
+    "longitude": 116.516472,
+    "slug": "pelabuhan-perikanan-tanjung-luar"
+  },
+  "Pelabuhan Perikanan Teluk Awang": {
+    "latitude": -8.88793464599996,
+    "longitude": 116.402368894,
+    "slug": "pelabuhan-perikanan-teluk-awang"
+  },
+  "Pelabuhan Perikanan Sape": {
+    "latitude": -8.565976709,
+    "longitude": 119.018095858,
+    "slug": "pelabuhan-perikanan-sape"
+  },
+  "Pelabuhan Goa": {
+    "latitude": -8.467879,
+    "longitude": 117.384386,
+    "slug": "pelabuhan-goa"
+  },
+  "Pelabuhan Labuan Aji Pulau Moyo": {
+    "latitude": -8.220505,
+    "longitude": 117.484021,
+    "slug": "pelabuhan-labuan-aji-pulau-moyo"
+  },
+  "Pelabuhan Benete": {
+    "latitude": -8.88770967672202,
+    "longitude": 116.732513675007,
+    "slug": "pelabuhan-benete"
+  },
+  "Pelabuhan Kempo": {
+    "latitude": -8.57132401324611,
+    "longitude": 118.219305072549,
+    "slug": "pelabuhan-kempo"
+  },
+  "Pelabuhan Calabai": {
+    "latitude": -8.21462504654526,
+    "longitude": 117.709001126511,
+    "slug": "pelabuhan-calabai"
+  },
+  "Pelabuhan Langgudu": {
+    "latitude": -8.712,
+    "longitude": 118.817,
+    "slug": "pelabuhan-langgudu"
+  },
+  "Pelabuhan Baranusa": {
+    "latitude": -8.2796582611175,
+    "longitude": 124.120264947533,
+    "slug": "pelabuhan-baranusa"
+  },
+  "Pelabuhan Kalabahi": {
+    "latitude": -8.28850508481408,
+    "longitude": 124.387176529249,
+    "slug": "pelabuhan-kalabahi"
+  },
+  "Pelabuhan Ende": {
+    "latitude": -8.8541274,
+    "longitude": 121.6618024,
+    "slug": "pelabuhan-ende"
+  },
+  "Pelabuhan Larantuka": {
+    "latitude": -8.342309,
+    "longitude": 122.990058,
+    "slug": "pelabuhan-larantuka"
+  },
+  "Pelabuhan Adonara": {
+    "latitude": -8.33267762565131,
+    "longitude": 123.338943724521,
+    "slug": "pelabuhan-adonara"
+  },
+  "Pelabuhan Waiwerang": {
+    "latitude": -8.391221,
+    "longitude": 123.162871,
+    "slug": "pelabuhan-waiwerang"
+  },
+  "Pelabuhan Solor": {
+    "latitude": -8.434639,
+    "longitude": 123.060462,
+    "slug": "pelabuhan-solor"
+  },
+  "Pelabuhan Hansisi": {
+    "latitude": -10.182825224,
+    "longitude": 123.48244852,
+    "slug": "pelabuhan-hansisi"
+  },
+  "Pelabuhan Bolok": {
+    "latitude": -10.2066734126581,
+    "longitude": 123.504746787174,
+    "slug": "pelabuhan-bolok"
+  },
+  "Pelabuhan Lewoleba": {
+    "latitude": -8.35677320146288,
+    "longitude": 123.400584227518,
+    "slug": "pelabuhan-lewoleba"
+  },
+  "Pelabuhan Wowong": {
+    "latitude": -8.288288,
+    "longitude": 123.766172,
+    "slug": "pelabuhan-wowong"
+  },
+  "Pelabuhan Balauring": {
+    "latitude": -8.21106108051569,
+    "longitude": 123.677588252169,
+    "slug": "pelabuhan-balauring"
+  },
+  "Pelabuhan Reo": {
+    "latitude": -8.21724870175951,
+    "longitude": 120.487828701333,
+    "slug": "pelabuhan-reo"
+  },
+  "Pelabuhan Labuan Bajo": {
+    "latitude": -8.494118786,
+    "longitude": 119.875799634,
+    "slug": "pelabuhan-labuan-bajo"
+  },
+  "Pelabuhan Taman Nasional Pulau Komodo": {
+    "latitude": -8.6338972801692,
+    "longitude": 119.521644224259,
+    "slug": "pelabuhan-taman-nasional-pulau-komodo"
+  },
+  "Pelabuhan Aimere": {
+    "latitude": -8.842346,
+    "longitude": 120.85443,
+    "slug": "pelabuhan-aimere"
+  },
+  "Pelabuhan Rote": {
+    "latitude": -10.7057395938904,
+    "longitude": 123.014640592666,
+    "slug": "pelabuhan-rote"
+  },
+  "Pelabuhan Seba": {
+    "latitude": -10.4690605062747,
+    "longitude": 121.807930013095,
+    "slug": "pelabuhan-seba"
+  },
+  "Pelabuhan Raijua": {
+    "latitude": -10.602492,
+    "longitude": 121.61773,
+    "slug": "pelabuhan-raijua"
+  },
+  "Pelabuhan Maumere": {
+    "latitude": -8.57178747784143,
+    "longitude": 122.24799669525,
+    "slug": "pelabuhan-maumere"
+  },
+  "Pelabuhan Pulau Palue": {
+    "latitude": -8.29389113891372,
+    "longitude": 121.756013844642,
+    "slug": "pelabuhan-pulau-palue"
+  },
+  "Pelabuhan Waingapu": {
+    "latitude": -9.60527704103672,
+    "longitude": 120.27383488124,
+    "slug": "pelabuhan-waingapu"
+  },
+  "Pelabuhan Atapupu": {
+    "latitude": -8.92806475328384,
+    "longitude": 124.837124921759,
+    "slug": "pelabuhan-atapupu"
+  },
+  "Pelabuhan Tenau": {
+    "latitude": -10.19545133,
+    "longitude": 123.5277844,
+    "slug": "pelabuhan-tenau"
+  },
+  "Pelabuhan Jayapura": {
+    "latitude": -2.545156608,
+    "longitude": 140.712821883,
+    "slug": "pelabuhan-jayapura"
+  },
+  "Pelabuhan Depapre": {
+    "latitude": -2.264033414395,
+    "longitude": 140.425372474518,
+    "slug": "pelabuhan-depapre"
+  },
+  "Pelabuhan Demta": {
+    "latitude": -2.27308304663875,
+    "longitude": 140.179000701213,
+    "slug": "pelabuhan-demta"
+  },
+  "Pelabuhan Sarmi": {
+    "latitude": -1.857062452,
+    "longitude": 138.751551285,
+    "slug": "pelabuhan-sarmi"
+  },
+  "Pelabuhan Masi-Masi": {
+    "latitude": -1.943736458,
+    "longitude": 139.012744732,
+    "slug": "pelabuhan-masi-masi"
+  },
+  "Pelabuhan Biak": {
+    "latitude": -1.185164423,
+    "longitude": 136.075756657,
+    "slug": "pelabuhan-biak"
+  },
+  "Pelabuhan Saribi (Numfor)": {
+    "latitude": -1.132807208,
+    "longitude": 134.872815115,
+    "slug": "pelabuhan-saribi-numfor"
+  },
+  "Pelabuhan Bromsi": {
+    "latitude": -1.226367357,
+    "longitude": 136.599666438,
+    "slug": "pelabuhan-bromsi"
+  },
+  "Pelabuhan Korido": {
+    "latitude": -0.838148453,
+    "longitude": 135.587301206,
+    "slug": "pelabuhan-korido"
+  },
+  "Pelabuhan Serui": {
+    "latitude": -1.88761865699996,
+    "longitude": 136.245108473,
+    "slug": "pelabuhan-serui"
+  },
+  "Pelabuhan Dawai": {
+    "latitude": -1.815798683,
+    "longitude": 136.725146339,
+    "slug": "pelabuhan-dawai"
+  },
+  "Pelabuhan Kaipuri": {
+    "latitude": -1.849909785,
+    "longitude": 136.987650234,
+    "slug": "pelabuhan-kaipuri"
+  },
+  "Pelabuhan Waren": {
+    "latitude": -2.204061936,
+    "longitude": 136.423178149,
+    "slug": "pelabuhan-waren"
+  },
+  "Pelabuhan Teba": {
+    "latitude": -1.42382396162356,
+    "longitude": 137.904451811547,
+    "slug": "pelabuhan-teba"
+  },
+  "Pelabuhan Manokwari": {
+    "latitude": -0.888787653999941,
+    "longitude": 134.075466395,
+    "slug": "pelabuhan-manokwari"
+  },
+  "Pelabuhan Marampa": {
+    "latitude": -0.904656515999932,
+    "longitude": 134.06805423,
+    "slug": "pelabuhan-marampa"
+  },
+  "Pelabuhan Oransbari": {
+    "latitude": -1.351752368,
+    "longitude": 134.271376892,
+    "slug": "pelabuhan-oransbari"
+  },
+  "Pelabuhan Fak-Fak": {
+    "latitude": -2.9325,
+    "longitude": 132.3094,
+    "slug": "pelabuhan-fak-fak"
+  },
+  "Pelabuhan Kaimana": {
+    "latitude": -3.66306,
+    "longitude": 133.7594,
+    "slug": "pelabuhan-kaimana"
+  },
+  "Pelabuhan Bintuni": {
+    "latitude": -2.24082648399996,
+    "longitude": 133.569693351,
+    "slug": "pelabuhan-bintuni"
+  },
+  "Pelabuhan Wasior": {
+    "latitude": -2.727168652,
+    "longitude": 134.505306981,
+    "slug": "pelabuhan-wasior"
+  },
+  "Pelabuhan Klademak": {
+    "latitude": -0.887681644,
+    "longitude": 131.27053441,
+    "slug": "pelabuhan-klademak"
+  },
+  "Pelabuhan Waesai": {
+    "latitude": -0.431946474,
+    "longitude": 130.80481824,
+    "slug": "pelabuhan-waesai"
+  },
+  "Pelabuhan Arar": {
+    "latitude": -0.943115579690422,
+    "longitude": 131.161921038501,
+    "slug": "pelabuhan-arar"
+  },
+  "Pelabuhan Pelayaran Rakyat Sorong": {
+    "latitude": -0.877645165,
+    "longitude": 131.246822849,
+    "slug": "pelabuhan-pelayaran-rakyat-sorong"
+  },
+  "Pelabuhan Dermaga Usaha Mina": {
+    "latitude": -0.877754004,
+    "longitude": 131.252591933,
+    "slug": "pelabuhan-dermaga-usaha-mina"
+  },
+  "Pelabuhan Utama Sorong": {
+    "latitude": -0.878334754871269,
+    "longitude": 131.246895597482,
+    "slug": "pelabuhan-utama-sorong"
+  },
+  "Pelabuhan Teminabuan": {
+    "latitude": -1.62344137724129,
+    "longitude": 131.837475054909,
+    "slug": "pelabuhan-teminabuan"
+  },
+  "Pelabuhan Sausapor": {
+    "latitude": -0.508569902375941,
+    "longitude": 132.082648006115,
+    "slug": "pelabuhan-sausapor"
+  },
+  "Pelabuhan Inanwatan": {
+    "latitude": -2.16685526759927,
+    "longitude": 132.163602147487,
+    "slug": "pelabuhan-inanwatan"
+  },
+  "Pelabuhan Yellu Misool": {
+    "latitude": -2.05747551674,
+    "longitude": 130.41253190005,
+    "slug": "pelabuhan-yellu-misool"
+  },
+  "Pelabuhan Folley Misool": {
+    "latitude": -1.7723972434639,
+    "longitude": 130.41162702995,
+    "slug": "pelabuhan-folley-misool"
+  },
+  "Pelabuhan Agats": {
+    "latitude": -5.63002940963621,
+    "longitude": 137.807617809747,
+    "slug": "pelabuhan-agats"
+  },
+  "Pelabuhan Wanam": {
+    "latitude": -7.55148020268984,
+    "longitude": 139.099513860188,
+    "slug": "pelabuhan-wanam"
+  },
+  "Pelabuhan Kimaam": {
+    "latitude": -8.0632669782384,
+    "longitude": 138.923664822505,
+    "slug": "pelabuhan-kimaam"
+  },
+  "Pelabuhan Merauke": {
+    "latitude": -8.48837881750748,
+    "longitude": 140.331115766176,
+    "slug": "pelabuhan-merauke"
+  },
+  "Pelabuhan Samabusa Nabire": {
+    "latitude": -3.2310327,
+    "longitude": 135.583474298,
+    "slug": "pelabuhan-samabusa-nabire"
+  },
+  "Pelabuhan Pomako Timika": {
+    "latitude": -4.84033638399995,
+    "longitude": 136.768391525,
+    "slug": "pelabuhan-pomako-timika"
+  },
+  "Pelabuhan Amamapare Timika": {
+    "latitude": -4.86521923099996,
+    "longitude": 136.789376434,
+    "slug": "pelabuhan-amamapare-timika"
+  },
+  "Pelabuhan Panipahan": {
+    "latitude": 2.469121738,
+    "longitude": 100.347379115,
+    "slug": "pelabuhan-panipahan"
+  },
+  "Pelabuhan Bagansiapiapi": {
+    "latitude": 2.139677055,
+    "longitude": 100.785318427,
+    "slug": "pelabuhan-bagansiapiapi"
+  },
+  "Pelabuhan Batu Enam": {
+    "latitude": 2.111323167,
+    "longitude": 100.797967293,
+    "slug": "pelabuhan-batu-enam"
+  },
+  "Pelabuhan Sinaboi": {
+    "latitude": 2.4783879971156,
+    "longitude": 101.2086989716,
+    "slug": "pelabuhan-sinaboi"
+  },
+  "Pelabuhan Tg Medang": {
+    "latitude": 2.28209046383588,
+    "longitude": 101.641098835036,
+    "slug": "pelabuhan-tg-medang"
+  },
+  "Pelabuhan Dumai": {
+    "latitude": 1.70003335523581,
+    "longitude": 101.468511309208,
+    "slug": "pelabuhan-dumai"
+  },
+  "Pelabuhan Batu Panjang": {
+    "latitude": 1.70537211,
+    "longitude": 101.521003105,
+    "slug": "pelabuhan-batu-panjang"
+  },
+  "Pelabuhan Bengkalis": {
+    "latitude": 1.466443564,
+    "longitude": 102.107052759,
+    "slug": "pelabuhan-bengkalis"
+  },
+  "Pelabuhan Sungai Pakning": {
+    "latitude": 1.3814335871721,
+    "longitude": 102.173925133302,
+    "slug": "pelabuhan-sungai-pakning"
+  },
+  "Pelabuhan Tg Buton": {
+    "latitude": 0.953074660975498,
+    "longitude": 102.302839495809,
+    "slug": "pelabuhan-tg-buton"
+  },
+  "Pelabuhan Selat Panjang": {
+    "latitude": 1.19607579636087,
+    "longitude": 102.628855341461,
+    "slug": "pelabuhan-selat-panjang"
+  },
+  "Pelabuhan Dorak": {
+    "latitude": 1.29614343367833,
+    "longitude": 102.630194485658,
+    "slug": "pelabuhan-dorak"
+  },
+  "Pelabuhan Sungai Guntung": {
+    "latitude": 0.365391156631616,
+    "longitude": 103.618436181144,
+    "slug": "pelabuhan-sungai-guntung"
+  },
+  "Pelabuhan Kuala Gaung": {
+    "latitude": -0.149421951740563,
+    "longitude": 103.56286172221,
+    "slug": "pelabuhan-kuala-gaung"
+  },
+  "Pelabuhan Tembilahan": {
+    "latitude": -0.129668911475901,
+    "longitude": 103.561475405824,
+    "slug": "pelabuhan-tembilahan"
+  },
+  "Pelabuhan Rengat": {
+    "latitude": -0.166818179514934,
+    "longitude": 103.552129182214,
+    "slug": "pelabuhan-rengat"
+  },
+  "Pelabuhan Kuala Enok": {
+    "latitude": -0.538415214464391,
+    "longitude": 103.500348612536,
+    "slug": "pelabuhan-kuala-enok"
+  },
+  "Pelabuhan Tanjung Silopo": {
+    "latitude": -3.476270261,
+    "longitude": 119.446881909,
+    "slug": "pelabuhan-tanjung-silopo"
+  },
+  "Pelabuhan Polewali": {
+    "latitude": -3.432896202,
+    "longitude": 119.339230399,
+    "slug": "pelabuhan-polewali"
+  },
+  "Pelabuhan Tinambung": {
+    "latitude": -3.51634766,
+    "longitude": 119.038356119,
+    "slug": "pelabuhan-tinambung"
+  },
+  "Pelabuhan Majene": {
+    "latitude": -3.545897084,
+    "longitude": 118.966016518,
+    "slug": "pelabuhan-majene"
+  },
+  "Pelabuhan Baru Majene": {
+    "latitude": -3.558534409,
+    "longitude": 118.945662928,
+    "slug": "pelabuhan-baru-majene"
+  },
+  "Pelabuhan Palipi": {
+    "latitude": -3.31369919,
+    "longitude": 118.849564749,
+    "slug": "pelabuhan-palipi"
+  },
+  "Pelabuhan Panamboang": {
+    "latitude": -3.006,
+    "longitude": 118.84,
+    "slug": "pelabuhan-panamboang"
+  },
+  "Pelabuhan Dermagah Dungkait": {
+    "latitude": -2.853470648,
+    "longitude": 118.803950345,
+    "slug": "pelabuhan-dermagah-dungkait"
+  },
+  "Pelabuhan Ferry Mamuju": {
+    "latitude": -2.675072218,
+    "longitude": 118.867482051,
+    "slug": "pelabuhan-ferry-mamuju"
+  },
+  "Pelabuhan Belang- Belang": {
+    "latitude": -2.474573404,
+    "longitude": 119.127912733,
+    "slug": "pelabuhan-belang-belang"
+  },
+  "Pelabuhan Sabakattang": {
+    "latitude": -2.220308371,
+    "longitude": 117.410732323,
+    "slug": "pelabuhan-sabakattang"
+  },
+  "Pelabuhan Babana": {
+    "latitude": -2.097554791,
+    "longitude": 119.193055852,
+    "slug": "pelabuhan-babana"
+  },
+  "Pelabuhan Cinoki": {
+    "latitude": -1.680534457,
+    "longitude": 119.282088621,
+    "slug": "pelabuhan-cinoki"
+  },
+  "Pelabuhan Pasang Kayu SMART Mamuju": {
+    "latitude": -1.135922656,
+    "longitude": 119.398053502,
+    "slug": "pelabuhan-pasang-kayu-smart-mamuju"
+  },
+  "Pelabuhan Ambo": {
+    "latitude": -2.538119,
+    "longitude": 117.944765,
+    "slug": "pelabuhan-ambo"
+  },
+  "Pelabuhan Popongan": {
+    "latitude": -2.4585871963963,
+    "longitude": 117.376677617157,
+    "slug": "pelabuhan-popongan"
+  },
+  "Pelabuhan Salissingan": {
+    "latitude": -2.31509256228807,
+    "longitude": 117.231649328598,
+    "slug": "pelabuhan-salissingan"
+  },
+  "Pelabuhan Galesong - Takalar": {
+    "latitude": -5.324445759,
+    "longitude": 119.356121493,
+    "slug": "pelabuhan-galesong-takalar"
+  },
+  "Pelabuhan Soekarno Hatta - Makassar": {
+    "latitude": -5.122342358,
+    "longitude": 119.407789228,
+    "slug": "pelabuhan-soekarno-hatta-makassar"
+  },
+  "Pelabuhan Maccini Baji - Pangkajene Kepulauan": {
+    "latitude": -4.774400263,
+    "longitude": 119.492060891,
+    "slug": "pelabuhan-maccini-baji-pangkajene-kepulauan"
+  },
+  "Pelabuhan Garongkong - Barru": {
+    "latitude": -4.37733499599994,
+    "longitude": 119.612338393,
+    "slug": "pelabuhan-garongkong-barru"
+  },
+  "Pelabuhan Nusantara - Pare Pare": {
+    "latitude": -4.01444988099996,
+    "longitude": 119.609922057,
+    "slug": "pelabuhan-nusantara-pare-pare"
+  },
+  "Pelabuhan Tanjung Ringgit - Palopo": {
+    "latitude": -2.98143288774509,
+    "longitude": 120.226702810163,
+    "slug": "pelabuhan-tanjung-ringgit-palopo"
+  },
+  "Pelabuhan Bajoe - Bone": {
+    "latitude": -4.546929124,
+    "longitude": 120.40431807,
+    "slug": "pelabuhan-bajoe-bone"
+  },
+  "Pelabuhan Bira - Bulukumba": {
+    "latitude": -5.607375034,
+    "longitude": 120.468188939,
+    "slug": "pelabuhan-bira-bulukumba"
+  },
+  "Pelabuhan Pamatata - Selayar": {
+    "latitude": -5.80687348381915,
+    "longitude": 120.541065535843,
+    "slug": "pelabuhan-pamatata-selayar"
+  },
+  "Pelabuhan Larea Rea - Sinjai": {
+    "latitude": -5.116364193,
+    "longitude": 120.288632305,
+    "slug": "pelabuhan-larea-rea-sinjai"
+  },
+  "Pelabuhan Bungeng - Jeneponto": {
+    "latitude": -5.64708801337648,
+    "longitude": 119.875429469101,
+    "slug": "pelabuhan-bungeng-jeneponto"
+  },
+  "Pelabuhan Benteng - Selayar": {
+    "latitude": -6.10036158019512,
+    "longitude": 120.448611980645,
+    "slug": "pelabuhan-benteng-selayar"
+  },
+  "Pelabuhan Taipa": {
+    "latitude": -0.77953,
+    "longitude": 119.85814,
+    "slug": "pelabuhan-taipa"
+  },
+  "Pelabuhan Pantoloan": {
+    "latitude": -0.710675791,
+    "longitude": 119.855417377,
+    "slug": "pelabuhan-pantoloan"
+  },
+  "Pelabuhan Wani": {
+    "latitude": -0.694891971,
+    "longitude": 119.840240897,
+    "slug": "pelabuhan-wani"
+  },
+  "Pelabuhan Donggala": {
+    "latitude": -0.66597,
+    "longitude": 119.74458,
+    "slug": "pelabuhan-donggala"
+  },
+  "Pelabuhan Ogoamas": {
+    "latitude": 0.741200848,
+    "longitude": 120.104873251,
+    "slug": "pelabuhan-ogoamas"
+  },
+  "Pelabuhan Perikanan Pantai Ogotua": {
+    "latitude": 0.95802605,
+    "longitude": 120.25321922,
+    "slug": "pelabuhan-perikanan-pantai-ogotua"
+  },
+  "Pelabuhan Daerah Haji Hayyun Tolitoli": {
+    "latitude": 1.037709056,
+    "longitude": 120.809498953,
+    "slug": "pelabuhan-daerah-haji-hayyun-tolitoli"
+  },
+  "Pelabuhan Leok Buol": {
+    "latitude": 1.19015554800006,
+    "longitude": 121.438172888,
+    "slug": "pelabuhan-leok-buol"
+  },
+  "Pelabuhan Laut Moutong": {
+    "latitude": 0.45709,
+    "longitude": 121.21051,
+    "slug": "pelabuhan-laut-moutong"
+  },
+  "Pelabuhan Tinombo": {
+    "latitude": 0.38798,
+    "longitude": 120.28916,
+    "slug": "pelabuhan-tinombo"
+  },
+  "Pelabuhan Paranggi": {
+    "latitude": -0.471553642,
+    "longitude": 120.063694453,
+    "slug": "pelabuhan-paranggi"
+  },
+  "Pelabuhan Toboli": {
+    "latitude": -0.70325,
+    "longitude": 120.09666,
+    "slug": "pelabuhan-toboli"
+  },
+  "Pelabuhan Loji": {
+    "latitude": -0.81206,
+    "longitude": 120.17949,
+    "slug": "pelabuhan-loji"
+  },
+  "Pelabuhan Poso": {
+    "latitude": -1.38131,
+    "longitude": 120.755,
+    "slug": "pelabuhan-poso"
+  },
+  "Pelabuhan Ampana": {
+    "latitude": -0.867656198,
+    "longitude": 121.58379536,
+    "slug": "pelabuhan-ampana"
+  },
+  "Pelabuhan Penyebrangan Uebone": {
+    "latitude": -0.913258603,
+    "longitude": 121.659479999,
+    "slug": "pelabuhan-penyebrangan-uebone"
+  },
+  "Pelabuhan Mantangisi": {
+    "latitude": -0.927364603,
+    "longitude": 121.696328163,
+    "slug": "pelabuhan-mantangisi"
+  },
+  "Pelabuhan Una-Una": {
+    "latitude": -0.20939,
+    "longitude": 121.63478,
+    "slug": "pelabuhan-una-una"
+  },
+  "Pelabuhan Pasokan": {
+    "latitude": -0.301491313999975,
+    "longitude": 122.337058195,
+    "slug": "pelabuhan-pasokan"
+  },
+  "Pelabuhan Laut Malenge": {
+    "latitude": -0.27155,
+    "longitude": 122.05574,
+    "slug": "pelabuhan-laut-malenge"
+  },
+  "Pelabuhan Wakai": {
+    "latitude": -0.406454014999952,
+    "longitude": 121.862097934,
+    "slug": "pelabuhan-wakai"
+  },
+  "Pelabuhan Ferry Siliti": {
+    "latitude": -1.73813773299997,
+    "longitude": 121.812404213,
+    "slug": "pelabuhan-ferry-siliti"
+  },
+  "Pelabuhan Kolonodale": {
+    "latitude": -1.91046711699993,
+    "longitude": 121.357215096,
+    "slug": "pelabuhan-kolonodale"
+  },
+  "Pelabuhan Bungku Tengah/ Marsaoleh": {
+    "latitude": -2.54076,
+    "longitude": 121.97378,
+    "slug": "pelabuhan-bungku-tengah-marsaoleh"
+  },
+  "Pelabuhan Bunta": {
+    "latitude": -0.837096415,
+    "longitude": 122.1621792,
+    "slug": "pelabuhan-bunta"
+  },
+  "Pelabuhan Pagimana": {
+    "latitude": -0.794979358999967,
+    "longitude": 122.6626814,
+    "slug": "pelabuhan-pagimana"
+  },
+  "Pelabuhan Tanjung": {
+    "latitude": -0.95075,
+    "longitude": 122.79686,
+    "slug": "pelabuhan-tanjung"
+  },
+  "Pelabuhan Tangkiang": {
+    "latitude": -1.209265643,
+    "longitude": 122.629451452,
+    "slug": "pelabuhan-tangkiang"
+  },
+  "Pelabuhan Leme Leme Bungin": {
+    "latitude": -1.271301646,
+    "longitude": 122.839755803,
+    "slug": "pelabuhan-leme-leme-bungin"
+  },
+  "Pelabuhan Laut Salakan": {
+    "latitude": -1.30865337,
+    "longitude": 123.290273446,
+    "slug": "pelabuhan-laut-salakan"
+  },
+  "Pelabuhan Banggai": {
+    "latitude": -1.58955,
+    "longitude": 123.49866,
+    "slug": "pelabuhan-banggai"
+  },
+  "Pelabuhan Nusantara Kendari": {
+    "latitude": -3.97220704099993,
+    "longitude": 122.613960181,
+    "slug": "pelabuhan-nusantara-kendari"
+  },
+  "Pelabuhan Bungkutoko": {
+    "latitude": -3.9771166699999,
+    "longitude": 122.613966699,
+    "slug": "pelabuhan-bungkutoko"
+  },
+  "Pelabuhan Murhum Baubau": {
+    "latitude": -5.454722,
+    "longitude": 122.61,
+    "slug": "pelabuhan-murhum-baubau"
+  },
+  "Pelabuhan Kolaka": {
+    "latitude": -4.058212542,
+    "longitude": 121.587343725,
+    "slug": "pelabuhan-kolaka"
+  },
+  "Pelabuhan Pomalaa/Dawi-dawi": {
+    "latitude": -4.179433356,
+    "longitude": 121.605094338,
+    "slug": "pelabuhan-pomalaa-dawi-dawi"
+  },
+  "Pelabuhan Raha": {
+    "latitude": -4.841111,
+    "longitude": 122.7308,
+    "slug": "pelabuhan-raha"
+  },
+  "Pelabuhan Tampo": {
+    "latitude": -4.624167,
+    "longitude": 122.7094,
+    "slug": "pelabuhan-tampo"
+  },
+  "Pelabuhan Pure": {
+    "latitude": -4.897269426,
+    "longitude": 122.831136647,
+    "slug": "pelabuhan-pure"
+  },
+  "Pelabuhan Tondasi": {
+    "latitude": -4.747523452,
+    "longitude": 122.370836257,
+    "slug": "pelabuhan-tondasi"
+  },
+  "Pelabuhan Tobaku": {
+    "latitude": -3.414124569,
+    "longitude": 120.887339612,
+    "slug": "pelabuhan-tobaku"
+  },
+  "Pelabuhan Kasipute": {
+    "latitude": -4.773571147,
+    "longitude": 122.064958714,
+    "slug": "pelabuhan-kasipute"
+  },
+  "Pelabuhan Sikeli": {
+    "latitude": -5.262284982,
+    "longitude": 121.794877321,
+    "slug": "pelabuhan-sikeli"
+  },
+  "Pelabuhan Dongkala": {
+    "latitude": -5.318241628,
+    "longitude": 122.051196389,
+    "slug": "pelabuhan-dongkala"
+  },
+  "Pelabuhan Lameruru": {
+    "latitude": -3.295833,
+    "longitude": 122.2944,
+    "slug": "pelabuhan-lameruru"
+  },
+  "Pelabuhan Molawe": {
+    "latitude": -3.612253814,
+    "longitude": 122.20101829,
+    "slug": "pelabuhan-molawe"
+  },
+  "Pelabuhan Amolengo": {
+    "latitude": -4.419440963,
+    "longitude": 122.851570559,
+    "slug": "pelabuhan-amolengo"
+  },
+  "Pelabuhan Torobulu": {
+    "latitude": -4.445469899,
+    "longitude": 122.454131595,
+    "slug": "pelabuhan-torobulu"
+  },
+  "Pelabuhan Langara": {
+    "latitude": -4.02031770599995,
+    "longitude": 122.987379273,
+    "slug": "pelabuhan-langara"
+  },
+  "Pelabuhan Munse": {
+    "latitude": -4.101209167,
+    "longitude": 123.251001971,
+    "slug": "pelabuhan-munse"
+  },
+  "Pelabuhan Banabungi Pasarwajo": {
+    "latitude": -5.51234155299994,
+    "longitude": 122.844462174,
+    "slug": "pelabuhan-banabungi-pasarwajo"
+  },
+  "Pelabuhan Kamaru-Lasalimu": {
+    "latitude": -5.1775,
+    "longitude": 123.0678,
+    "slug": "pelabuhan-kamaru-lasalimu"
+  },
+  "Pelabuhan Bandar Batauga": {
+    "latitude": -5.594444,
+    "longitude": 122.5917,
+    "slug": "pelabuhan-bandar-batauga"
+  },
+  "Pelabuhan Siompu": {
+    "latitude": -5.627919857,
+    "longitude": 122.526320164,
+    "slug": "pelabuhan-siompu"
+  },
+  "Pelabuhan Kadatua": {
+    "latitude": -5.502347712,
+    "longitude": 122.526089344,
+    "slug": "pelabuhan-kadatua"
+  },
+  "Pelabuhan Batu Atas Timur": {
+    "latitude": -6.205548873,
+    "longitude": 122.719086402,
+    "slug": "pelabuhan-batu-atas-timur"
+  },
+  "Pelabuhan Wamengkoli/Waara": {
+    "latitude": -5.427175809,
+    "longitude": 122.599933471,
+    "slug": "pelabuhan-wamengkoli-waara"
+  },
+  "Pelabuhan Tolandona": {
+    "latitude": -5.366590264,
+    "longitude": 122.616383732,
+    "slug": "pelabuhan-tolandona"
+  },
+  "Pelabuhan Mawasangka": {
+    "latitude": -5.282217323,
+    "longitude": 122.287591614,
+    "slug": "pelabuhan-mawasangka"
+  },
+  "Pelabuhan Talaga Raya": {
+    "latitude": -5.473042522,
+    "longitude": 122.075001398,
+    "slug": "pelabuhan-talaga-raya"
+  },
+  "Pelabuhan Ereke - Waode Buri": {
+    "latitude": -4.773011169,
+    "longitude": 123.173310737,
+    "slug": "pelabuhan-ereke-waode-buri"
+  },
+  "Pelabuhan Wanci": {
+    "latitude": -3.96932505799992,
+    "longitude": 122.613412238,
+    "slug": "pelabuhan-wanci"
+  },
+  "Pelabuhan Kaledupa": {
+    "latitude": -5.508965977,
+    "longitude": 123.770443098,
+    "slug": "pelabuhan-kaledupa"
+  },
+  "Pelabuhan Tomia": {
+    "latitude": -5.719356698,
+    "longitude": 123.904204707,
+    "slug": "pelabuhan-tomia"
+  },
+  "Pelabuhan Binongko": {
+    "latitude": -5.904823726,
+    "longitude": 124.035114336,
+    "slug": "pelabuhan-binongko"
+  },
+  "Pelabuhan Manado": {
+    "latitude": 1.495029784,
+    "longitude": 124.839097927,
+    "slug": "pelabuhan-manado"
+  },
+  "Pelabuhan Bukide": {
+    "latitude": 3.752356582,
+    "longitude": 125.580986911,
+    "slug": "pelabuhan-bukide"
+  },
+  "Pelabuhan Kawaluso": {
+    "latitude": 4.229902778,
+    "longitude": 125.3213139,
+    "slug": "pelabuhan-kawaluso"
+  },
+  "Pelabuhan Kahakitang": {
+    "latitude": 3.174763889,
+    "longitude": 125.5178056,
+    "slug": "pelabuhan-kahakitang"
+  },
+  "Pelabuhan Kalama": {
+    "latitude": 3.233183333,
+    "longitude": 125.4535722,
+    "slug": "pelabuhan-kalama"
+  },
+  "Pelabuhan Kawio": {
+    "latitude": 4.666657745,
+    "longitude": 125.43261819,
+    "slug": "pelabuhan-kawio"
+  },
+  "Pelabuhan Marore": {
+    "latitude": 4.729897222,
+    "longitude": 125.4775889,
+    "slug": "pelabuhan-marore"
+  },
+  "Pelabuhan Matutuang": {
+    "latitude": 4.431971723,
+    "longitude": 125.68983002,
+    "slug": "pelabuhan-matutuang"
+  },
+  "Pelabuhan Ngalipaeng": {
+    "latitude": 3.36704707574229,
+    "longitude": 125.627896740599,
+    "slug": "pelabuhan-ngalipaeng"
+  },
+  "Pelabuhan Para": {
+    "latitude": 3.068161111,
+    "longitude": 125.5001556,
+    "slug": "pelabuhan-para"
+  },
+  "Pelabuhan Petta": {
+    "latitude": 3.675941339052,
+    "longitude": 125.596128270631,
+    "slug": "pelabuhan-petta"
+  },
+  "Pelabuhan Tahuna": {
+    "latitude": 3.60112154668322,
+    "longitude": 125.484558271843,
+    "slug": "pelabuhan-tahuna"
+  },
+  "Pelabuhan Beo": {
+    "latitude": 4.22774835246976,
+    "longitude": 126.768406729676,
+    "slug": "pelabuhan-beo"
+  },
+  "Pelabuhan Dapalan": {
+    "latitude": 4.41947834040101,
+    "longitude": 126.955209653385,
+    "slug": "pelabuhan-dapalan"
+  },
+  "Pelabuhan Essang": {
+    "latitude": 4.47854900373691,
+    "longitude": 126.688503717692,
+    "slug": "pelabuhan-essang"
+  },
+  "Pelabuhan Kakorotan": {
+    "latitude": 4.632725,
+    "longitude": 127.1579111,
+    "slug": "pelabuhan-kakorotan"
+  },
+  "Pelabuhan Karatung": {
+    "latitude": 4.723805556,
+    "longitude": 127.0868833,
+    "slug": "pelabuhan-karatung"
+  },
+  "Pelabuhan Lirung": {
+    "latitude": 3.94296688976631,
+    "longitude": 126.7690057396,
+    "slug": "pelabuhan-lirung"
+  },
+  "Pelabuhan Marampit": {
+    "latitude": 4.731616667,
+    "longitude": 127.1304444,
+    "slug": "pelabuhan-marampit"
+  },
+  "Pelabuhan Mangarang": {
+    "latitude": 3.842089416,
+    "longitude": 126.743549671,
+    "slug": "pelabuhan-mangarang"
+  },
+  "Pelabuhan Miangas": {
+    "latitude": 5.549959001,
+    "longitude": 126.581747009,
+    "slug": "pelabuhan-miangas"
+  },
+  "Pelabuhan Rainis": {
+    "latitude": 4.23689746990294,
+    "longitude": 126.8890406036,
+    "slug": "pelabuhan-rainis"
+  },
+  "Pelabuhan Melonguane": {
+    "latitude": 3.997558333,
+    "longitude": 126.6767528,
+    "slug": "pelabuhan-melonguane"
+  },
+  "Pelabuhan Buhias": {
+    "latitude": 2.676230556,
+    "longitude": 125.452275,
+    "slug": "pelabuhan-buhias"
+  },
+  "Pelabuhan Pehe": {
+    "latitude": 2.75623232599349,
+    "longitude": 125.347096333685,
+    "slug": "pelabuhan-pehe"
+  },
+  "Pelabuhan Sawang": {
+    "latitude": 2.679886111,
+    "longitude": 125.3926556,
+    "slug": "pelabuhan-sawang"
+  },
+  "Pelabuhan Tagulandang": {
+    "latitude": 2.340964509,
+    "longitude": 125.3811726,
+    "slug": "pelabuhan-tagulandang"
+  },
+  "Pelabuhan Ulu Siau": {
+    "latitude": 2.7134243594817,
+    "longitude": 125.424722473393,
+    "slug": "pelabuhan-ulu-siau"
+  },
+  "Pelabuhan Biaro": {
+    "latitude": 2.127293412,
+    "longitude": 125.3636468,
+    "slug": "pelabuhan-biaro"
+  },
+  "Pelabuhan Makalehi": {
+    "latitude": 2.734233333,
+    "longitude": 125.1618889,
+    "slug": "pelabuhan-makalehi"
+  },
+  "Pelabuhan Amurang": {
+    "latitude": 1.24699372239425,
+    "longitude": 124.521174385868,
+    "slug": "pelabuhan-amurang"
+  },
+  "Pelabuhan Belang": {
+    "latitude": 0.920331831941121,
+    "longitude": 124.815161613241,
+    "slug": "pelabuhan-belang"
+  },
+  "Pelabuhan Likupang": {
+    "latitude": 1.72653888377013,
+    "longitude": 125.066198321004,
+    "slug": "pelabuhan-likupang"
+  },
+  "Pelabuhan Munte/Likupang Barat": {
+    "latitude": 1.71255892009112,
+    "longitude": 125.042845033241,
+    "slug": "pelabuhan-munte-likupang-barat"
+  },
+  "Pelabuhan Kotabunan": {
+    "latitude": 0.81826487485064,
+    "longitude": 124.692620975715,
+    "slug": "pelabuhan-kotabunan"
+  },
+  "Pelabuhan Labuhan Uki": {
+    "latitude": 0.900255659423035,
+    "longitude": 123.925610006473,
+    "slug": "pelabuhan-labuhan-uki"
+  },
+  "Pelabuhan Torosik": {
+    "latitude": 0.391005374423366,
+    "longitude": 124.306449506054,
+    "slug": "pelabuhan-torosik"
+  },
+  "Pelabuhan Samudera Bitung": {
+    "latitude": 1.436626,
+    "longitude": 125.187339,
+    "slug": "pelabuhan-samudera-bitung"
+  },
+  "Pelabuhan Teluk Bungus Padang": {
+    "latitude": -1.030278,
+    "longitude": 100.3992,
+    "slug": "pelabuhan-teluk-bungus-padang"
+  },
+  "Pelabuhan Teluk Bayur Padang": {
+    "latitude": -0.997778,
+    "longitude": 100.3714,
+    "slug": "pelabuhan-teluk-bayur-padang"
+  },
+  "Pelabuhan Muaro Padang": {
+    "latitude": -0.965556,
+    "longitude": 100.3528,
+    "slug": "pelabuhan-muaro-padang"
+  },
+  "Pelabuhan Tuapejat Sipora": {
+    "latitude": -2.030556,
+    "longitude": 99.59278,
+    "slug": "pelabuhan-tuapejat-sipora"
+  },
+  "Pelabuhan Maileppet Siberut": {
+    "latitude": -1.563611,
+    "longitude": 99.19667,
+    "slug": "pelabuhan-maileppet-siberut"
+  },
+  "Pelabuhan Sikakap Pagai Utara": {
+    "latitude": -2.77867469999995,
+    "longitude": 100.215362174,
+    "slug": "pelabuhan-sikakap-pagai-utara"
+  },
+  "Pelabuhan Sikabaluan Siberut": {
+    "latitude": -1.080556,
+    "longitude": 98.95694,
+    "slug": "pelabuhan-sikabaluan-siberut"
+  },
+  "Pelabuhan Air Bangis Pasaman": {
+    "latitude": 0.21,
+    "longitude": 99.26389,
+    "slug": "pelabuhan-air-bangis-pasaman"
+  },
+  "Pelabuhan Panasahan Pesisir": {
+    "latitude": -1.36359291699994,
+    "longitude": 100.56219853,
+    "slug": "pelabuhan-panasahan-pesisir"
+  },
+  "Pelabuhan Tanjung Api-Api": {
+    "latitude": -2.372667,
+    "longitude": 104.8059,
+    "slug": "pelabuhan-tanjung-api-api"
+  },
+  "Pelabuhan Boombaru": {
+    "latitude": -2.34824309499993,
+    "longitude": 105.052313463,
+    "slug": "pelabuhan-boombaru"
+  },
+  "Pelabuhan Belawan": {
+    "latitude": 3.79555315500005,
+    "longitude": 98.71386105,
+    "slug": "pelabuhan-belawan"
+  },
+  "Pelabuhan Sibolga": {
+    "latitude": 1.72842,
+    "longitude": 98.785762,
+    "slug": "pelabuhan-sibolga"
+  },
+  "Pelabuhan Kuala Tanjung": {
+    "latitude": 3.36300572200002,
+    "longitude": 99.453840213,
+    "slug": "pelabuhan-kuala-tanjung"
+  },
+  "Pelabuhan Gunung Sitoli": {
+    "latitude": 1.305827,
+    "longitude": 97.609683,
+    "slug": "pelabuhan-gunung-sitoli"
+  },
+  "Pelabuhan Pangkalan Susu": {
+    "latitude": 4.123017,
+    "longitude": 98.213235,
+    "slug": "pelabuhan-pangkalan-susu"
+  },
+  "Pelabuhan Tanjung Balai Asahan": {
+    "latitude": 3.04252021000002,
+    "longitude": 99.861157892,
+    "slug": "pelabuhan-tanjung-balai-asahan"
+  },
+  "Pelabuhan Tanjung Beringin": {
+    "latitude": 3.50706125900006,
+    "longitude": 99.214632029,
+    "slug": "pelabuhan-tanjung-beringin"
+  },
+  "Pelabuhan Barus": {
+    "latitude": 2.007449,
+    "longitude": 98.398276,
+    "slug": "pelabuhan-barus"
+  },
+  "Pelabuhan Batahan": {
+    "latitude": 0.363983,
+    "longitude": 99.121439,
+    "slug": "pelabuhan-batahan"
+  },
+  "Pelabuhan Lahewa": {
+    "latitude": 1.41397068300005,
+    "longitude": 97.174316301,
+    "slug": "pelabuhan-lahewa"
+  },
+  "Pelabuhan Leidong": {
+    "latitude": 2.752325,
+    "longitude": 99.979582,
+    "slug": "pelabuhan-leidong"
+  },
+  "Pelabuhan Pulau Tello": {
+    "latitude": -0.035577080999929,
+    "longitude": 98.289436803,
+    "slug": "pelabuhan-pulau-tello"
+  },
+  "Pelabuhan Teluk Dalam": {
+    "latitude": 0.55453,
+    "longitude": 97.820789,
+    "slug": "pelabuhan-teluk-dalam"
+  },
+  "Pelabuhan Sirombu": {
+    "latitude": 0.94232,
+    "longitude": 97.410944,
+    "slug": "pelabuhan-sirombu"
+  },
+  "Pelabuhan Tanjung Sarang Elang": {
+    "latitude": 2.53904097700007,
+    "longitude": 100.129796957,
+    "slug": "pelabuhan-tanjung-sarang-elang"
+  }
+}

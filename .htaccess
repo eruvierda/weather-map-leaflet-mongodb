@@ -1,0 +1,29 @@
+# Cache Control for Weather Data Files
+# Prevent caching of JSON weather data files
+
+<FilesMatch "\.(json)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header set Last-Modified "Wed, 21 Oct 2015 07:28:00 GMT"
+</FilesMatch>
+
+# Specific cache control for weather data files
+<FilesMatch "(city_weather_data|grid_weather_data|pelabuhan_weather_data|namaPelabuhan)\.json$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
+    Header set Pragma "no-cache"
+    Header set Expires "Thu, 01 Jan 1970 00:00:00 GMT"
+</FilesMatch>
+
+# Enable CORS for local development
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "*"
+    Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header always set Access-Control-Allow-Headers "Content-Type, Cache-Control, Pragma"
+</IfModule>
+
+# Force download of JSON files (optional - uncomment if needed)
+# <FilesMatch "\.(json)$">
+#     ForceType application/octet-stream
+#     Header set Content-Disposition "attachment"
+# </FilesMatch>
