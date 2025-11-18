@@ -264,6 +264,25 @@
     <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
     
     <!-- Smart Cache Manager -->
+    <script>
+        (function configureWeatherApiBase() {
+            const isSamePortAsApi = window.location.port === '8000';
+            const fallbackApiBase = `${window.location.protocol}//${window.location.hostname}:8000`;
+            window.WEATHER_API_BASE = (window.WEATHER_API_BASE ?? null);
+            if (!window.WEATHER_API_BASE) {
+                window.WEATHER_API_BASE = isSamePortAsApi ? '' : fallbackApiBase;
+            }
+
+            window.WEATHER_ENDPOINTS = Object.assign(
+                {
+                    city: '/api/weather/city',
+                    grid: '/api/weather/grid',
+                    port: '/api/weather/port',
+                },
+                window.WEATHER_ENDPOINTS || {}
+            );
+        })();
+    </script>
     <script src="openmeteo/smart_cache_manager.js"></script>
 
     <script>
@@ -1015,9 +1034,11 @@
         }
 
         // Function to load and display city weather data
-        const CITY_API_URL = '/api/weather/city';
-        const GRID_API_URL = '/api/weather/grid';
-        const PORT_API_URL = '/api/weather/port';
+        const {
+            city: CITY_API_URL = '/api/weather/city',
+            grid: GRID_API_URL = '/api/weather/grid',
+            port: PORT_API_URL = '/api/weather/port',
+        } = window.WEATHER_ENDPOINTS || {};
 
         async function loadAndDisplayCityWeather() {
             const loadingText = document.getElementById('loading-text');
@@ -1151,7 +1172,7 @@
             
             try {
                 // Load 1-degree grid weather data using smart cache manager
-                const gridWeatherData = await cacheManager.getData('openmeteo/grid_weather_data_1degree.json', 'grid');
+                const gridWeatherData = await cacheManager.getData(GRID_API_URL, 'grid');
                 
                 if (loadingText) loadingText.textContent = `Memproses data cuaca untuk ${gridWeatherData.length} lokasi grid 1-derajat...`;
                 
@@ -1170,7 +1191,7 @@
 
             try {
                 // Load 1-degree grid weather data using smart cache manager
-                const gridWeatherData = await cacheManager.getData('openmeteo/grid_weather_data_1degree.json', 'grid');
+                const gridWeatherData = await cacheManager.getData(GRID_API_URL, 'grid');
                 
                 if (loadingText) loadingText.textContent = `Mewarnai ${gridWeatherData.length} sel grid berdasarkan angin...`;
                 
@@ -1576,7 +1597,7 @@
                 
                 // Check port weather data freshness using cache manager
                 try {
-                    const portData = await cacheManager.getData('pelabuhan/pelabuhan_weather_data.json', 'weather', false);
+                    const portData = await cacheManager.getData(PORT_API_URL, 'weather', false);
                     if (portData && portData.length > 0 && portData[0].fetched_at) {
                         const dataDate = new Date(portData[0].fetched_at);
                         const currentDate = new Date();
@@ -1593,7 +1614,7 @@
                 
                 // Check city weather data freshness using cache manager
                 try {
-                    const cityData = await cacheManager.getData('openmeteo/city_weather_data.json', 'weather', false);
+                    const cityData = await cacheManager.getData(CITY_API_URL, 'weather', false);
                     if (cityData && cityData.length > 0 && cityData[0].weather_data && cityData[0].weather_data.fetched_at) {
                         const dataDate = new Date(cityData[0].weather_data.fetched_at);
                         const currentDate = new Date();
@@ -1614,7 +1635,7 @@
                 
                 // Check grid weather data freshness using cache manager
                 try {
-                    const gridData = await cacheManager.getData('openmeteo/grid_weather_data_1degree.json', 'grid', false);
+                    const gridData = await cacheManager.getData(GRID_API_URL, 'grid', false);
                     if (gridData && gridData.length > 0 && gridData[0].weather_data && gridData[0].weather_data.fetched_at) {
                         const dataDate = new Date(gridData[0].weather_data.fetched_at);
                         const currentDate = new Date();
@@ -1801,11 +1822,7 @@
         
         async function refreshAllData() {
             try {
-                const urls = [
-                    'pelabuhan/pelabuhan_weather_data.json',
-                    'openmeteo/city_weather_data.json',
-                    'openmeteo/grid_weather_data_1degree.json'
-                ];
+                const urls = [PORT_API_URL, CITY_API_URL, GRID_API_URL];
                 
                 for (const url of urls) {
                     await cacheManager.getData(url, 'weather', true);
